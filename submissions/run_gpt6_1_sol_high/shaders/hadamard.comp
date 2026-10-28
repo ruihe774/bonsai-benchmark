@@ -1,0 +1,14 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+shared float v[512];
+void main(){
+ uint l=gl_LocalInvocationID.x;uint localbase=gl_WorkGroupID.x*512;uint base=localbase+gl_WorkGroupID.y*p.a;
+ for(uint j=l;j<512;j+=256){float a=F(p.x).d[base+j];if(p.b==0)a*=F(p.w).d[localbase+j];v[j]=a;}
+ barrier();
+ for(uint s=1;s<512;s*=2){
+  uint a=(l/s)*(2*s)+l%s;uint b=a+s;
+  float x=v[a],y=v[b];barrier();v[a]=x+y;v[b]=x-y;barrier();
+ }
+ for(uint j=l;j<512;j+=256){float a=v[j]*0.04419417382415922;if(p.b==1)a*=F(p.w).d[localbase+j];F(p.y).d[base+j]=a;}
+}

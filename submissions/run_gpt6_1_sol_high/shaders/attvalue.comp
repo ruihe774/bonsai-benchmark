@@ -1,0 +1,6 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+void main(){uint d=gl_LocalInvocationID.x,h=gl_WorkGroupID.x,split=gl_WorkGroupID.y;uint splits=max(p.c,1);uint chunk=(p.a+splits-1)/splits;uint begin=split*chunk,end=min(p.a,begin+chunk);float sum=0;
+ for(uint t=begin;t<end;t++)sum+=F(p.x).d[h*p.b+t]*float(H(p.w).d[(t*4+h/4)*256+d]);F(p.y).d[(split*16+h)*256+d]=sum;
+}

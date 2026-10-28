@@ -1,0 +1,11 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+shared float sums[8];shared float mx;
+void main(){uint l=gl_LocalInvocationID.x,h=gl_WorkGroupID.x;uint count=p.a+h/16;
+ float m=-1e30;for(uint i=l;i<count;i+=256)m=max(m,F(p.x).d[h*p.b+i]);m=subgroupMax(m);if(gl_SubgroupInvocationID==0)sums[gl_SubgroupID]=m;barrier();
+ if(l<32){m=l<8?sums[l]:-1e30;m=subgroupMax(m);if(l==0)mx=m;}barrier();
+ float s=0;for(uint i=l;i<count;i+=256){float x=exp(F(p.x).d[h*p.b+i]-mx);F(p.x).d[h*p.b+i]=x;s+=x;}s=subgroupAdd(s);if(gl_SubgroupInvocationID==0)sums[gl_SubgroupID]=s;barrier();
+ if(l<32){s=l<8?sums[l]:0;s=subgroupAdd(s);if(l==0)sums[0]=s;}barrier();
+ for(uint i=l;i<count;i+=256)F(p.x).d[h*p.b+i]/=sums[0];
+}

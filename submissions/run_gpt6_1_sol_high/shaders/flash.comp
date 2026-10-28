@@ -1,0 +1,58 @@
+#version 460
+#include "common.glsl"
+#extension GL_KHR_cooperative_matrix : require
+#extension GL_KHR_memory_scope_semantics : require
+#extension GL_KHR_shader_subgroup_shuffle : require
+layout(local_size_x=128) in;
+shared float16_t query_tile[16*256];
+shared float scores[16*64];
+shared float16_t probs[16*64];
+shared float result[16*256];
+shared float maxima[16],denom[16],rescale[16];
+void main(){
+ uint l=gl_LocalInvocationID.x,sg=gl_SubgroupID;
+ uint qb=gl_WorkGroupID.x*16,head=gl_WorkGroupID.y,kh=head/4;
+ for(uint i=l;i<16*256;i+=128){uint q=i/256,d=i%256;query_tile[i]=float16_t(qb+q<p.d?F(p.x).d[(qb+q)*4096+head*256+d]:0);result[i]=0;}
+ if(l<16){maxima[l]=-1e30;denom[l]=0;}barrier();
+ uint end=p.a+min(qb+16,p.d);float runningmax=-1e30,runningden=0;
+ for(uint kb=0;kb<end;kb+=64){
+  coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator> sc=coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator>(0.0);
+  for(uint k=0;k<256;k+=16){
+   coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseA> qa;
+   coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseB> kk;
+   coopMatLoad(qa,query_tile,k,256,gl_CooperativeMatrixLayoutRowMajor);
+   coopMatLoad(kk,H(p.w).d,(kb+sg*16)*1024+kh*256+k,1024,gl_CooperativeMatrixLayoutColumnMajor);
+   sc=coopMatMulAdd(qa,kk,sc);
+  }
+  coopMatStore(sc,scores,sg*16,64,gl_CooperativeMatrixLayoutRowMajor);barrier();
+  uint qi=l/8,lane=l%8;float localmax=-1e30;
+  for(uint j=lane;j<64;j+=8){float s=scores[qi*64+j]*0.0625;if(kb+j>=p.a+qb+qi+1||qb+qi>=p.d)s=-1e30;scores[qi*64+j]=s;localmax=max(localmax,s);}
+  localmax=max(localmax,subgroupShuffleXor(localmax,1));localmax=max(localmax,subgroupShuffleXor(localmax,2));localmax=max(localmax,subgroupShuffleXor(localmax,4));
+  float m=max(runningmax,localmax),alpha=exp(runningmax-m),sum=0;
+  for(uint j=lane;j<64;j+=8){float v=(kb+j<p.a+qb+qi+1&&qb+qi<p.d)?exp(scores[qi*64+j]-m):0;probs[qi*64+j]=float16_t(v);sum+=v;}
+  sum+=subgroupShuffleXor(sum,1);sum+=subgroupShuffleXor(sum,2);sum+=subgroupShuffleXor(sum,4);
+  runningmax=m;runningden=runningden*alpha+sum;
+  if(lane==0){denom[qi]=runningden;rescale[qi]=alpha;}barrier();
+  for(uint i=l;i<16*256;i+=128)result[i]*=rescale[i/256];barrier();
+  coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator> c0,c1,c2,c3;
+  coopMatLoad(c0,result,sg*64,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatLoad(c1,result,sg*64+16,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatLoad(c2,result,sg*64+32,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatLoad(c3,result,sg*64+48,256,gl_CooperativeMatrixLayoutRowMajor);
+  for(uint k=0;k<64;k+=16){
+   coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseA> pa;
+   coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseB> vv;
+   coopMatLoad(pa,probs,k,64,gl_CooperativeMatrixLayoutRowMajor);
+   uint base=(kb+k)*1024+kh*256+sg*64;
+   coopMatLoad(vv,H(p.z).d,base,1024,gl_CooperativeMatrixLayoutRowMajor);c0=coopMatMulAdd(pa,vv,c0);
+   coopMatLoad(vv,H(p.z).d,base+16,1024,gl_CooperativeMatrixLayoutRowMajor);c1=coopMatMulAdd(pa,vv,c1);
+   coopMatLoad(vv,H(p.z).d,base+32,1024,gl_CooperativeMatrixLayoutRowMajor);c2=coopMatMulAdd(pa,vv,c2);
+   coopMatLoad(vv,H(p.z).d,base+48,1024,gl_CooperativeMatrixLayoutRowMajor);c3=coopMatMulAdd(pa,vv,c3);
+  }
+  coopMatStore(c0,result,sg*64,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatStore(c1,result,sg*64+16,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatStore(c2,result,sg*64+32,256,gl_CooperativeMatrixLayoutRowMajor);
+  coopMatStore(c3,result,sg*64+48,256,gl_CooperativeMatrixLayoutRowMajor);barrier();
+ }
+ for(uint i=l;i<16*256;i+=128){uint q=i/256,d=i%256;if(qb+q<p.d)F(p.y).d[(qb+q)*4096+head*256+d]=result[i]/denom[q];}
+}

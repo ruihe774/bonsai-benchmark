@@ -1,0 +1,14 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+shared float a[256];shared float sums[8];
+void main(){uint i=gl_LocalInvocationID.x,h=gl_WorkGroupID.x,token=gl_WorkGroupID.y;
+ uint inputbase=token*(p.b==0?8192:1024);
+ float x=F(p.x).d[inputbase+h*(p.b==0?512:256)+i];
+ float s=subgroupAdd(x*x);if(gl_SubgroupInvocationID==0)sums[gl_SubgroupID]=s;barrier();
+ float z=0;for(uint j=0;j<8;j++)z+=sums[j];a[i]=x*inversesqrt(z/256+1e-6)*F(p.w).d[i];barrier();
+ float y=a[i];
+ if(i<64){uint j=i%32;float theta=float(p.a+token)*pow(10000000.0,-float(j)/32.0);float cs=cos(theta),sn=sin(theta);y=i<32?a[i]*cs-a[i+32]*sn:a[i]*cs+a[i-32]*sn;}
+ if(p.b==0){F(p.y).d[token*4096+h*256+i]=y;F(p.z).d[token*4096+h*256+i]=F(p.x).d[inputbase+h*512+256+i];}
+ else {H(p.y).d[((p.a+token)*4+h)*256+i]=float16_t(y);H(p.z).d[((p.a+token)*4+h)*256+i]=float16_t(F(p.s).d[token*1024+h*256+i]);}
+}

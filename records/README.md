@@ -6,6 +6,14 @@ Raw Claude Code artifacts for the bonsai-vk benchmark runs, kept alongside
 | directory | model | effort | compact window | report |
 |---|---|---|---|---|
 | `run_dsv41f_1017_high` | DeepSeek-V4.1-Flash-1017 (`deepseek-flash[1m]`) | high | 786432 | `reports/run_dsv41f_1017_high/` (verifier failed: greedy-long SIGSEGV; partial 0.6958) |
+| `run_gpt6_1_sol_high` | gpt-6.1-sol | high | 300000 | `reports/run_gpt6_1_sol_high/` (correctness 0.9958 accepted; perf 0.511×; memory gates pass) |
+
+`run_gpt6_1_sol_high` is the first run prepared after the black-box reference
+rule (`agent/TASK.md`) and with the sandbox proxy retrying upstream token rate
+limits reported as HTTP 422; both are discussed in its `AUDIT.md`. Its two
+earlier attempts are preserved under `/mnt/workspace/bonsai-runs` with
+`_attempt1` (upstream 422 killed the main session) and `_abandoned` (operator
+stopped it for static analysis of `ref/bin`, before the rule existed).
 
 Each directory contains:
 

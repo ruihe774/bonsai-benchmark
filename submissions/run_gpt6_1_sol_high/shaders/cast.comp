@@ -1,0 +1,4 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+void main(){uint i=gl_GlobalInvocationID.x;if(i<p.a)H(p.y).d[i]=float16_t(F(p.x).d[i]);}

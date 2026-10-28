@@ -1,0 +1,23 @@
+#version 460
+#include "common.glsl"
+#extension GL_KHR_cooperative_matrix : require
+#extension GL_KHR_memory_scope_semantics : require
+layout(local_size_x=128) in;
+void main(){
+ uint row=gl_WorkGroupID.x*64+gl_SubgroupID*16;uint token=gl_WorkGroupID.y*64;if(row>=p.b||token>=p.d)return;
+ coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator> c0=coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator>(0.0);
+ coopmat<float,gl_ScopeSubgroup,16,16,gl_MatrixUseAccumulator> c1=c0,c2=c0,c3=c0;
+ for(uint k=0;k<p.a;k+=16){
+  coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseA> a;
+  coopmat<float16_t,gl_ScopeSubgroup,16,16,gl_MatrixUseB> b;
+  coopMatLoad(b,H(p.w).d,row*p.a+k,p.a,gl_CooperativeMatrixLayoutColumnMajor);
+  coopMatLoad(a,H(p.x).d,token*p.a+k,p.a,gl_CooperativeMatrixLayoutRowMajor);c0=coopMatMulAdd(a,b,c0);
+  coopMatLoad(a,H(p.x).d,(token+16)*p.a+k,p.a,gl_CooperativeMatrixLayoutRowMajor);c1=coopMatMulAdd(a,b,c1);
+  coopMatLoad(a,H(p.x).d,(token+32)*p.a+k,p.a,gl_CooperativeMatrixLayoutRowMajor);c2=coopMatMulAdd(a,b,c2);
+  coopMatLoad(a,H(p.x).d,(token+48)*p.a+k,p.a,gl_CooperativeMatrixLayoutRowMajor);c3=coopMatMulAdd(a,b,c3);
+ }
+ coopMatStore(c0,F(p.y).d,token*p.b+row,p.b,gl_CooperativeMatrixLayoutRowMajor);
+ coopMatStore(c1,F(p.y).d,(token+16)*p.b+row,p.b,gl_CooperativeMatrixLayoutRowMajor);
+ coopMatStore(c2,F(p.y).d,(token+32)*p.b+row,p.b,gl_CooperativeMatrixLayoutRowMajor);
+ coopMatStore(c3,F(p.y).d,(token+48)*p.b+row,p.b,gl_CooperativeMatrixLayoutRowMajor);
+}

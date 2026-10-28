@@ -1,0 +1,39 @@
+#version 460
+#include "common.glsl"
+#extension GL_EXT_control_flow_attributes : require
+// Eight output rows per subgroup; dispatchceil(out/32),local128.
+layout(local_size_x=128) in;
+vec4 block_dot(uvec4 q,uint lane,vec4 x,float x4){
+ vec4 d=(vec4((q*3)>>8)-1.0)*x.x;q=(q*3)&255;
+ d+=(vec4((q*3)>>8)-1.0)*x.y;q=(q*3)&255;
+ d+=(vec4((q*3)>>8)-1.0)*x.z;q=(q*3)&255;
+ d+=(vec4((q*3)>>8)-1.0)*x.w;q=(q*3)&255;
+ if(lane<24)d+=(vec4((q*3)>>8)-1.0)*x4;
+ return d;
+}
+void main(){
+ uint lane=gl_LocalInvocationID.x%32;
+ uint row=gl_WorkGroupID.x*32+(gl_LocalInvocationID.x/32)*8;
+ if(row>=p.b)return;
+ vec4 sums[2];sums[0]=vec4(0.0);sums[1]=vec4(0.0);
+ if(p.c==143){
+  uint nb=p.a/128;
+  for(uint block=0;block<nb;block++){
+   uint start=lane<16?lane:(lane<24?80+lane-16:120+lane-24);
+   uint step=lane<16?16:(lane<24?8:2);
+   vec4 x=vec4(0.0);float x4=0.0;
+   if(lane<26){x=vec4(F(p.x).d[block*128+start],F(p.x).d[block*128+start+step],F(p.x).d[block*128+start+step*2],F(p.x).d[block*128+start+step*3]);if(lane<24)x4=F(p.x).d[block*128+start+step*4];}
+   [[unroll]] for(uint halfrow=0;halfrow<2;halfrow++){
+    uvec4 r=uvec4(row+halfrow*4)+uvec4(0,1,2,3);r=min(r,uvec4(p.b-1));
+    uvec4 base=(r*nb+block)*7;
+    uvec4 q=uvec4(I(p.w).d[base.x+lane/4],I(p.w).d[base.y+lane/4],I(p.w).d[base.z+lane/4],I(p.w).d[base.w+lane/4]);q=(q>>(8*(lane%4)))&255;
+    vec4 scale=vec4(unpackHalf2x16(I(p.w).d[base.x+6]>>16).x,unpackHalf2x16(I(p.w).d[base.y+6]>>16).x,unpackHalf2x16(I(p.w).d[base.z+6]>>16).x,unpackHalf2x16(I(p.w).d[base.w+6]>>16).x);
+    if(lane<26)sums[halfrow]+=block_dot(q,lane,x,x4)*scale;
+   }
+  }
+ }else{
+  for(uint k=lane;k<p.a;k+=32){float x=F(p.x).d[k];[[unroll]] for(uint h=0;h<2;h++){uint r=row+h*4;sums[h]+=vec4(F(p.w).d[min(r,p.b-1)*p.a+k],F(p.w).d[min(r+1,p.b-1)*p.a+k],F(p.w).d[min(r+2,p.b-1)*p.a+k],F(p.w).d[min(r+3,p.b-1)*p.a+k])*x;}}
+ }
+ vec4 s0=subgroupAdd(sums[0]),s1=subgroupAdd(sums[1]);
+ if(lane==0){if(row<p.b)F(p.y).d[row]=s0.x;if(row+1<p.b)F(p.y).d[row+1]=s0.y;if(row+2<p.b)F(p.y).d[row+2]=s0.z;if(row+3<p.b)F(p.y).d[row+3]=s0.w;if(row+4<p.b)F(p.y).d[row+4]=s1.x;if(row+5<p.b)F(p.y).d[row+5]=s1.y;if(row+6<p.b)F(p.y).d[row+6]=s1.z;if(row+7<p.b)F(p.y).d[row+7]=s1.w;}
+}

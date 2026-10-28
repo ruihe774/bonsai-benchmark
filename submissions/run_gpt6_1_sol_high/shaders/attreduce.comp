@@ -1,0 +1,4 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+void main(){uint d=gl_LocalInvocationID.x,h=gl_WorkGroupID.x;float sum=0;for(uint s=0;s<p.a;s++)sum+=F(p.x).d[(s*16+h)*256+d];F(p.y).d[h*256+d]=sum;}

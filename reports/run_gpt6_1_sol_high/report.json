@@ -1,0 +1,373 @@
+{
+ "submission": "/mnt/workspace/bonsai-runs/run_gpt6_1_sol_high",
+ "started": "2026-10-28 00:35:56",
+ "submission_bytes": 1918330,
+ "build_ok": true,
+ "build_log": "",
+ "correctness": {
+  "score": 0.9957905278712088,
+  "suites": {
+   "tokenizer": 1.0,
+   "dequant": 1.0,
+   "logits": 0.9965058775078637,
+   "positions": 0.9789250974589983,
+   "greedy": 1.0
+  },
+  "details": {
+   "tokenizer": {
+    "exact": 15,
+    "total": 15,
+    "details": [
+     {
+      "text": "Hello, world!",
+      "ok": true
+     },
+     {
+      "text": "The quick brown fox jumps over the lazy dog.",
+      "ok": true
+     },
+     {
+      "text": "def foo(x):\n    return x + 1\n",
+      "ok": true
+     },
+     {
+      "text": "  leading and trailing spaces  ",
+      "ok": true
+     },
+     {
+      "text": "\n\n\tindented\ttext\t\n",
+      "ok": true
+     },
+     {
+      "text": "\u65e5\u672c\u8a9e\u306e\u30c6\u30ad\u30b9\u30c8\u3068\u4e2d\u6587\u6587\u672c",
+      "ok": true
+     },
+     {
+      "text": "e\u0301 combining mark: cafe\u0301",
+      "ok": true
+     },
+     {
+      "text": "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435, \u043c\u0438\u0440",
+      "ok": true
+     },
+     {
+      "text": "\ud83d\udc69\u200d\ud83d\udcbb emoji and \ud83d\ude80 rocket",
+      "ok": true
+     },
+     {
+      "text": "<|im_start|>user\nspecial tokens<|im_end|>",
+      "ok": true
+     },
+     {
+      "text": "a",
+      "ok": true
+     },
+     {
+      "text": "1234567890 3.14159 -42",
+      "ok": true
+     },
+     {
+      "text": "mixedCASE_with_under_scores-and-hyphens",
+      "ok": true
+     },
+     {
+      "text": "lines\r\nwith\r\nCRLF",
+      "ok": true
+     },
+     {
+      "text": "    ",
+      "ok": true
+     }
+    ]
+   },
+   "dequant": {
+    "exact": 5,
+    "total": 5,
+    "tensors": 426,
+    "details": [
+     {
+      "name": "blk.0.attn_gate.weight",
+      "shape": [
+       4096,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 143,
+       "rank": 2,
+       "ne": [
+        2560,
+        4096,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.3.attn_v.weight",
+      "shape": [
+       1024,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 143,
+       "rank": 2,
+       "ne": [
+        2560,
+        1024,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.0.ssm_alpha.weight",
+      "shape": [
+       32,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 2,
+       "ne": [
+        2560,
+        32,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.0.ssm_conv1d.weight",
+      "shape": [
+       8192,
+       4
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 2,
+       "ne": [
+        4,
+        8192,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "output_norm.weight",
+      "shape": [
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 1,
+       "ne": [
+        2560,
+        1,
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   "logits": {
+    "cases": [
+     {
+      "name": "ctx512",
+      "n_ctx": 512,
+      "top1": 1,
+      "kl": 3.674310544484996e-07,
+      "cos": 0.9999768733978271,
+      "score": 0.9995227709843731
+     },
+     {
+      "name": "ctx2048",
+      "n_ctx": 2048,
+      "top1": 1,
+      "kl": 0.00020606375010277642,
+      "cos": 0.9999902248382568,
+      "score": 0.9916462909630096
+     },
+     {
+      "name": "ctx4096",
+      "n_ctx": 4096,
+      "top1": 1,
+      "kl": 4.029383737016934e-05,
+      "cos": 0.9999958276748657,
+      "score": 0.9983080428321708
+     },
+     {
+      "name": "ctx8192",
+      "n_ctx": 8192,
+      "top1": 1,
+      "kl": 8.361886278649282e-05,
+      "cos": 0.9999938607215881,
+      "score": 0.9965464052519014
+     }
+    ]
+   },
+   "positions": {
+    "top1": 0.96875,
+    "kl": 0.00010959643170345417,
+    "score": 0.9789250974589983,
+    "cases": [
+     {
+      "name": "pos512",
+      "samples": 32,
+      "top1": 0.96875,
+      "kl": 7.559437261117856e-05
+     },
+     {
+      "name": "pos2048",
+      "samples": 32,
+      "top1": 0.96875,
+      "kl": 0.00014359849079572976
+     }
+    ]
+   },
+   "greedy": {
+    "matched": 192,
+    "total": 192,
+    "cases": [
+     {
+      "name": "greedy_short",
+      "n_ctx": 1024,
+      "matched": 64,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       11
+      ]
+     },
+     {
+      "name": "greedy_med",
+      "n_ctx": 4096,
+      "matched": 64,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       353
+      ]
+     },
+     {
+      "name": "greedy_long",
+      "n_ctx": 16384,
+      "matched": 64,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       1619
+      ]
+     }
+    ]
+   }
+  },
+  "accepted": true,
+  "partial": false,
+  "finished": [
+   "tokenizer",
+   "dequant",
+   "logits",
+   "positions",
+   "greedy"
+  ],
+  "suites_total": 5
+ },
+ "correctness_current": null,
+ "perf_mode": "full",
+ "correctness_wall_s": 44.46994877800171,
+ "perf_threshold_s": 900.0,
+ "agent_vram_peak_bytes": 1803530240,
+ "agent_host_rss_bytes": 1185357824,
+ "child_processes": {
+  "cpu_s": 0.0,
+  "maxrss_kb": 0,
+  "live": []
+ },
+ "perf": {
+  "rows": {
+   "pp512": {
+    "agent": 1292.9590048763648,
+    "ref": 2593.733422470461,
+    "speedup": 0.4984934047867018
+   },
+   "pp2048": {
+    "agent": 1274.2047368754368,
+    "ref": 2639.72995821116,
+    "speedup": 0.48270268438325964
+   },
+   "pp4096": {
+    "agent": 1249.0742361724886,
+    "ref": 2983.997909788435,
+    "speedup": 0.4185908549316134
+   },
+   "pp8192": {
+    "agent": 1202.8873065547702,
+    "ref": 2729.584667490039,
+    "speedup": 0.4406851052767939
+   },
+   "tg128 @ d0": {
+    "agent": 97.04330755310893,
+    "ref": 179.2953138899844,
+    "speedup": 0.5412484322521374
+   },
+   "tg128 @ d512": {
+    "agent": 95.45991987186478,
+    "ref": 183.61286297497094,
+    "speedup": 0.5198977801728266
+   },
+   "tg128 @ d2048": {
+    "agent": 91.13549659657838,
+    "ref": 177.66696837089586,
+    "speedup": 0.5129568958835656
+   },
+   "tg128 @ d4096": {
+    "agent": 86.28220723935601,
+    "ref": 136.99698945152159,
+    "speedup": 0.6298109731081956
+   },
+   "tg128 @ d8192": {
+    "agent": 77.07338377786807,
+    "ref": 131.84499940904746,
+    "speedup": 0.5845757072571927
+   }
+  },
+  "speedup_geomean": 0.5105969194819024,
+  "reference": {
+   "pp": {
+    "512": 2593.733422470461,
+    "2048": 2639.72995821116,
+    "4096": 2983.997909788435,
+    "8192": 2729.584667490039
+   },
+   "tg": {
+    "0": 179.2953138899844,
+    "512": 183.61286297497094,
+    "2048": 177.66696837089586,
+    "4096": 136.99698945152159,
+    "8192": 131.84499940904746
+   },
+   "vram_peak_bytes": 2062639104,
+   "host_peak_rss_bytes": 2140762112
+  }
+ },
+ "vram": {
+  "agent_peak_bytes": 1803530240,
+  "ref_peak_bytes": 2062639104,
+  "cap_bytes": 3093958656.0,
+  "agent_host_rss_bytes": 1185357824,
+  "rss_cap_bytes": 4288245760,
+  "passed": true
+ }
+}

@@ -1,0 +1,12 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=128) in;
+void main(){
+ uint l=gl_LocalInvocationID.x;
+ if(p.c!=143){uint i=gl_GlobalInvocationID.x;if(i<p.a)H(p.y).d[i]=float16_t(F(p.w).d[i]);return;}
+ uint lane=l%32,block=gl_WorkGroupID.x*4+l/32;if(block>=p.a/128||lane>=26)return;
+ uint base=block*7;uint q=(I(p.w).d[base+lane/4]>>(8*(lane%4)))&255;
+ float scale=unpackHalf2x16(I(p.w).d[base+6]>>16).x;
+ uint start=lane<16?lane:(lane<24?80+lane-16:120+lane-24);uint step=lane<16?16:(lane<24?8:2);
+ for(uint j=0;j<(lane<24?5:4);j++){float v=float(int((q*3)>>8)-1)*scale;H(p.y).d[block*128+start+j*step]=float16_t(v);q=(q*3)&255;}
+}

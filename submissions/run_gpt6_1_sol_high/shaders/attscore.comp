@@ -1,0 +1,7 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=128) in;
+void main(){uint lane=gl_LocalInvocationID.x%32;uint ti=gl_WorkGroupID.x*4+gl_LocalInvocationID.x/32;uint group=gl_WorkGroupID.y;uint h=group%16,token=group/16;uint count=p.a+token;if(ti>=count)return;
+ float sum=0;for(uint j=lane;j<256;j+=32)sum+=F(p.x).d[token*4096+h*256+j]*float(H(p.w).d[(ti*4+h/4)*256+j]);
+ sum=subgroupAdd(sum);if(lane==0)F(p.y).d[group*p.b+ti]=sum*0.0625;
+}

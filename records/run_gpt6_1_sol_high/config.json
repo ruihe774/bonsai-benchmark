@@ -1,0 +1,41 @@
+{
+  "compact_window": 300000,
+  "effort": "high",
+  "launch_env": {
+    "ANTHROPIC_AUTH_TOKEN": "REDACTED (proxy-managed; not stored)",
+    "ANTHROPIC_BASE_URL": "http://host.containers.internal:15721",
+    "BENCH_COMPACT_WINDOW": "300000",
+    "BENCH_EFFORT": "high",
+    "BENCH_MAX_CONTEXT": "1000000",
+    "BENCH_MODEL": "gpt-6.1-sol"
+  },
+  "max_context": 1000000,
+  "meta": {
+    "budget_s": 7200,
+    "deadline_epoch": 1793173187,
+    "elapsed_s": 6901,
+    "end_epoch": 1793172888,
+    "exit": 0,
+    "start_epoch": 1793165987,
+    "timed_out": false
+  },
+  "model": "gpt-6.1-sol",
+  "notes": "The upstream gateway (cc-switch on the host, port 15721) manages the real credential; the agent container received only a dummy token. The sandbox proxy retries upstream token rate limits reported as HTTP 422 (6 retries, RETRY_RATE_LIMIT_422). Two subagent tasks were terminated by that limit and resumed; the main session was unaffected.",
+  "run": "run_gpt6_1_sol_high",
+  "settings_file": "settings.json",
+  "tuning": {
+    "BENCH_MODEL": "gpt-6.1-sol",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "300000",
+    "CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS": "1",
+    "CLAUDE_CODE_EFFORT_LEVEL": "high",
+    "CLAUDE_CODE_ENABLE_TODO_TOOLS": "1",
+    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "1",
+    "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "1000000",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "",
+    "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "8",
+    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "1",
+    "CLAUDE_CODE_MAX_TURNS": "",
+    "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "inherit"
+  }
+}

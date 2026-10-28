@@ -1,0 +1,23 @@
+#version 460
+#include "common.glsl"
+#extension GL_KHR_shader_subgroup_shuffle : require
+#extension GL_EXT_control_flow_attributes : require
+layout(local_size_x=256) in;
+shared float q[128],k[128],qs[8],ks[8];
+void main(){
+ uint l=gl_LocalInvocationID.x,lane=gl_SubgroupInvocationID;
+ uint vi=gl_SubgroupID*8+lane%8,part=lane/8;
+ uint h=gl_WorkGroupID.x/2,vbase=(gl_WorkGroupID.x%2)*64,kh=h%16;
+ float qv=0,kv=0;if(l<128){qv=F(p.x).d[kh*128+l];kv=F(p.x).d[2048+kh*128+l];q[l]=qv;k[l]=kv;}
+ float sq=subgroupAdd(qv*qv),sk=subgroupAdd(kv*kv);if(lane==0){qs[gl_SubgroupID]=sq;ks[gl_SubgroupID]=sk;}barrier();
+ float qsum=0,ksum=0;for(uint i=0;i<8;i++){qsum+=qs[i];ksum+=ks[i];}
+ if(l<128){q[l]*=inversesqrt(qsum+1e-6)*0.08838834764831845;k[l]*=inversesqrt(ksum+1e-6);}barrier();
+ float alpha=F(p.t).d[h]+F(p.w).d[h];float decay=exp(F(p.z).d[h]*(alpha>20?alpha:log(1+exp(alpha)))),beta=sigmoid(F(p.u).d[h]);
+ float pred=0;uint base=h*16384+vbase+vi;
+ [[unroll]] for(uint j=part;j<128;j+=4)pred+=F(p.s).d[base+j*128]*decay*k[j];
+ pred+=subgroupShuffleXor(pred,8);pred+=subgroupShuffleXor(pred,16);
+ float delta=(F(p.x).d[4096+h*128+vbase+vi]-pred)*beta;float outv=0;
+ [[unroll]] for(uint j=part;j<128;j+=4){float sv=F(p.s).d[base+j*128]*decay+delta*k[j];F(p.s).d[base+j*128]=sv;outv+=sv*q[j];}
+ outv+=subgroupShuffleXor(outv,8);outv+=subgroupShuffleXor(outv,16);
+ if(part==0)F(p.y).d[h*128+vbase+vi]=outv;
+}

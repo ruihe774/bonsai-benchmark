@@ -1,0 +1,9 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+const uint powers[5]=uint[5](1,3,9,27,81);
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.a)return;uint token=gl_WorkGroupID.y;uint id=p.c!=0?I(p.x).d[token]:p.b;uint base=(id*(p.a/128)+i/128)*28;uint j=i%128;uint ix,tr;
+ if(j<80){ix=j%16;tr=j/16;}else if(j<120){ix=16+(j-80)%8;tr=(j-80)/8;}else{ix=24+(j-120)%2;tr=(j-120)/2;}
+ uint q=uint(B(p.w).d[base+ix]);int v=int((((q*powers[tr])&255)*3)>>8)-1;
+ uint h=uint(B(p.w).d[base+26])|(uint(B(p.w).d[base+27])<<8);
+ F(p.y).d[token*p.a+i]=float(v)*unpackHalf2x16(h).x;}

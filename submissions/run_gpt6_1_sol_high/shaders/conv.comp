@@ -1,0 +1,9 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=256) in;
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=8192)return;
+ float v0=F(p.s).d[i*3],v1=F(p.s).d[i*3+1],v2=F(p.s).d[i*3+2];
+ float w0=F(p.w).d[i*4],w1=F(p.w).d[i*4+1],w2=F(p.w).d[i*4+2],w3=F(p.w).d[i*4+3];
+ for(uint t=0;t<max(p.a,1);t++){float v3=F(p.x).d[t*8192+i];F(p.y).d[t*8192+i]=silu(v0*w0+v1*w1+v2*w2+v3*w3);v0=v1;v1=v2;v2=v3;}
+ F(p.s).d[i*3]=v0;F(p.s).d[i*3+1]=v1;F(p.s).d[i*3+2]=v2;
+}

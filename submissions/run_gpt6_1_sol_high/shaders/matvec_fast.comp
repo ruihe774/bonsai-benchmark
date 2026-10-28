@@ -1,0 +1,49 @@
+#version 460
+#include "common.glsl"
+
+// Four output rows per subgroup share all activation loads and loop control.
+// Same Params as matvec.comp. Dispatch ceil(p.b/16),1,1 (local128).
+layout(local_size_x=128) in;
+void main() {
+    uint lane=gl_LocalInvocationID.x%32;
+    uint row=gl_WorkGroupID.x*16+(gl_LocalInvocationID.x/32)*4;
+    if(row>=p.b) return;
+    vec4 sum=vec4(0.0);
+    if(p.c==143) {
+        uint blocks=p.a/128;
+        uvec4 row_offset=uvec4(row,row+1,row+2,row+3)*(blocks*7);
+        for(uint block=0;block<blocks;block++) {
+            uvec4 base=row_offset+block*7;
+            uvec4 packed=uvec4(I(p.w).d[base.x+lane/4],I(p.w).d[base.y+lane/4],I(p.w).d[base.z+lane/4],I(p.w).d[base.w+lane/4]);
+            packed=(packed>>(8*(lane%4)))&255;
+            vec4 scale=vec4(unpackHalf2x16(I(p.w).d[base.x+6]>>16).x,unpackHalf2x16(I(p.w).d[base.y+6]>>16).x,unpackHalf2x16(I(p.w).d[base.z+6]>>16).x,unpackHalf2x16(I(p.w).d[base.w+6]>>16).x);
+            uint start=lane<16?lane:(lane<24?80+lane-16:120+lane-24);
+            uint step=lane<16?16:(lane<24?8:2);
+            vec4 dot=vec4(0.0);
+            if(lane<26) {
+                float x=F(p.x).d[block*128+start];
+                dot+=(vec4(packed*3>>8)-1.0)*x; packed=(packed*3)&255;
+                x=F(p.x).d[block*128+start+step];
+                dot+=(vec4(packed*3>>8)-1.0)*x; packed=(packed*3)&255;
+                x=F(p.x).d[block*128+start+step*2];
+                dot+=(vec4(packed*3>>8)-1.0)*x; packed=(packed*3)&255;
+                x=F(p.x).d[block*128+start+step*3];
+                dot+=(vec4(packed*3>>8)-1.0)*x; packed=(packed*3)&255;
+                if(lane<24) dot+=(vec4(packed*3>>8)-1.0)*F(p.x).d[block*128+start+step*4];
+            }
+            sum+=dot*scale;
+        }
+    } else {
+        for(uint k=lane;k<p.a;k+=32) {
+            float x=F(p.x).d[k];
+            sum+=vec4(F(p.w).d[row*p.a+k],F(p.w).d[(row+1)*p.a+k],F(p.w).d[(row+2)*p.a+k],F(p.w).d[(row+3)*p.a+k])*x;
+        }
+    }
+    sum=subgroupAdd(sum);
+    if(lane==0) {
+        F(p.y).d[row]=sum.x;
+        if(row+1<p.b)F(p.y).d[row+1]=sum.y;
+        if(row+2<p.b)F(p.y).d[row+2]=sum.z;
+        if(row+3<p.b)F(p.y).d[row+3]=sum.w;
+    }
+}

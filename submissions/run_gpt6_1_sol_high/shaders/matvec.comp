@@ -1,0 +1,31 @@
+#version 460
+#include "common.glsl"
+layout(local_size_x=128) in;
+void main(){
+ uint lane=gl_LocalInvocationID.x%32;
+ uint row=gl_WorkGroupID.x*4+gl_LocalInvocationID.x/32;
+ if(row>=p.b)return;
+ float sum=0;
+ if(p.c==143){
+  uint nb=p.a/128;
+  for(uint b=0;b<nb;b++){
+   uint base=(row*nb+b)*7;
+   uint q=(I(p.w).d[base+lane/4]>>(8*(lane%4)))&255;
+   float scale=unpackHalf2x16(I(p.w).d[base+6]>>16).x;
+   uint start=lane<16?lane:(lane<24?80+lane-16:120+lane-24);
+   uint step=lane<16?16:(lane<24?8:2);
+   float s=0;
+   if(lane<26){
+    s+=float(int((q*3)>>8)-1)*F(p.x).d[b*128+start];q=(q*3)&255;
+    s+=float(int((q*3)>>8)-1)*F(p.x).d[b*128+start+step];q=(q*3)&255;
+    s+=float(int((q*3)>>8)-1)*F(p.x).d[b*128+start+step*2];q=(q*3)&255;
+    s+=float(int((q*3)>>8)-1)*F(p.x).d[b*128+start+step*3];q=(q*3)&255;
+    if(lane<24)s+=float(int((q*3)>>8)-1)*F(p.x).d[b*128+start+step*4];
+   }
+   sum+=s*scale;
+  }
+ }else{
+  for(uint k=lane;k<p.a;k+=32)sum+=F(p.w).d[row*p.a+k]*F(p.x).d[k];
+ }
+ sum=subgroupAdd(sum);if(lane==0)F(p.y).d[row]=sum;
+}

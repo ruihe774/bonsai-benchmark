@@ -1,0 +1,14 @@
+#version 460
+#include "common.glsl"
+#extension GL_EXT_shader_subgroup_extended_types_int64 : require
+layout(local_size_x=256) in;
+layout(buffer_reference,scalar,buffer_reference_align=8) buffer U64 { uint64_t d[]; };
+shared uint64_t winners[8];
+void main(){uint l=gl_LocalInvocationID.x;uint64_t best=0;
+ if(p.b==0){
+  uint base=gl_WorkGroupID.x*1024;
+  for(uint j=l;j<1024;j+=256){uint id=base+j;if(id>=p.a)continue;uint bits=floatBitsToUint(F(p.x).d[id]);uint ordered=(bits&0x80000000)!=0?~bits:bits^0x80000000;best=max(best,(uint64_t(ordered)<<32)|uint64_t(0xffffffff-id));}
+ }else{if(l<p.a)best=U64(p.x).d[l];}
+ best=subgroupMax(best);if(gl_SubgroupInvocationID==0)winners[gl_SubgroupID]=best;barrier();
+ if(l<32){best=l<8?winners[l]:uint64_t(0);best=subgroupMax(best);if(l==0){if(p.b==0)U64(p.y).d[gl_WorkGroupID.x]=best;else I(p.y).d[0]=0xffffffff-uint(best);}}
+}

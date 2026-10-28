@@ -61,8 +61,10 @@ Everything is offline. Available tools and data:
   so reserve it for tokenizer checks and short spot checks. `ref/PROTOCOL.md`
   describes the line protocol.
 - **Reference use — black box.** Run the reference binaries through their
-  documented CLI and line protocol only. Do **not** disassemble, decompile,
-  debug, or otherwise analyze the binaries, and do not read them with `strings`,
+  documented CLI and line protocol only. This includes `llama-debug`'s
+  `--verbose`/`--tensor-filter` graph and tensor dumps, which `MODEL.md`
+  explicitly permits. Do **not** disassemble, decompile, use a debugger on, or
+  otherwise analyze the binaries, and do not read them with `strings`,
   `nm`, `readelf`, `objdump`, `llvm-objdump`, `gdb`, `lldb`, custom ELF parsers
   or disassembler bindings; do not link to or reuse their code. Recover the
   architecture from the GGUF, the safetensors development copy and the

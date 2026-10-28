@@ -25,8 +25,9 @@ separately.
   structural requirement subject to source review; documented CPU model math
   makes the submission non-compliant.
 - `ref/bin` is used only as a black box: running the documented CLI/protocol is
-  allowed; disassembly, `strings`/`nm`/`readelf`/`objdump`, debugger use, ELF
-  parsing or reusing the reference's code is non-compliant.
+  allowed, including `llama-debug`'s `--verbose`/`--tensor-filter` graph and
+  tensor dumps (see `MODEL.md`); disassembly, `strings`/`nm`/`readelf`/`objdump`,
+  debugger use, ELF parsing or reusing the reference's code is non-compliant.
 - No prebuilt engine binary; only source and build scripts are submitted.
 - The grading build runs in a clean container containing only the submitted
   files. `data/`, `docs/` and `ref/` are not present during the build; do not

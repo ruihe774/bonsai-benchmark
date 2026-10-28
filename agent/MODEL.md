@@ -15,6 +15,16 @@ never read at runtime), and the reference runner.
 line protocol. Where your interpretation disagrees with the oracle, the oracle
 wins.
 
+`ref/bin/llama-debug` may be used. Its documented CLI options (`--verbose` /
+`-v` and `--tensor-filter`) print llama.cpp's per-node computation graph and
+intermediate tensor values. Using that output to recover the architecture, op
+order and numerical behavior is explicitly allowed and is part of the intended
+recovery path; it does not count as analyzing the reference as anything other
+than a black box. The `TASK.md` prohibition on disassembly, `strings`, `nm`,
+`readelf`, `objdump`, debuggers (`gdb`/`lldb`), ELF parsing, and linking or
+reusing the reference's code still applies: running `llama-debug` through its
+own documented CLI is not "debugging the binary".
+
 Contract notes:
 
 - The engine loads the GGUF at runtime and derives every weight from it; it must

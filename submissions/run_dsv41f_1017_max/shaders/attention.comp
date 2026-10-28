@@ -1,0 +1,62 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer QB { float q[]; };
+layout(std430, binding = 1) readonly buffer KC { uint kc[]; };
+layout(std430, binding = 2) readonly buffer VC { uint vc[]; };
+layout(std430, binding = 3) buffer SC { float scores[]; };
+layout(std430, binding = 4) writeonly buffer OB { float outv[]; };
+layout(push_constant) uniform PC { uint pos; uint flags; } pc;
+
+shared float qs[256];
+shared float red[256];
+
+void main() {
+    uint h = gl_WorkGroupID.x;
+    uint tid = gl_LocalInvocationID.x;
+    uint kvh = h >> 2;
+    uint npos = pc.pos + 1u;
+    qs[tid] = q[tid == 0u ? h * 256u : 0u];
+    qs[tid] = q[h * 256u + tid];
+    barrier();
+    uint kbase = kvh * 256u;
+    float mx = -1e30;
+    for (uint p = tid; p < npos; p += 256u) {
+        float s = 0.0;
+        uint kb = p * 1024u + kbase;
+        for (uint i = 0u; i < 256u; i++) {
+            float kv = unpackHalf2x16(kc[kb + i]).x;
+            s += qs[i] * kv;
+        }
+        s *= 0.0625;
+        scores[h * 16384u + p] = s;
+        mx = max(mx, s);
+    }
+    red[tid] = mx;
+    barrier();
+    for (uint st = 128u; st > 0u; st >>= 1) {
+        if (tid < st) red[tid] = max(red[tid], red[tid + st]);
+        barrier();
+    }
+    float m = red[0];
+    barrier();
+    float sm = 0.0;
+    for (uint p = tid; p < npos; p += 256u) {
+        float e = exp(scores[h * 16384u + p] - m);
+        scores[h * 16384u + p] = e;
+        sm += e;
+    }
+    red[tid] = sm;
+    barrier();
+    for (uint st = 128u; st > 0u; st >>= 1) {
+        if (tid < st) red[tid] += red[tid + st];
+        barrier();
+    }
+    float inv = 1.0 / red[0];
+    float acc = 0.0;
+    uint vb = kvh * 256u + tid;
+    for (uint p = 0u; p < npos; p++) {
+        float w = scores[h * 16384u + p] * inv;
+        acc += w * unpackHalf2x16(vc[p * 1024u + vb]).x;
+    }
+    outv[h * 256u + tid] = acc;
+}

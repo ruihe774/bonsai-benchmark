@@ -1,0 +1,27 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) writeonly buffer YB { int y[]; };
+layout(push_constant) uniform PC { uint n; uint flags; } pc;
+
+shared float bv[256];
+shared int bi[256];
+
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    float best = -1e30;
+    int idx = 0;
+    for (uint i = tid; i < pc.n; i += 256u) {
+        float v = x[i];
+        if (v > best) { best = v; idx = int(i); }
+    }
+    bv[tid] = best; bi[tid] = idx;
+    barrier();
+    for (uint s = 128u; s > 0u; s >>= 1) {
+        if (tid < s) {
+            if (bv[tid + s] > bv[tid]) { bv[tid] = bv[tid + s]; bi[tid] = bi[tid + s]; }
+        }
+        barrier();
+    }
+    if (tid == 0u) y[0] = bi[0];
+}

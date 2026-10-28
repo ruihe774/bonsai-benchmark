@@ -1,0 +1,487 @@
+n_fields 53
+GGUF.version [<GGUFValueType.UINT32: 4>] 3
+GGUF.tensor_count [<GGUFValueType.UINT64: 10>] 426
+GGUF.kv_count [<GGUFValueType.UINT64: 10>] 50
+general.architecture [<GGUFValueType.STRING: 8>] qwen35
+general.type [<GGUFValueType.STRING: 8>] model
+general.sampling.min_p [<GGUFValueType.FLOAT32: 6>] 0.0
+general.name [<GGUFValueType.STRING: 8>] Ternary-Bonsai-2-4B
+general.size_label [<GGUFValueType.STRING: 8>] 4B
+qwen35.block_count [<GGUFValueType.UINT32: 4>] 32
+qwen35.context_length [<GGUFValueType.UINT32: 4>] 262144
+qwen35.embedding_length [<GGUFValueType.UINT32: 4>] 2560
+qwen35.feed_forward_length [<GGUFValueType.UINT32: 4>] 9216
+qwen35.attention.head_count [<GGUFValueType.UINT32: 4>] 16
+qwen35.attention.head_count_kv [<GGUFValueType.UINT32: 4>] 4
+qwen35.rope.dimension_sections [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] [11, 11, 10, 0]
+qwen35.rope.freq_base [<GGUFValueType.FLOAT32: 6>] 10000000.0
+qwen35.attention.layer_norm_rms_epsilon [<GGUFValueType.FLOAT32: 6>] 9.999999974752427e-07
+qwen35.attention.key_length [<GGUFValueType.UINT32: 4>] 256
+qwen35.attention.value_length [<GGUFValueType.UINT32: 4>] 256
+qwen35.ssm.conv_kernel [<GGUFValueType.UINT32: 4>] 4
+qwen35.ssm.state_size [<GGUFValueType.UINT32: 4>] 128
+qwen35.ssm.group_count [<GGUFValueType.UINT32: 4>] 16
+qwen35.ssm.time_step_rank [<GGUFValueType.UINT32: 4>] 32
+qwen35.ssm.inner_size [<GGUFValueType.UINT32: 4>] 4096
+qwen35.full_attention_interval [<GGUFValueType.UINT32: 4>] 4
+qwen35.rope.dimension_count [<GGUFValueType.UINT32: 4>] 64
+prism.hadamard.tied_output [<GGUFValueType.BOOL: 7>] True
+prism.hadamard.version [<GGUFValueType.UINT32: 4>] 2
+prism.hadamard.block_size [<GGUFValueType.UINT32: 4>] 512
+prism.hadamard.transform [<GGUFValueType.STRING: 8>] normalized-sylvester-walsh-hadamard
+prism.hadamard.axis [<GGUFValueType.STRING: 8>] input-last-dimension
+prism.hadamard.sign_mode [<GGUFValueType.STRING: 8>] explicit
+prism.hadamard.weight_names [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] ['blk.0.attn_qkv.weight', 'blk.0.attn_gate.weight', 'blk.0.ssm_out.weight', 'blk.0.ffn_down.weight', 'blk.0.ffn_gate.weight', 'blk.0.ffn_up.weight', 'blk.1.attn_qkv.weight', 'blk.1.attn_gate.weight', 'blk.1.ssm_out.weight', 'blk.1.ffn_down.weight', 'blk.1.ffn_gate.weight', 'blk.1.ffn_up.weight', 'bl...
+prism.hadamard.sign_widths [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] [2560, 4096, 9216]
+prism.hadamard.sign_values [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] [-1, -1, -1, 1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, -1, -1...
+prism.hadamard.inverse_weight_names [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] ['token_embd.weight']
+prism.hadamard.gdn_v_grouped [<GGUFValueType.BOOL: 7>] True
+tokenizer.ggml.model [<GGUFValueType.STRING: 8>] gpt2
+tokenizer.ggml.pre [<GGUFValueType.STRING: 8>] qwen35
+tokenizer.ggml.tokens [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] 496645 None
+tokenizer.ggml.token_type [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] 248325 None
+tokenizer.ggml.merges [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] 495179 None
+tokenizer.ggml.eos_token_id [<GGUFValueType.UINT32: 4>] 248046
+tokenizer.ggml.padding_token_id [<GGUFValueType.UINT32: 4>] 248044
+tokenizer.ggml.add_bos_token [<GGUFValueType.BOOL: 7>] False
+tokenizer.chat_template [<GGUFValueType.STRING: 8>] {%- set image_count = namespace(value=0) %}
+{%- set video_count = namespace(value=0) %}
+{%- macro render_content(content, do_vision_count, is_system_content=false) %}
+    {%- if content is string %}
+        {{- content }}
+    {%- elif content is iterable and content is not mapping %}
+        {%- for...
+general.quantization_version [<GGUFValueType.UINT32: 4>] 2
+general.file_type [<GGUFValueType.UINT32: 4>] 143
+tokenizer.ggml.bos_token_id [<GGUFValueType.UINT32: 4>] 248044
+general.sampling.temp [<GGUFValueType.FLOAT32: 6>] 1.0
+general.sampling.top_p [<GGUFValueType.FLOAT32: 6>] 0.949999988079071
+general.sampling.top_k [<GGUFValueType.INT32: 5>] 20
+general.sampling.penalty_repeat [<GGUFValueType.FLOAT32: 6>] 1.0
+== tensors == 426
+output_norm.weight F32 [np.uint64(2560)] 10240 11037536
+token_embd.weight PTQ1_0 [np.uint64(2560), np.uint64(248320)] 139059200 11047776
+blk.0.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 150106976
+blk.0.attn_norm.weight F32 [np.uint64(2560)] 10240 152400736
+blk.0.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 152410976
+blk.0.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 156998496
+blk.0.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 162159456
+blk.0.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 167320416
+blk.0.post_attention_norm.weight F32 [np.uint64(2560)] 10240 172481376
+blk.0.ssm_a F32 [np.uint64(32)] 128 172491616
+blk.0.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 172491744
+blk.0.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 172819424
+blk.0.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 173147104
+blk.0.ssm_dt.bias F32 [np.uint64(32)] 128 173278176
+blk.0.ssm_norm.weight F32 [np.uint64(128)] 512 173278304
+blk.0.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 173278816
+blk.1.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 175572576
+blk.1.attn_norm.weight F32 [np.uint64(2560)] 10240 177866336
+blk.1.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 177876576
+blk.1.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 182464096
+blk.1.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 187625056
+blk.1.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 192786016
+blk.1.post_attention_norm.weight F32 [np.uint64(2560)] 10240 197946976
+blk.1.ssm_a F32 [np.uint64(32)] 128 197957216
+blk.1.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 197957344
+blk.1.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 198285024
+blk.1.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 198612704
+blk.1.ssm_dt.bias F32 [np.uint64(32)] 128 198743776
+blk.1.ssm_norm.weight F32 [np.uint64(128)] 512 198743904
+blk.1.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 198744416
+blk.2.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 201038176
+blk.2.attn_norm.weight F32 [np.uint64(2560)] 10240 203331936
+blk.2.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 203342176
+blk.2.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 207929696
+blk.2.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 213090656
+blk.2.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 218251616
+blk.2.post_attention_norm.weight F32 [np.uint64(2560)] 10240 223412576
+blk.2.ssm_a F32 [np.uint64(32)] 128 223422816
+blk.2.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 223422944
+blk.2.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 223750624
+blk.2.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 224078304
+blk.2.ssm_dt.bias F32 [np.uint64(32)] 128 224209376
+blk.2.ssm_norm.weight F32 [np.uint64(128)] 512 224209504
+blk.2.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 224210016
+blk.3.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 226503776
+blk.3.attn_k_norm.weight F32 [np.uint64(256)] 1024 227077216
+blk.3.attn_norm.weight F32 [np.uint64(2560)] 10240 227078240
+blk.3.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 227088480
+blk.3.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 229382240
+blk.3.attn_q_norm.weight F32 [np.uint64(256)] 1024 233969760
+blk.3.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 233970784
+blk.3.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 234544224
+blk.3.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 239705184
+blk.3.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 244866144
+blk.3.post_attention_norm.weight F32 [np.uint64(2560)] 10240 250027104
+blk.4.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 250037344
+blk.4.attn_norm.weight F32 [np.uint64(2560)] 10240 252331104
+blk.4.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 252341344
+blk.4.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 256928864
+blk.4.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 262089824
+blk.4.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 267250784
+blk.4.post_attention_norm.weight F32 [np.uint64(2560)] 10240 272411744
+blk.4.ssm_a F32 [np.uint64(32)] 128 272421984
+blk.4.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 272422112
+blk.4.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 272749792
+blk.4.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 273077472
+blk.4.ssm_dt.bias F32 [np.uint64(32)] 128 273208544
+blk.4.ssm_norm.weight F32 [np.uint64(128)] 512 273208672
+blk.4.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 273209184
+blk.5.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 275502944
+blk.5.attn_norm.weight F32 [np.uint64(2560)] 10240 277796704
+blk.5.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 277806944
+blk.5.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 282394464
+blk.5.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 287555424
+blk.5.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 292716384
+blk.5.post_attention_norm.weight F32 [np.uint64(2560)] 10240 297877344
+blk.5.ssm_a F32 [np.uint64(32)] 128 297887584
+blk.5.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 297887712
+blk.5.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 298215392
+blk.5.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 298543072
+blk.5.ssm_dt.bias F32 [np.uint64(32)] 128 298674144
+blk.5.ssm_norm.weight F32 [np.uint64(128)] 512 298674272
+blk.5.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 298674784
+blk.6.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 300968544
+blk.6.attn_norm.weight F32 [np.uint64(2560)] 10240 303262304
+blk.6.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 303272544
+blk.6.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 307860064
+blk.6.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 313021024
+blk.6.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 318181984
+blk.6.post_attention_norm.weight F32 [np.uint64(2560)] 10240 323342944
+blk.6.ssm_a F32 [np.uint64(32)] 128 323353184
+blk.6.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 323353312
+blk.6.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 323680992
+blk.6.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 324008672
+blk.6.ssm_dt.bias F32 [np.uint64(32)] 128 324139744
+blk.6.ssm_norm.weight F32 [np.uint64(128)] 512 324139872
+blk.6.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 324140384
+blk.7.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 326434144
+blk.7.attn_k_norm.weight F32 [np.uint64(256)] 1024 327007584
+blk.7.attn_norm.weight F32 [np.uint64(2560)] 10240 327008608
+blk.7.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 327018848
+blk.7.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 329312608
+blk.7.attn_q_norm.weight F32 [np.uint64(256)] 1024 333900128
+blk.7.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 333901152
+blk.7.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 334474592
+blk.7.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 339635552
+blk.7.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 344796512
+blk.7.post_attention_norm.weight F32 [np.uint64(2560)] 10240 349957472
+blk.8.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 349967712
+blk.8.attn_norm.weight F32 [np.uint64(2560)] 10240 352261472
+blk.8.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 352271712
+blk.8.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 356859232
+blk.8.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 362020192
+blk.8.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 367181152
+blk.8.post_attention_norm.weight F32 [np.uint64(2560)] 10240 372342112
+blk.8.ssm_a F32 [np.uint64(32)] 128 372352352
+blk.8.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 372352480
+blk.8.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 372680160
+blk.8.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 373007840
+blk.8.ssm_dt.bias F32 [np.uint64(32)] 128 373138912
+blk.8.ssm_norm.weight F32 [np.uint64(128)] 512 373139040
+blk.8.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 373139552
+blk.9.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 375433312
+blk.9.attn_norm.weight F32 [np.uint64(2560)] 10240 377727072
+blk.9.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 377737312
+blk.9.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 382324832
+blk.9.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 387485792
+blk.9.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 392646752
+blk.9.post_attention_norm.weight F32 [np.uint64(2560)] 10240 397807712
+blk.9.ssm_a F32 [np.uint64(32)] 128 397817952
+blk.9.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 397818080
+blk.9.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 398145760
+blk.9.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 398473440
+blk.9.ssm_dt.bias F32 [np.uint64(32)] 128 398604512
+blk.9.ssm_norm.weight F32 [np.uint64(128)] 512 398604640
+blk.9.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 398605152
+blk.10.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 400898912
+blk.10.attn_norm.weight F32 [np.uint64(2560)] 10240 403192672
+blk.10.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 403202912
+blk.10.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 407790432
+blk.10.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 412951392
+blk.10.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 418112352
+blk.10.post_attention_norm.weight F32 [np.uint64(2560)] 10240 423273312
+blk.10.ssm_a F32 [np.uint64(32)] 128 423283552
+blk.10.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 423283680
+blk.10.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 423611360
+blk.10.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 423939040
+blk.10.ssm_dt.bias F32 [np.uint64(32)] 128 424070112
+blk.10.ssm_norm.weight F32 [np.uint64(128)] 512 424070240
+blk.10.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 424070752
+blk.11.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 426364512
+blk.11.attn_k_norm.weight F32 [np.uint64(256)] 1024 426937952
+blk.11.attn_norm.weight F32 [np.uint64(2560)] 10240 426938976
+blk.11.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 426949216
+blk.11.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 429242976
+blk.11.attn_q_norm.weight F32 [np.uint64(256)] 1024 433830496
+blk.11.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 433831520
+blk.11.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 434404960
+blk.11.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 439565920
+blk.11.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 444726880
+blk.11.post_attention_norm.weight F32 [np.uint64(2560)] 10240 449887840
+blk.12.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 449898080
+blk.12.attn_norm.weight F32 [np.uint64(2560)] 10240 452191840
+blk.12.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 452202080
+blk.12.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 456789600
+blk.12.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 461950560
+blk.12.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 467111520
+blk.12.post_attention_norm.weight F32 [np.uint64(2560)] 10240 472272480
+blk.12.ssm_a F32 [np.uint64(32)] 128 472282720
+blk.12.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 472282848
+blk.12.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 472610528
+blk.12.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 472938208
+blk.12.ssm_dt.bias F32 [np.uint64(32)] 128 473069280
+blk.12.ssm_norm.weight F32 [np.uint64(128)] 512 473069408
+blk.12.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 473069920
+blk.13.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 475363680
+blk.13.attn_norm.weight F32 [np.uint64(2560)] 10240 477657440
+blk.13.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 477667680
+blk.13.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 482255200
+blk.13.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 487416160
+blk.13.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 492577120
+blk.13.post_attention_norm.weight F32 [np.uint64(2560)] 10240 497738080
+blk.13.ssm_a F32 [np.uint64(32)] 128 497748320
+blk.13.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 497748448
+blk.13.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 498076128
+blk.13.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 498403808
+blk.13.ssm_dt.bias F32 [np.uint64(32)] 128 498534880
+blk.13.ssm_norm.weight F32 [np.uint64(128)] 512 498535008
+blk.13.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 498535520
+blk.14.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 500829280
+blk.14.attn_norm.weight F32 [np.uint64(2560)] 10240 503123040
+blk.14.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 503133280
+blk.14.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 507720800
+blk.14.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 512881760
+blk.14.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 518042720
+blk.14.post_attention_norm.weight F32 [np.uint64(2560)] 10240 523203680
+blk.14.ssm_a F32 [np.uint64(32)] 128 523213920
+blk.14.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 523214048
+blk.14.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 523541728
+blk.14.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 523869408
+blk.14.ssm_dt.bias F32 [np.uint64(32)] 128 524000480
+blk.14.ssm_norm.weight F32 [np.uint64(128)] 512 524000608
+blk.14.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 524001120
+blk.15.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 526294880
+blk.15.attn_k_norm.weight F32 [np.uint64(256)] 1024 526868320
+blk.15.attn_norm.weight F32 [np.uint64(2560)] 10240 526869344
+blk.15.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 526879584
+blk.15.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 529173344
+blk.15.attn_q_norm.weight F32 [np.uint64(256)] 1024 533760864
+blk.15.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 533761888
+blk.15.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 534335328
+blk.15.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 539496288
+blk.15.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 544657248
+blk.15.post_attention_norm.weight F32 [np.uint64(2560)] 10240 549818208
+blk.16.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 549828448
+blk.16.attn_norm.weight F32 [np.uint64(2560)] 10240 552122208
+blk.16.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 552132448
+blk.16.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 556719968
+blk.16.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 561880928
+blk.16.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 567041888
+blk.16.post_attention_norm.weight F32 [np.uint64(2560)] 10240 572202848
+blk.16.ssm_a F32 [np.uint64(32)] 128 572213088
+blk.16.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 572213216
+blk.16.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 572540896
+blk.16.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 572868576
+blk.16.ssm_dt.bias F32 [np.uint64(32)] 128 572999648
+blk.16.ssm_norm.weight F32 [np.uint64(128)] 512 572999776
+blk.16.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 573000288
+blk.17.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 575294048
+blk.17.attn_norm.weight F32 [np.uint64(2560)] 10240 577587808
+blk.17.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 577598048
+blk.17.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 582185568
+blk.17.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 587346528
+blk.17.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 592507488
+blk.17.post_attention_norm.weight F32 [np.uint64(2560)] 10240 597668448
+blk.17.ssm_a F32 [np.uint64(32)] 128 597678688
+blk.17.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 597678816
+blk.17.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 598006496
+blk.17.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 598334176
+blk.17.ssm_dt.bias F32 [np.uint64(32)] 128 598465248
+blk.17.ssm_norm.weight F32 [np.uint64(128)] 512 598465376
+blk.17.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 598465888
+blk.18.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 600759648
+blk.18.attn_norm.weight F32 [np.uint64(2560)] 10240 603053408
+blk.18.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 603063648
+blk.18.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 607651168
+blk.18.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 612812128
+blk.18.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 617973088
+blk.18.post_attention_norm.weight F32 [np.uint64(2560)] 10240 623134048
+blk.18.ssm_a F32 [np.uint64(32)] 128 623144288
+blk.18.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 623144416
+blk.18.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 623472096
+blk.18.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 623799776
+blk.18.ssm_dt.bias F32 [np.uint64(32)] 128 623930848
+blk.18.ssm_norm.weight F32 [np.uint64(128)] 512 623930976
+blk.18.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 623931488
+blk.19.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 626225248
+blk.19.attn_k_norm.weight F32 [np.uint64(256)] 1024 626798688
+blk.19.attn_norm.weight F32 [np.uint64(2560)] 10240 626799712
+blk.19.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 626809952
+blk.19.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 629103712
+blk.19.attn_q_norm.weight F32 [np.uint64(256)] 1024 633691232
+blk.19.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 633692256
+blk.19.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 634265696
+blk.19.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 639426656
+blk.19.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 644587616
+blk.19.post_attention_norm.weight F32 [np.uint64(2560)] 10240 649748576
+blk.20.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 649758816
+blk.20.attn_norm.weight F32 [np.uint64(2560)] 10240 652052576
+blk.20.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 652062816
+blk.20.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 656650336
+blk.20.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 661811296
+blk.20.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 666972256
+blk.20.post_attention_norm.weight F32 [np.uint64(2560)] 10240 672133216
+blk.20.ssm_a F32 [np.uint64(32)] 128 672143456
+blk.20.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 672143584
+blk.20.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 672471264
+blk.20.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 672798944
+blk.20.ssm_dt.bias F32 [np.uint64(32)] 128 672930016
+blk.20.ssm_norm.weight F32 [np.uint64(128)] 512 672930144
+blk.20.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 672930656
+blk.21.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 675224416
+blk.21.attn_norm.weight F32 [np.uint64(2560)] 10240 677518176
+blk.21.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 677528416
+blk.21.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 682115936
+blk.21.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 687276896
+blk.21.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 692437856
+blk.21.post_attention_norm.weight F32 [np.uint64(2560)] 10240 697598816
+blk.21.ssm_a F32 [np.uint64(32)] 128 697609056
+blk.21.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 697609184
+blk.21.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 697936864
+blk.21.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 698264544
+blk.21.ssm_dt.bias F32 [np.uint64(32)] 128 698395616
+blk.21.ssm_norm.weight F32 [np.uint64(128)] 512 698395744
+blk.21.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 698396256
+blk.22.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 700690016
+blk.22.attn_norm.weight F32 [np.uint64(2560)] 10240 702983776
+blk.22.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 702994016
+blk.22.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 707581536
+blk.22.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 712742496
+blk.22.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 717903456
+blk.22.post_attention_norm.weight F32 [np.uint64(2560)] 10240 723064416
+blk.22.ssm_a F32 [np.uint64(32)] 128 723074656
+blk.22.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 723074784
+blk.22.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 723402464
+blk.22.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 723730144
+blk.22.ssm_dt.bias F32 [np.uint64(32)] 128 723861216
+blk.22.ssm_norm.weight F32 [np.uint64(128)] 512 723861344
+blk.22.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 723861856
+blk.23.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 726155616
+blk.23.attn_k_norm.weight F32 [np.uint64(256)] 1024 726729056
+blk.23.attn_norm.weight F32 [np.uint64(2560)] 10240 726730080
+blk.23.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 726740320
+blk.23.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 729034080
+blk.23.attn_q_norm.weight F32 [np.uint64(256)] 1024 733621600
+blk.23.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 733622624
+blk.23.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 734196064
+blk.23.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 739357024
+blk.23.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 744517984
+blk.23.post_attention_norm.weight F32 [np.uint64(2560)] 10240 749678944
+blk.24.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 749689184
+blk.24.attn_norm.weight F32 [np.uint64(2560)] 10240 751982944
+blk.24.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 751993184
+blk.24.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 756580704
+blk.24.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 761741664
+blk.24.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 766902624
+blk.24.post_attention_norm.weight F32 [np.uint64(2560)] 10240 772063584
+blk.24.ssm_a F32 [np.uint64(32)] 128 772073824
+blk.24.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 772073952
+blk.24.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 772401632
+blk.24.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 772729312
+blk.24.ssm_dt.bias F32 [np.uint64(32)] 128 772860384
+blk.24.ssm_norm.weight F32 [np.uint64(128)] 512 772860512
+blk.24.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 772861024
+blk.25.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 775154784
+blk.25.attn_norm.weight F32 [np.uint64(2560)] 10240 777448544
+blk.25.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 777458784
+blk.25.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 782046304
+blk.25.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 787207264
+blk.25.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 792368224
+blk.25.post_attention_norm.weight F32 [np.uint64(2560)] 10240 797529184
+blk.25.ssm_a F32 [np.uint64(32)] 128 797539424
+blk.25.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 797539552
+blk.25.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 797867232
+blk.25.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 798194912
+blk.25.ssm_dt.bias F32 [np.uint64(32)] 128 798325984
+blk.25.ssm_norm.weight F32 [np.uint64(128)] 512 798326112
+blk.25.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 798326624
+blk.26.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 800620384
+blk.26.attn_norm.weight F32 [np.uint64(2560)] 10240 802914144
+blk.26.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 802924384
+blk.26.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 807511904
+blk.26.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 812672864
+blk.26.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 817833824
+blk.26.post_attention_norm.weight F32 [np.uint64(2560)] 10240 822994784
+blk.26.ssm_a F32 [np.uint64(32)] 128 823005024
+blk.26.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 823005152
+blk.26.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 823332832
+blk.26.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 823660512
+blk.26.ssm_dt.bias F32 [np.uint64(32)] 128 823791584
+blk.26.ssm_norm.weight F32 [np.uint64(128)] 512 823791712
+blk.26.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 823792224
+blk.27.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 826085984
+blk.27.attn_k_norm.weight F32 [np.uint64(256)] 1024 826659424
+blk.27.attn_norm.weight F32 [np.uint64(2560)] 10240 826660448
+blk.27.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 826670688
+blk.27.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 828964448
+blk.27.attn_q_norm.weight F32 [np.uint64(256)] 1024 833551968
+blk.27.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 833552992
+blk.27.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 834126432
+blk.27.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 839287392
+blk.27.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 844448352
+blk.27.post_attention_norm.weight F32 [np.uint64(2560)] 10240 849609312
+blk.28.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 849619552
+blk.28.attn_norm.weight F32 [np.uint64(2560)] 10240 851913312
+blk.28.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 851923552
+blk.28.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 856511072
+blk.28.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 861672032
+blk.28.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 866832992
+blk.28.post_attention_norm.weight F32 [np.uint64(2560)] 10240 871993952
+blk.28.ssm_a F32 [np.uint64(32)] 128 872004192
+blk.28.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 872004320
+blk.28.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 872332000
+blk.28.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 872659680
+blk.28.ssm_dt.bias F32 [np.uint64(32)] 128 872790752
+blk.28.ssm_norm.weight F32 [np.uint64(128)] 512 872790880
+blk.28.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 872791392
+blk.29.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 875085152
+blk.29.attn_norm.weight F32 [np.uint64(2560)] 10240 877378912
+blk.29.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 877389152
+blk.29.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 881976672
+blk.29.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 887137632
+blk.29.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 892298592
+blk.29.post_attention_norm.weight F32 [np.uint64(2560)] 10240 897459552
+blk.29.ssm_a F32 [np.uint64(32)] 128 897469792
+blk.29.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 897469920
+blk.29.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 897797600
+blk.29.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 898125280
+blk.29.ssm_dt.bias F32 [np.uint64(32)] 128 898256352
+blk.29.ssm_norm.weight F32 [np.uint64(128)] 512 898256480
+blk.29.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 898256992
+blk.30.attn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(4096)] 2293760 900550752
+blk.30.attn_norm.weight F32 [np.uint64(2560)] 10240 902844512
+blk.30.attn_qkv.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 902854752
+blk.30.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 907442272
+blk.30.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 912603232
+blk.30.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 917764192
+blk.30.post_attention_norm.weight F32 [np.uint64(2560)] 10240 922925152
+blk.30.ssm_a F32 [np.uint64(32)] 128 922935392
+blk.30.ssm_alpha.weight F32 [np.uint64(2560), np.uint64(32)] 327680 922935520
+blk.30.ssm_beta.weight F32 [np.uint64(2560), np.uint64(32)] 327680 923263200
+blk.30.ssm_conv1d.weight F32 [np.uint64(4), np.uint64(8192)] 131072 923590880
+blk.30.ssm_dt.bias F32 [np.uint64(32)] 128 923721952
+blk.30.ssm_norm.weight F32 [np.uint64(128)] 512 923722080
+blk.30.ssm_out.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 923722592
+blk.31.attn_k.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 926016352
+blk.31.attn_k_norm.weight F32 [np.uint64(256)] 1024 926589792
+blk.31.attn_norm.weight F32 [np.uint64(2560)] 10240 926590816
+blk.31.attn_output.weight PTQ1_0 [np.uint64(4096), np.uint64(2560)] 2293760 926601056
+blk.31.attn_q.weight PTQ1_0 [np.uint64(2560), np.uint64(8192)] 4587520 928894816
+blk.31.attn_q_norm.weight F32 [np.uint64(256)] 1024 933482336
+blk.31.attn_v.weight PTQ1_0 [np.uint64(2560), np.uint64(1024)] 573440 933483360
+blk.31.ffn_down.weight PTQ1_0 [np.uint64(9216), np.uint64(2560)] 5160960 934056800
+blk.31.ffn_gate.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 939217760
+blk.31.ffn_up.weight PTQ1_0 [np.uint64(2560), np.uint64(9216)] 5160960 944378720
+blk.31.post_attention_norm.weight F32 [np.uint64(2560)] 10240 949539680

@@ -1,0 +1,28 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) readonly buffer WB { float w[]; };
+layout(std430, binding = 2) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint n; float eps; uint w_off; uint flags; uint stride; } pc;
+
+shared float red[256];
+
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    uint row = gl_WorkGroupID.x;
+    uint base = row * (pc.stride != 0u ? pc.stride : pc.n);
+    float sum = 0.0;
+    for (uint i = tid; i < pc.n; i += 256u) { float v = x[base + i]; sum += v * v; }
+    red[tid] = sum;
+    barrier();
+    for (uint s = 128u; s > 0u; s >>= 1) {
+        if (tid < s) red[tid] += red[tid + s];
+        barrier();
+    }
+    float rms = sqrt(red[0] / float(pc.n) + pc.eps);
+    for (uint i = tid; i < pc.n; i += 256u) {
+        float v = x[base + i] / rms;
+        if (pc.flags != 0u) v *= w[pc.w_off + i];
+        y[base + i] = v;
+    }
+}

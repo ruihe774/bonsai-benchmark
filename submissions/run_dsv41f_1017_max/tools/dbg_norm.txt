@@ -1,0 +1,428 @@
+20 0.00.050.157 I llama_model_loader: - kv  13:    qwen35.attention.layer_norm_rms_epsilon f32              = 0.000001
+33 0.00.050.160 I llama_model_loader: - kv  26:                   prism.hadamard.transform str              = normalized-sylvester-walsh-hadamard
+114 0.00.239.919 I print_info: f_norm_eps            = 0.0e+00
+115 0.00.239.920 I print_info: f_norm_rms_eps        = 1.0e-06
+200 0.00.282.904 D create_tensor: loading tensor output_norm.weight
+203 0.00.282.911 D create_tensor: loading tensor blk.0.attn_norm.weight
+204 0.00.282.914 D create_tensor: loading tensor blk.0.post_attention_norm.weight
+212 0.00.282.937 D create_tensor: loading tensor blk.0.ssm_norm.weight
+217 0.00.282.948 D create_tensor: loading tensor blk.1.attn_norm.weight
+218 0.00.282.952 D create_tensor: loading tensor blk.1.post_attention_norm.weight
+226 0.00.282.969 D create_tensor: loading tensor blk.1.ssm_norm.weight
+231 0.00.282.981 D create_tensor: loading tensor blk.2.attn_norm.weight
+232 0.00.282.983 D create_tensor: loading tensor blk.2.post_attention_norm.weight
+240 0.00.283.000 D create_tensor: loading tensor blk.2.ssm_norm.weight
+245 0.00.283.010 D create_tensor: loading tensor blk.3.attn_norm.weight
+246 0.00.283.012 D create_tensor: loading tensor blk.3.post_attention_norm.weight
+255 0.00.283.030 D create_tensor: loading tensor blk.3.attn_q_norm.weight
+256 0.00.283.033 D create_tensor: loading tensor blk.3.attn_k_norm.weight
+260 0.00.283.041 D create_tensor: loading tensor blk.4.attn_norm.weight
+261 0.00.283.043 D create_tensor: loading tensor blk.4.post_attention_norm.weight
+269 0.00.283.061 D create_tensor: loading tensor blk.4.ssm_norm.weight
+274 0.00.283.070 D create_tensor: loading tensor blk.5.attn_norm.weight
+275 0.00.283.073 D create_tensor: loading tensor blk.5.post_attention_norm.weight
+283 0.00.283.090 D create_tensor: loading tensor blk.5.ssm_norm.weight
+288 0.00.283.102 D create_tensor: loading tensor blk.6.attn_norm.weight
+289 0.00.283.103 D create_tensor: loading tensor blk.6.post_attention_norm.weight
+297 0.00.283.116 D create_tensor: loading tensor blk.6.ssm_norm.weight
+302 0.00.283.124 D create_tensor: loading tensor blk.7.attn_norm.weight
+303 0.00.283.126 D create_tensor: loading tensor blk.7.post_attention_norm.weight
+312 0.00.283.138 D create_tensor: loading tensor blk.7.attn_q_norm.weight
+313 0.00.283.139 D create_tensor: loading tensor blk.7.attn_k_norm.weight
+317 0.00.283.147 D create_tensor: loading tensor blk.8.attn_norm.weight
+318 0.00.283.148 D create_tensor: loading tensor blk.8.post_attention_norm.weight
+326 0.00.283.161 D create_tensor: loading tensor blk.8.ssm_norm.weight
+331 0.00.283.169 D create_tensor: loading tensor blk.9.attn_norm.weight
+332 0.00.283.170 D create_tensor: loading tensor blk.9.post_attention_norm.weight
+340 0.00.283.184 D create_tensor: loading tensor blk.9.ssm_norm.weight
+345 0.00.283.191 D create_tensor: loading tensor blk.10.attn_norm.weight
+346 0.00.283.196 D create_tensor: loading tensor blk.10.post_attention_norm.weight
+354 0.00.283.209 D create_tensor: loading tensor blk.10.ssm_norm.weight
+359 0.00.283.217 D create_tensor: loading tensor blk.11.attn_norm.weight
+360 0.00.283.218 D create_tensor: loading tensor blk.11.post_attention_norm.weight
+369 0.00.283.230 D create_tensor: loading tensor blk.11.attn_q_norm.weight
+370 0.00.283.232 D create_tensor: loading tensor blk.11.attn_k_norm.weight
+374 0.00.283.239 D create_tensor: loading tensor blk.12.attn_norm.weight
+375 0.00.283.240 D create_tensor: loading tensor blk.12.post_attention_norm.weight
+383 0.00.283.252 D create_tensor: loading tensor blk.12.ssm_norm.weight
+388 0.00.283.260 D create_tensor: loading tensor blk.13.attn_norm.weight
+389 0.00.283.261 D create_tensor: loading tensor blk.13.post_attention_norm.weight
+397 0.00.283.274 D create_tensor: loading tensor blk.13.ssm_norm.weight
+402 0.00.283.285 D create_tensor: loading tensor blk.14.attn_norm.weight
+403 0.00.283.287 D create_tensor: loading tensor blk.14.post_attention_norm.weight
+411 0.00.283.300 D create_tensor: loading tensor blk.14.ssm_norm.weight
+416 0.00.283.308 D create_tensor: loading tensor blk.15.attn_norm.weight
+417 0.00.283.309 D create_tensor: loading tensor blk.15.post_attention_norm.weight
+426 0.00.283.322 D create_tensor: loading tensor blk.15.attn_q_norm.weight
+427 0.00.283.324 D create_tensor: loading tensor blk.15.attn_k_norm.weight
+431 0.00.283.330 D create_tensor: loading tensor blk.16.attn_norm.weight
+432 0.00.283.331 D create_tensor: loading tensor blk.16.post_attention_norm.weight
+440 0.00.283.345 D create_tensor: loading tensor blk.16.ssm_norm.weight
+445 0.00.283.353 D create_tensor: loading tensor blk.17.attn_norm.weight
+446 0.00.283.355 D create_tensor: loading tensor blk.17.post_attention_norm.weight
+454 0.00.283.366 D create_tensor: loading tensor blk.17.ssm_norm.weight
+459 0.00.283.375 D create_tensor: loading tensor blk.18.attn_norm.weight
+460 0.00.283.376 D create_tensor: loading tensor blk.18.post_attention_norm.weight
+468 0.00.283.389 D create_tensor: loading tensor blk.18.ssm_norm.weight
+473 0.00.283.397 D create_tensor: loading tensor blk.19.attn_norm.weight
+474 0.00.283.399 D create_tensor: loading tensor blk.19.post_attention_norm.weight
+483 0.00.283.412 D create_tensor: loading tensor blk.19.attn_q_norm.weight
+484 0.00.283.414 D create_tensor: loading tensor blk.19.attn_k_norm.weight
+488 0.00.283.420 D create_tensor: loading tensor blk.20.attn_norm.weight
+489 0.00.283.422 D create_tensor: loading tensor blk.20.post_attention_norm.weight
+497 0.00.283.435 D create_tensor: loading tensor blk.20.ssm_norm.weight
+502 0.00.283.443 D create_tensor: loading tensor blk.21.attn_norm.weight
+503 0.00.283.444 D create_tensor: loading tensor blk.21.post_attention_norm.weight
+511 0.00.283.458 D create_tensor: loading tensor blk.21.ssm_norm.weight
+516 0.00.283.471 D create_tensor: loading tensor blk.22.attn_norm.weight
+517 0.00.283.473 D create_tensor: loading tensor blk.22.post_attention_norm.weight
+525 0.00.283.485 D create_tensor: loading tensor blk.22.ssm_norm.weight
+530 0.00.283.494 D create_tensor: loading tensor blk.23.attn_norm.weight
+531 0.00.283.496 D create_tensor: loading tensor blk.23.post_attention_norm.weight
+540 0.00.283.508 D create_tensor: loading tensor blk.23.attn_q_norm.weight
+541 0.00.283.510 D create_tensor: loading tensor blk.23.attn_k_norm.weight
+545 0.00.283.517 D create_tensor: loading tensor blk.24.attn_norm.weight
+546 0.00.283.518 D create_tensor: loading tensor blk.24.post_attention_norm.weight
+554 0.00.283.531 D create_tensor: loading tensor blk.24.ssm_norm.weight
+559 0.00.283.539 D create_tensor: loading tensor blk.25.attn_norm.weight
+560 0.00.283.540 D create_tensor: loading tensor blk.25.post_attention_norm.weight
+568 0.00.283.554 D create_tensor: loading tensor blk.25.ssm_norm.weight
+573 0.00.283.561 D create_tensor: loading tensor blk.26.attn_norm.weight
+574 0.00.283.563 D create_tensor: loading tensor blk.26.post_attention_norm.weight
+582 0.00.283.576 D create_tensor: loading tensor blk.26.ssm_norm.weight
+587 0.00.283.584 D create_tensor: loading tensor blk.27.attn_norm.weight
+588 0.00.283.586 D create_tensor: loading tensor blk.27.post_attention_norm.weight
+597 0.00.283.598 D create_tensor: loading tensor blk.27.attn_q_norm.weight
+598 0.00.283.600 D create_tensor: loading tensor blk.27.attn_k_norm.weight
+602 0.00.283.607 D create_tensor: loading tensor blk.28.attn_norm.weight
+603 0.00.283.608 D create_tensor: loading tensor blk.28.post_attention_norm.weight
+611 0.00.283.621 D create_tensor: loading tensor blk.28.ssm_norm.weight
+616 0.00.283.630 D create_tensor: loading tensor blk.29.attn_norm.weight
+617 0.00.283.632 D create_tensor: loading tensor blk.29.post_attention_norm.weight
+625 0.00.283.646 D create_tensor: loading tensor blk.29.ssm_norm.weight
+630 0.00.283.654 D create_tensor: loading tensor blk.30.attn_norm.weight
+631 0.00.283.655 D create_tensor: loading tensor blk.30.post_attention_norm.weight
+639 0.00.283.670 D create_tensor: loading tensor blk.30.ssm_norm.weight
+644 0.00.283.678 D create_tensor: loading tensor blk.31.attn_norm.weight
+645 0.00.283.680 D create_tensor: loading tensor blk.31.post_attention_norm.weight
+654 0.00.283.695 D create_tensor: loading tensor blk.31.attn_q_norm.weight
+655 0.00.283.697 D create_tensor: loading tensor blk.31.attn_k_norm.weight
+1297 0.00.350.034 I llama_model_loader: - kv  13:    qwen35.attention.layer_norm_rms_epsilon f32              = 0.000001
+1310 0.00.350.037 I llama_model_loader: - kv  26:                   prism.hadamard.transform str              = normalized-sylvester-walsh-hadamard
+1391 0.00.530.919 I print_info: f_norm_eps            = 0.0e+00
+1392 0.00.530.920 I print_info: f_norm_rms_eps        = 1.0e-06
+1477 0.00.531.079 D create_tensor: loading tensor output_norm.weight
+1480 0.00.531.086 D create_tensor: loading tensor blk.0.attn_norm.weight
+1481 0.00.531.089 D create_tensor: loading tensor blk.0.post_attention_norm.weight
+1489 0.00.531.109 D create_tensor: loading tensor blk.0.ssm_norm.weight
+1494 0.00.531.119 D create_tensor: loading tensor blk.1.attn_norm.weight
+1495 0.00.531.121 D create_tensor: loading tensor blk.1.post_attention_norm.weight
+1503 0.00.531.137 D create_tensor: loading tensor blk.1.ssm_norm.weight
+1508 0.00.531.146 D create_tensor: loading tensor blk.2.attn_norm.weight
+1509 0.00.531.148 D create_tensor: loading tensor blk.2.post_attention_norm.weight
+1517 0.00.531.164 D create_tensor: loading tensor blk.2.ssm_norm.weight
+1522 0.00.531.173 D create_tensor: loading tensor blk.3.attn_norm.weight
+1523 0.00.531.175 D create_tensor: loading tensor blk.3.post_attention_norm.weight
+1532 0.00.531.191 D create_tensor: loading tensor blk.3.attn_q_norm.weight
+1533 0.00.531.194 D create_tensor: loading tensor blk.3.attn_k_norm.weight
+1537 0.00.531.200 D create_tensor: loading tensor blk.4.attn_norm.weight
+1538 0.00.531.202 D create_tensor: loading tensor blk.4.post_attention_norm.weight
+1546 0.00.531.213 D create_tensor: loading tensor blk.4.ssm_norm.weight
+1551 0.00.531.221 D create_tensor: loading tensor blk.5.attn_norm.weight
+1552 0.00.531.222 D create_tensor: loading tensor blk.5.post_attention_norm.weight
+1560 0.00.531.234 D create_tensor: loading tensor blk.5.ssm_norm.weight
+1565 0.00.531.240 D create_tensor: loading tensor blk.6.attn_norm.weight
+1566 0.00.531.242 D create_tensor: loading tensor blk.6.post_attention_norm.weight
+1574 0.00.531.254 D create_tensor: loading tensor blk.6.ssm_norm.weight
+1579 0.00.531.261 D create_tensor: loading tensor blk.7.attn_norm.weight
+1580 0.00.531.262 D create_tensor: loading tensor blk.7.post_attention_norm.weight
+1589 0.00.531.274 D create_tensor: loading tensor blk.7.attn_q_norm.weight
+1590 0.00.531.275 D create_tensor: loading tensor blk.7.attn_k_norm.weight
+1594 0.00.531.282 D create_tensor: loading tensor blk.8.attn_norm.weight
+1595 0.00.531.284 D create_tensor: loading tensor blk.8.post_attention_norm.weight
+1603 0.00.531.295 D create_tensor: loading tensor blk.8.ssm_norm.weight
+1608 0.00.531.303 D create_tensor: loading tensor blk.9.attn_norm.weight
+1609 0.00.531.304 D create_tensor: loading tensor blk.9.post_attention_norm.weight
+1617 0.00.531.315 D create_tensor: loading tensor blk.9.ssm_norm.weight
+1622 0.00.531.323 D create_tensor: loading tensor blk.10.attn_norm.weight
+1623 0.00.531.325 D create_tensor: loading tensor blk.10.post_attention_norm.weight
+1631 0.00.531.337 D create_tensor: loading tensor blk.10.ssm_norm.weight
+1636 0.00.531.344 D create_tensor: loading tensor blk.11.attn_norm.weight
+1637 0.00.531.346 D create_tensor: loading tensor blk.11.post_attention_norm.weight
+1646 0.00.531.360 D create_tensor: loading tensor blk.11.attn_q_norm.weight
+1647 0.00.531.361 D create_tensor: loading tensor blk.11.attn_k_norm.weight
+1651 0.00.531.367 D create_tensor: loading tensor blk.12.attn_norm.weight
+1652 0.00.531.368 D create_tensor: loading tensor blk.12.post_attention_norm.weight
+1660 0.00.531.380 D create_tensor: loading tensor blk.12.ssm_norm.weight
+1665 0.00.531.387 D create_tensor: loading tensor blk.13.attn_norm.weight
+1666 0.00.531.388 D create_tensor: loading tensor blk.13.post_attention_norm.weight
+1674 0.00.531.401 D create_tensor: loading tensor blk.13.ssm_norm.weight
+1679 0.00.531.408 D create_tensor: loading tensor blk.14.attn_norm.weight
+1680 0.00.531.410 D create_tensor: loading tensor blk.14.post_attention_norm.weight
+1688 0.00.531.422 D create_tensor: loading tensor blk.14.ssm_norm.weight
+1693 0.00.531.430 D create_tensor: loading tensor blk.15.attn_norm.weight
+1694 0.00.531.431 D create_tensor: loading tensor blk.15.post_attention_norm.weight
+1703 0.00.531.443 D create_tensor: loading tensor blk.15.attn_q_norm.weight
+1704 0.00.531.445 D create_tensor: loading tensor blk.15.attn_k_norm.weight
+1708 0.00.531.451 D create_tensor: loading tensor blk.16.attn_norm.weight
+1709 0.00.531.452 D create_tensor: loading tensor blk.16.post_attention_norm.weight
+1717 0.00.531.465 D create_tensor: loading tensor blk.16.ssm_norm.weight
+1722 0.00.531.472 D create_tensor: loading tensor blk.17.attn_norm.weight
+1723 0.00.531.474 D create_tensor: loading tensor blk.17.post_attention_norm.weight
+1731 0.00.531.486 D create_tensor: loading tensor blk.17.ssm_norm.weight
+1736 0.00.531.493 D create_tensor: loading tensor blk.18.attn_norm.weight
+1737 0.00.531.495 D create_tensor: loading tensor blk.18.post_attention_norm.weight
+1745 0.00.531.508 D create_tensor: loading tensor blk.18.ssm_norm.weight
+1750 0.00.531.515 D create_tensor: loading tensor blk.19.attn_norm.weight
+1751 0.00.531.517 D create_tensor: loading tensor blk.19.post_attention_norm.weight
+1760 0.00.531.530 D create_tensor: loading tensor blk.19.attn_q_norm.weight
+1761 0.00.531.531 D create_tensor: loading tensor blk.19.attn_k_norm.weight
+1765 0.00.531.538 D create_tensor: loading tensor blk.20.attn_norm.weight
+1766 0.00.531.539 D create_tensor: loading tensor blk.20.post_attention_norm.weight
+1774 0.00.531.552 D create_tensor: loading tensor blk.20.ssm_norm.weight
+1779 0.00.531.560 D create_tensor: loading tensor blk.21.attn_norm.weight
+1780 0.00.531.561 D create_tensor: loading tensor blk.21.post_attention_norm.weight
+1788 0.00.531.574 D create_tensor: loading tensor blk.21.ssm_norm.weight
+1793 0.00.531.581 D create_tensor: loading tensor blk.22.attn_norm.weight
+1794 0.00.531.583 D create_tensor: loading tensor blk.22.post_attention_norm.weight
+1802 0.00.531.596 D create_tensor: loading tensor blk.22.ssm_norm.weight
+1807 0.00.531.603 D create_tensor: loading tensor blk.23.attn_norm.weight
+1808 0.00.531.605 D create_tensor: loading tensor blk.23.post_attention_norm.weight
+1817 0.00.531.617 D create_tensor: loading tensor blk.23.attn_q_norm.weight
+1818 0.00.531.619 D create_tensor: loading tensor blk.23.attn_k_norm.weight
+1822 0.00.531.625 D create_tensor: loading tensor blk.24.attn_norm.weight
+1823 0.00.531.626 D create_tensor: loading tensor blk.24.post_attention_norm.weight
+1831 0.00.531.639 D create_tensor: loading tensor blk.24.ssm_norm.weight
+1836 0.00.531.648 D create_tensor: loading tensor blk.25.attn_norm.weight
+1837 0.00.531.649 D create_tensor: loading tensor blk.25.post_attention_norm.weight
+1845 0.00.531.661 D create_tensor: loading tensor blk.25.ssm_norm.weight
+1850 0.00.531.669 D create_tensor: loading tensor blk.26.attn_norm.weight
+1851 0.00.531.671 D create_tensor: loading tensor blk.26.post_attention_norm.weight
+1859 0.00.531.684 D create_tensor: loading tensor blk.26.ssm_norm.weight
+1864 0.00.531.691 D create_tensor: loading tensor blk.27.attn_norm.weight
+1865 0.00.531.692 D create_tensor: loading tensor blk.27.post_attention_norm.weight
+1874 0.00.531.706 D create_tensor: loading tensor blk.27.attn_q_norm.weight
+1875 0.00.531.707 D create_tensor: loading tensor blk.27.attn_k_norm.weight
+1879 0.00.531.714 D create_tensor: loading tensor blk.28.attn_norm.weight
+1880 0.00.531.715 D create_tensor: loading tensor blk.28.post_attention_norm.weight
+1888 0.00.531.729 D create_tensor: loading tensor blk.28.ssm_norm.weight
+1893 0.00.531.737 D create_tensor: loading tensor blk.29.attn_norm.weight
+1894 0.00.531.739 D create_tensor: loading tensor blk.29.post_attention_norm.weight
+1902 0.00.531.752 D create_tensor: loading tensor blk.29.ssm_norm.weight
+1907 0.00.531.761 D create_tensor: loading tensor blk.30.attn_norm.weight
+1908 0.00.531.763 D create_tensor: loading tensor blk.30.post_attention_norm.weight
+1916 0.00.531.776 D create_tensor: loading tensor blk.30.ssm_norm.weight
+1921 0.00.531.785 D create_tensor: loading tensor blk.31.attn_norm.weight
+1922 0.00.531.787 D create_tensor: loading tensor blk.31.post_attention_norm.weight
+1931 0.00.531.801 D create_tensor: loading tensor blk.31.attn_q_norm.weight
+1932 0.00.531.803 D create_tensor: loading tensor blk.31.attn_k_norm.weight
+2565 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(model.input_embed{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2573 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_output-0{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2595 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_residual-0{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2603 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(l_out-0{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2611 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(attn_output-1{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2633 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(attn_residual-1{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2641 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(l_out-1{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2649 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(attn_output-2{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2671 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(attn_residual-2{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2679 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(l_out-2{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2687 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Qcur_reshaped-3{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+2709 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Kcur-3 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+2725 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(attn_residual-3{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2733 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(l_out-3{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2741 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(attn_output-4{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2763 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(attn_residual-4{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2771 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(l_out-4{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2779 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(attn_output-5{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2801 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(attn_residual-5{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2809 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(l_out-5{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2817 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(attn_output-6{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2839 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(attn_residual-6{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2847 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(l_out-6{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2855 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Qcur_reshaped-7{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+2877 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Kcur-7 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+2893 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(attn_residual-7{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2901 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(l_out-7{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2909 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(attn_output-8{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2931 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(attn_residual-8{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2939 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(l_out-8{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2947 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(attn_output-9{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2969 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(attn_residual-9{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2977 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(l_out-9{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+2985 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(attn_output-10{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3007 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(attn_residual-10{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3015 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(l_out-10{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3023 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Qcur_reshaped-11{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3045 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Kcur-11 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3061 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(attn_residual-11{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3069 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(l_out-11{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3077 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(attn_output-12{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3099 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(attn_residual-12{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3107 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(l_out-12{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3115 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(attn_output-13{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3137 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(attn_residual-13{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3145 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(l_out-13{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3153 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(attn_output-14{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3175 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(attn_residual-14{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3183 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(l_out-14{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3191 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Qcur_reshaped-15{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3213 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Kcur-15 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3229 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(attn_residual-15{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3237 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(l_out-15{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3245 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(attn_output-16{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3267 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(attn_residual-16{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3275 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(l_out-16{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3283 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(attn_output-17{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3305 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(attn_residual-17{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3313 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(l_out-17{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3321 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(attn_output-18{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3343 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(attn_residual-18{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3351 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(l_out-18{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3359 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Qcur_reshaped-19{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3381 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Kcur-19 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3397 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(attn_residual-19{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3405 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(l_out-19{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3413 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(attn_output-20{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3435 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(attn_residual-20{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3443 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(l_out-20{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3451 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(attn_output-21{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3473 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(attn_residual-21{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3481 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(l_out-21{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3489 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(attn_output-22{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3511 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(attn_residual-22{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3519 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(l_out-22{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3527 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Qcur_reshaped-23{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3549 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Kcur-23 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3565 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(attn_residual-23{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3573 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(l_out-23{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3581 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(attn_output-24{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3603 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(attn_residual-24{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3611 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(l_out-24{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3619 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(attn_output-25{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3641 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(attn_residual-25{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3649 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(l_out-25{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3657 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(attn_output-26{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3679 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(attn_residual-26{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3687 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(l_out-26{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3695 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Qcur_reshaped-27{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3717 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Kcur-27 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3733 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(attn_residual-27{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3741 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(l_out-27{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3749 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(attn_output-28{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3771 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(attn_residual-28{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3779 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(l_out-28{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3787 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(attn_output-29{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3809 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(attn_residual-29{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3817 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(l_out-29{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3825 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(attn_output-30{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+3847 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(attn_residual-30{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3855 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(l_out-30{2560, 2, 1, 1}, }) = {2560, 2, 1, 1}
+3863 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Qcur_reshaped-31{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+3885 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Kcur-31 (reshaped){256, 4, 2, 1}, }) = {256, 4, 2, 1}
+3901 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(attn_residual-31{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3908 common_debug_cb_eval:                     norm = (f32)   RMS_NORM(l_out-31{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3918 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(model.input_embed{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3925 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_output-0{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+3938 common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_residual-0{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3945 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(l_out-0{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3952 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(attn_output-1{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+3965 common_debug_cb_eval:                   norm-1 = (f32)   RMS_NORM(attn_residual-1{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3972 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(l_out-1{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3979 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(attn_output-2{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+3992 common_debug_cb_eval:                   norm-2 = (f32)   RMS_NORM(attn_residual-2{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+3999 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(l_out-2{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4006 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Qcur_reshaped-3{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4019 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Kcur-3 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4029 common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(attn_residual-3{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4036 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(l_out-3{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4043 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(attn_output-4{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4056 common_debug_cb_eval:                   norm-4 = (f32)   RMS_NORM(attn_residual-4{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4063 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(l_out-4{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4070 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(attn_output-5{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4083 common_debug_cb_eval:                   norm-5 = (f32)   RMS_NORM(attn_residual-5{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4090 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(l_out-5{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4097 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(attn_output-6{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4110 common_debug_cb_eval:                   norm-6 = (f32)   RMS_NORM(attn_residual-6{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4117 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(l_out-6{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4124 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Qcur_reshaped-7{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4137 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Kcur-7 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4147 common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(attn_residual-7{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4154 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(l_out-7{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4161 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(attn_output-8{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4174 common_debug_cb_eval:                   norm-8 = (f32)   RMS_NORM(attn_residual-8{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4181 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(l_out-8{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4188 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(attn_output-9{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4201 common_debug_cb_eval:                   norm-9 = (f32)   RMS_NORM(attn_residual-9{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4208 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(l_out-9{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4215 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(attn_output-10{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4228 common_debug_cb_eval:                  norm-10 = (f32)   RMS_NORM(attn_residual-10{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4235 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(l_out-10{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4242 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Qcur_reshaped-11{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4255 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Kcur-11 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4265 common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(attn_residual-11{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4272 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(l_out-11{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4279 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(attn_output-12{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4292 common_debug_cb_eval:                  norm-12 = (f32)   RMS_NORM(attn_residual-12{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4299 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(l_out-12{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4306 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(attn_output-13{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4319 common_debug_cb_eval:                  norm-13 = (f32)   RMS_NORM(attn_residual-13{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4326 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(l_out-13{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4333 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(attn_output-14{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4346 common_debug_cb_eval:                  norm-14 = (f32)   RMS_NORM(attn_residual-14{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4353 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(l_out-14{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4360 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Qcur_reshaped-15{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4373 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Kcur-15 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4383 common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(attn_residual-15{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4390 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(l_out-15{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4397 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(attn_output-16{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4410 common_debug_cb_eval:                  norm-16 = (f32)   RMS_NORM(attn_residual-16{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4417 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(l_out-16{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4424 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(attn_output-17{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4437 common_debug_cb_eval:                  norm-17 = (f32)   RMS_NORM(attn_residual-17{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4444 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(l_out-17{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4451 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(attn_output-18{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4464 common_debug_cb_eval:                  norm-18 = (f32)   RMS_NORM(attn_residual-18{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4471 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(l_out-18{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4478 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Qcur_reshaped-19{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4491 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Kcur-19 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4501 common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(attn_residual-19{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4508 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(l_out-19{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4515 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(attn_output-20{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4528 common_debug_cb_eval:                  norm-20 = (f32)   RMS_NORM(attn_residual-20{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4535 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(l_out-20{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4542 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(attn_output-21{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4555 common_debug_cb_eval:                  norm-21 = (f32)   RMS_NORM(attn_residual-21{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4562 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(l_out-21{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4569 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(attn_output-22{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4582 common_debug_cb_eval:                  norm-22 = (f32)   RMS_NORM(attn_residual-22{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4589 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(l_out-22{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4596 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Qcur_reshaped-23{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4609 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Kcur-23 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4619 common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(attn_residual-23{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4626 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(l_out-23{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4633 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(attn_output-24{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4646 common_debug_cb_eval:                  norm-24 = (f32)   RMS_NORM(attn_residual-24{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4653 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(l_out-24{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4660 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(attn_output-25{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4673 common_debug_cb_eval:                  norm-25 = (f32)   RMS_NORM(attn_residual-25{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4680 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(l_out-25{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4687 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(attn_output-26{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4700 common_debug_cb_eval:                  norm-26 = (f32)   RMS_NORM(attn_residual-26{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4707 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(l_out-26{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4714 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Qcur_reshaped-27{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4727 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Kcur-27 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4737 common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(attn_residual-27{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4744 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(l_out-27{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4751 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(attn_output-28{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4764 common_debug_cb_eval:                  norm-28 = (f32)   RMS_NORM(attn_residual-28{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4771 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(l_out-28{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4778 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(attn_output-29{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4791 common_debug_cb_eval:                  norm-29 = (f32)   RMS_NORM(attn_residual-29{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4798 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(l_out-29{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4805 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(attn_output-30{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+4818 common_debug_cb_eval:                  norm-30 = (f32)   RMS_NORM(attn_residual-30{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4825 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(l_out-30{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4832 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Qcur_reshaped-31{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+4845 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Kcur-31 (reshaped){256, 4, 1, 1}, }) = {256, 4, 1, 1}
+4855 common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(attn_residual-31{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}
+4862 common_debug_cb_eval:                     norm = (f32)   RMS_NORM(l_out-31{2560, 1, 1, 1}, }) = {2560, 1, 1, 1}

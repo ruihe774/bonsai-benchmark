@@ -1,0 +1,624 @@
+208:0.00.248.301 D create_tensor: loading tensor blk.0.ssm_dt.bias
+209:0.00.248.303 D create_tensor: loading tensor blk.0.ssm_a
+211:0.00.248.308 D create_tensor: loading tensor blk.0.ssm_alpha.weight
+222:0.00.248.331 D create_tensor: loading tensor blk.1.ssm_dt.bias
+223:0.00.248.333 D create_tensor: loading tensor blk.1.ssm_a
+225:0.00.248.337 D create_tensor: loading tensor blk.1.ssm_alpha.weight
+236:0.00.248.360 D create_tensor: loading tensor blk.2.ssm_dt.bias
+237:0.00.248.362 D create_tensor: loading tensor blk.2.ssm_a
+239:0.00.248.365 D create_tensor: loading tensor blk.2.ssm_alpha.weight
+265:0.00.248.413 D create_tensor: loading tensor blk.4.ssm_dt.bias
+266:0.00.248.415 D create_tensor: loading tensor blk.4.ssm_a
+268:0.00.248.419 D create_tensor: loading tensor blk.4.ssm_alpha.weight
+279:0.00.248.440 D create_tensor: loading tensor blk.5.ssm_dt.bias
+280:0.00.248.441 D create_tensor: loading tensor blk.5.ssm_a
+282:0.00.248.445 D create_tensor: loading tensor blk.5.ssm_alpha.weight
+293:0.00.248.464 D create_tensor: loading tensor blk.6.ssm_dt.bias
+294:0.00.248.466 D create_tensor: loading tensor blk.6.ssm_a
+296:0.00.248.470 D create_tensor: loading tensor blk.6.ssm_alpha.weight
+322:0.00.248.600 D create_tensor: loading tensor blk.8.ssm_dt.bias
+323:0.00.248.601 D create_tensor: loading tensor blk.8.ssm_a
+325:0.00.248.605 D create_tensor: loading tensor blk.8.ssm_alpha.weight
+336:0.00.248.626 D create_tensor: loading tensor blk.9.ssm_dt.bias
+337:0.00.248.627 D create_tensor: loading tensor blk.9.ssm_a
+339:0.00.248.631 D create_tensor: loading tensor blk.9.ssm_alpha.weight
+350:0.00.248.648 D create_tensor: loading tensor blk.10.ssm_dt.bias
+351:0.00.248.649 D create_tensor: loading tensor blk.10.ssm_a
+353:0.00.248.652 D create_tensor: loading tensor blk.10.ssm_alpha.weight
+379:0.00.248.690 D create_tensor: loading tensor blk.12.ssm_dt.bias
+380:0.00.248.691 D create_tensor: loading tensor blk.12.ssm_a
+382:0.00.248.694 D create_tensor: loading tensor blk.12.ssm_alpha.weight
+393:0.00.248.710 D create_tensor: loading tensor blk.13.ssm_dt.bias
+394:0.00.248.712 D create_tensor: loading tensor blk.13.ssm_a
+396:0.00.248.714 D create_tensor: loading tensor blk.13.ssm_alpha.weight
+407:0.00.248.731 D create_tensor: loading tensor blk.14.ssm_dt.bias
+408:0.00.248.732 D create_tensor: loading tensor blk.14.ssm_a
+410:0.00.248.736 D create_tensor: loading tensor blk.14.ssm_alpha.weight
+436:0.00.248.775 D create_tensor: loading tensor blk.16.ssm_dt.bias
+437:0.00.248.777 D create_tensor: loading tensor blk.16.ssm_a
+439:0.00.248.780 D create_tensor: loading tensor blk.16.ssm_alpha.weight
+450:0.00.248.797 D create_tensor: loading tensor blk.17.ssm_dt.bias
+451:0.00.248.798 D create_tensor: loading tensor blk.17.ssm_a
+453:0.00.248.801 D create_tensor: loading tensor blk.17.ssm_alpha.weight
+464:0.00.248.818 D create_tensor: loading tensor blk.18.ssm_dt.bias
+465:0.00.248.819 D create_tensor: loading tensor blk.18.ssm_a
+467:0.00.248.822 D create_tensor: loading tensor blk.18.ssm_alpha.weight
+493:0.00.248.861 D create_tensor: loading tensor blk.20.ssm_dt.bias
+494:0.00.248.863 D create_tensor: loading tensor blk.20.ssm_a
+496:0.00.248.867 D create_tensor: loading tensor blk.20.ssm_alpha.weight
+507:0.00.248.884 D create_tensor: loading tensor blk.21.ssm_dt.bias
+508:0.00.248.886 D create_tensor: loading tensor blk.21.ssm_a
+510:0.00.248.889 D create_tensor: loading tensor blk.21.ssm_alpha.weight
+521:0.00.248.906 D create_tensor: loading tensor blk.22.ssm_dt.bias
+522:0.00.248.908 D create_tensor: loading tensor blk.22.ssm_a
+524:0.00.248.911 D create_tensor: loading tensor blk.22.ssm_alpha.weight
+550:0.00.248.950 D create_tensor: loading tensor blk.24.ssm_dt.bias
+551:0.00.248.951 D create_tensor: loading tensor blk.24.ssm_a
+553:0.00.248.954 D create_tensor: loading tensor blk.24.ssm_alpha.weight
+564:0.00.248.972 D create_tensor: loading tensor blk.25.ssm_dt.bias
+565:0.00.248.974 D create_tensor: loading tensor blk.25.ssm_a
+567:0.00.248.977 D create_tensor: loading tensor blk.25.ssm_alpha.weight
+578:0.00.248.995 D create_tensor: loading tensor blk.26.ssm_dt.bias
+579:0.00.248.996 D create_tensor: loading tensor blk.26.ssm_a
+581:0.00.248.999 D create_tensor: loading tensor blk.26.ssm_alpha.weight
+607:0.00.249.039 D create_tensor: loading tensor blk.28.ssm_dt.bias
+608:0.00.249.041 D create_tensor: loading tensor blk.28.ssm_a
+610:0.00.249.044 D create_tensor: loading tensor blk.28.ssm_alpha.weight
+621:0.00.249.062 D create_tensor: loading tensor blk.29.ssm_dt.bias
+622:0.00.249.064 D create_tensor: loading tensor blk.29.ssm_a
+624:0.00.249.067 D create_tensor: loading tensor blk.29.ssm_alpha.weight
+635:0.00.249.088 D create_tensor: loading tensor blk.30.ssm_dt.bias
+636:0.00.249.091 D create_tensor: loading tensor blk.30.ssm_a
+638:0.00.249.094 D create_tensor: loading tensor blk.30.ssm_alpha.weight
+665:0.00.249.137 D create_tensor: loading tensor blk.0.ssm_alpha.scale
+673:0.00.249.146 D create_tensor: loading tensor blk.0.ssm_alpha.input_scale
+681:0.00.249.154 D create_tensor: loading tensor blk.1.ssm_alpha.scale
+689:0.00.249.162 D create_tensor: loading tensor blk.1.ssm_alpha.input_scale
+697:0.00.249.170 D create_tensor: loading tensor blk.2.ssm_alpha.scale
+705:0.00.249.178 D create_tensor: loading tensor blk.2.ssm_alpha.input_scale
+727:0.00.249.200 D create_tensor: loading tensor blk.4.ssm_alpha.scale
+735:0.00.249.208 D create_tensor: loading tensor blk.4.ssm_alpha.input_scale
+743:0.00.249.215 D create_tensor: loading tensor blk.5.ssm_alpha.scale
+751:0.00.249.223 D create_tensor: loading tensor blk.5.ssm_alpha.input_scale
+759:0.00.249.231 D create_tensor: loading tensor blk.6.ssm_alpha.scale
+767:0.00.249.239 D create_tensor: loading tensor blk.6.ssm_alpha.input_scale
+789:0.00.249.260 D create_tensor: loading tensor blk.8.ssm_alpha.scale
+797:0.00.249.268 D create_tensor: loading tensor blk.8.ssm_alpha.input_scale
+805:0.00.249.275 D create_tensor: loading tensor blk.9.ssm_alpha.scale
+813:0.00.249.283 D create_tensor: loading tensor blk.9.ssm_alpha.input_scale
+821:0.00.249.291 D create_tensor: loading tensor blk.10.ssm_alpha.scale
+829:0.00.249.299 D create_tensor: loading tensor blk.10.ssm_alpha.input_scale
+851:0.00.249.321 D create_tensor: loading tensor blk.12.ssm_alpha.scale
+859:0.00.249.329 D create_tensor: loading tensor blk.12.ssm_alpha.input_scale
+867:0.00.249.337 D create_tensor: loading tensor blk.13.ssm_alpha.scale
+875:0.00.249.345 D create_tensor: loading tensor blk.13.ssm_alpha.input_scale
+883:0.00.249.353 D create_tensor: loading tensor blk.14.ssm_alpha.scale
+891:0.00.249.361 D create_tensor: loading tensor blk.14.ssm_alpha.input_scale
+913:0.00.249.384 D create_tensor: loading tensor blk.16.ssm_alpha.scale
+921:0.00.249.393 D create_tensor: loading tensor blk.16.ssm_alpha.input_scale
+929:0.00.249.401 D create_tensor: loading tensor blk.17.ssm_alpha.scale
+937:0.00.249.410 D create_tensor: loading tensor blk.17.ssm_alpha.input_scale
+945:0.00.249.418 D create_tensor: loading tensor blk.18.ssm_alpha.scale
+953:0.00.249.426 D create_tensor: loading tensor blk.18.ssm_alpha.input_scale
+975:0.00.249.451 D create_tensor: loading tensor blk.20.ssm_alpha.scale
+983:0.00.249.460 D create_tensor: loading tensor blk.20.ssm_alpha.input_scale
+991:0.00.249.469 D create_tensor: loading tensor blk.21.ssm_alpha.scale
+999:0.00.249.478 D create_tensor: loading tensor blk.21.ssm_alpha.input_scale
+1007:0.00.249.493 D create_tensor: loading tensor blk.22.ssm_alpha.scale
+1015:0.00.249.502 D create_tensor: loading tensor blk.22.ssm_alpha.input_scale
+1037:0.00.249.527 D create_tensor: loading tensor blk.24.ssm_alpha.scale
+1045:0.00.249.536 D create_tensor: loading tensor blk.24.ssm_alpha.input_scale
+1053:0.00.249.545 D create_tensor: loading tensor blk.25.ssm_alpha.scale
+1061:0.00.249.553 D create_tensor: loading tensor blk.25.ssm_alpha.input_scale
+1069:0.00.250.140 D create_tensor: loading tensor blk.26.ssm_alpha.scale
+1077:0.00.250.150 D create_tensor: loading tensor blk.26.ssm_alpha.input_scale
+1099:0.00.250.178 D create_tensor: loading tensor blk.28.ssm_alpha.scale
+1107:0.00.250.188 D create_tensor: loading tensor blk.28.ssm_alpha.input_scale
+1115:0.00.250.198 D create_tensor: loading tensor blk.29.ssm_alpha.scale
+1123:0.00.250.208 D create_tensor: loading tensor blk.29.ssm_alpha.input_scale
+1131:0.00.250.218 D create_tensor: loading tensor blk.30.ssm_alpha.scale
+1139:0.00.250.229 D create_tensor: loading tensor blk.30.ssm_alpha.input_scale
+1485:0.00.494.549 D create_tensor: loading tensor blk.0.ssm_dt.bias
+1486:0.00.494.551 D create_tensor: loading tensor blk.0.ssm_a
+1488:0.00.494.555 D create_tensor: loading tensor blk.0.ssm_alpha.weight
+1499:0.00.494.578 D create_tensor: loading tensor blk.1.ssm_dt.bias
+1500:0.00.494.580 D create_tensor: loading tensor blk.1.ssm_a
+1502:0.00.494.583 D create_tensor: loading tensor blk.1.ssm_alpha.weight
+1513:0.00.494.605 D create_tensor: loading tensor blk.2.ssm_dt.bias
+1514:0.00.494.608 D create_tensor: loading tensor blk.2.ssm_a
+1516:0.00.494.611 D create_tensor: loading tensor blk.2.ssm_alpha.weight
+1542:0.00.494.659 D create_tensor: loading tensor blk.4.ssm_dt.bias
+1543:0.00.494.661 D create_tensor: loading tensor blk.4.ssm_a
+1545:0.00.494.664 D create_tensor: loading tensor blk.4.ssm_alpha.weight
+1556:0.00.494.683 D create_tensor: loading tensor blk.5.ssm_dt.bias
+1557:0.00.494.685 D create_tensor: loading tensor blk.5.ssm_a
+1559:0.00.494.688 D create_tensor: loading tensor blk.5.ssm_alpha.weight
+1570:0.00.494.704 D create_tensor: loading tensor blk.6.ssm_dt.bias
+1571:0.00.494.705 D create_tensor: loading tensor blk.6.ssm_a
+1573:0.00.494.708 D create_tensor: loading tensor blk.6.ssm_alpha.weight
+1599:0.00.494.743 D create_tensor: loading tensor blk.8.ssm_dt.bias
+1600:0.00.494.745 D create_tensor: loading tensor blk.8.ssm_a
+1602:0.00.494.748 D create_tensor: loading tensor blk.8.ssm_alpha.weight
+1613:0.00.494.763 D create_tensor: loading tensor blk.9.ssm_dt.bias
+1614:0.00.494.765 D create_tensor: loading tensor blk.9.ssm_a
+1616:0.00.494.767 D create_tensor: loading tensor blk.9.ssm_alpha.weight
+1627:0.00.494.784 D create_tensor: loading tensor blk.10.ssm_dt.bias
+1628:0.00.494.785 D create_tensor: loading tensor blk.10.ssm_a
+1630:0.00.494.788 D create_tensor: loading tensor blk.10.ssm_alpha.weight
+1656:0.00.494.825 D create_tensor: loading tensor blk.12.ssm_dt.bias
+1657:0.00.494.826 D create_tensor: loading tensor blk.12.ssm_a
+1659:0.00.494.830 D create_tensor: loading tensor blk.12.ssm_alpha.weight
+1670:0.00.494.846 D create_tensor: loading tensor blk.13.ssm_dt.bias
+1671:0.00.494.847 D create_tensor: loading tensor blk.13.ssm_a
+1673:0.00.494.850 D create_tensor: loading tensor blk.13.ssm_alpha.weight
+1684:0.00.494.867 D create_tensor: loading tensor blk.14.ssm_dt.bias
+1685:0.00.494.868 D create_tensor: loading tensor blk.14.ssm_a
+1687:0.00.494.871 D create_tensor: loading tensor blk.14.ssm_alpha.weight
+1713:0.00.494.909 D create_tensor: loading tensor blk.16.ssm_dt.bias
+1714:0.00.494.910 D create_tensor: loading tensor blk.16.ssm_a
+1716:0.00.494.913 D create_tensor: loading tensor blk.16.ssm_alpha.weight
+1727:0.00.494.930 D create_tensor: loading tensor blk.17.ssm_dt.bias
+1728:0.00.494.931 D create_tensor: loading tensor blk.17.ssm_a
+1730:0.00.494.935 D create_tensor: loading tensor blk.17.ssm_alpha.weight
+1741:0.00.494.952 D create_tensor: loading tensor blk.18.ssm_dt.bias
+1742:0.00.494.953 D create_tensor: loading tensor blk.18.ssm_a
+1744:0.00.494.956 D create_tensor: loading tensor blk.18.ssm_alpha.weight
+1770:0.00.494.997 D create_tensor: loading tensor blk.20.ssm_dt.bias
+1771:0.00.494.998 D create_tensor: loading tensor blk.20.ssm_a
+1773:0.00.495.001 D create_tensor: loading tensor blk.20.ssm_alpha.weight
+1784:0.00.495.019 D create_tensor: loading tensor blk.21.ssm_dt.bias
+1785:0.00.495.020 D create_tensor: loading tensor blk.21.ssm_a
+1787:0.00.495.023 D create_tensor: loading tensor blk.21.ssm_alpha.weight
+1798:0.00.495.040 D create_tensor: loading tensor blk.22.ssm_dt.bias
+1799:0.00.495.042 D create_tensor: loading tensor blk.22.ssm_a
+1801:0.00.495.045 D create_tensor: loading tensor blk.22.ssm_alpha.weight
+1827:0.00.495.085 D create_tensor: loading tensor blk.24.ssm_dt.bias
+1828:0.00.495.087 D create_tensor: loading tensor blk.24.ssm_a
+1830:0.00.495.090 D create_tensor: loading tensor blk.24.ssm_alpha.weight
+1841:0.00.495.107 D create_tensor: loading tensor blk.25.ssm_dt.bias
+1842:0.00.495.108 D create_tensor: loading tensor blk.25.ssm_a
+1844:0.00.495.111 D create_tensor: loading tensor blk.25.ssm_alpha.weight
+1855:0.00.495.128 D create_tensor: loading tensor blk.26.ssm_dt.bias
+1856:0.00.495.130 D create_tensor: loading tensor blk.26.ssm_a
+1858:0.00.495.133 D create_tensor: loading tensor blk.26.ssm_alpha.weight
+1884:0.00.495.174 D create_tensor: loading tensor blk.28.ssm_dt.bias
+1885:0.00.495.175 D create_tensor: loading tensor blk.28.ssm_a
+1887:0.00.495.179 D create_tensor: loading tensor blk.28.ssm_alpha.weight
+1898:0.00.495.198 D create_tensor: loading tensor blk.29.ssm_dt.bias
+1899:0.00.495.199 D create_tensor: loading tensor blk.29.ssm_a
+1901:0.00.495.202 D create_tensor: loading tensor blk.29.ssm_alpha.weight
+1912:0.00.495.221 D create_tensor: loading tensor blk.30.ssm_dt.bias
+1913:0.00.495.223 D create_tensor: loading tensor blk.30.ssm_a
+1915:0.00.495.226 D create_tensor: loading tensor blk.30.ssm_alpha.weight
+1942:0.00.495.269 D create_tensor: loading tensor blk.0.ssm_alpha.scale
+1950:0.00.495.278 D create_tensor: loading tensor blk.0.ssm_alpha.input_scale
+1958:0.00.495.286 D create_tensor: loading tensor blk.1.ssm_alpha.scale
+1966:0.00.495.293 D create_tensor: loading tensor blk.1.ssm_alpha.input_scale
+1974:0.00.495.301 D create_tensor: loading tensor blk.2.ssm_alpha.scale
+1982:0.00.495.309 D create_tensor: loading tensor blk.2.ssm_alpha.input_scale
+2004:0.00.495.330 D create_tensor: loading tensor blk.4.ssm_alpha.scale
+2012:0.00.495.338 D create_tensor: loading tensor blk.4.ssm_alpha.input_scale
+2020:0.00.495.345 D create_tensor: loading tensor blk.5.ssm_alpha.scale
+2028:0.00.495.353 D create_tensor: loading tensor blk.5.ssm_alpha.input_scale
+2036:0.00.495.360 D create_tensor: loading tensor blk.6.ssm_alpha.scale
+2044:0.00.495.367 D create_tensor: loading tensor blk.6.ssm_alpha.input_scale
+2066:0.00.495.388 D create_tensor: loading tensor blk.8.ssm_alpha.scale
+2074:0.00.495.396 D create_tensor: loading tensor blk.8.ssm_alpha.input_scale
+2082:0.00.495.403 D create_tensor: loading tensor blk.9.ssm_alpha.scale
+2090:0.00.495.411 D create_tensor: loading tensor blk.9.ssm_alpha.input_scale
+2098:0.00.495.419 D create_tensor: loading tensor blk.10.ssm_alpha.scale
+2106:0.00.495.426 D create_tensor: loading tensor blk.10.ssm_alpha.input_scale
+2128:0.00.495.448 D create_tensor: loading tensor blk.12.ssm_alpha.scale
+2136:0.00.495.456 D create_tensor: loading tensor blk.12.ssm_alpha.input_scale
+2144:0.00.495.463 D create_tensor: loading tensor blk.13.ssm_alpha.scale
+2152:0.00.495.471 D create_tensor: loading tensor blk.13.ssm_alpha.input_scale
+2160:0.00.495.479 D create_tensor: loading tensor blk.14.ssm_alpha.scale
+2168:0.00.495.489 D create_tensor: loading tensor blk.14.ssm_alpha.input_scale
+2190:0.00.495.759 D create_tensor: loading tensor blk.16.ssm_alpha.scale
+2198:0.00.495.768 D create_tensor: loading tensor blk.16.ssm_alpha.input_scale
+2206:0.00.495.776 D create_tensor: loading tensor blk.17.ssm_alpha.scale
+2214:0.00.495.785 D create_tensor: loading tensor blk.17.ssm_alpha.input_scale
+2222:0.00.495.793 D create_tensor: loading tensor blk.18.ssm_alpha.scale
+2230:0.00.495.802 D create_tensor: loading tensor blk.18.ssm_alpha.input_scale
+2252:0.00.495.827 D create_tensor: loading tensor blk.20.ssm_alpha.scale
+2260:0.00.495.836 D create_tensor: loading tensor blk.20.ssm_alpha.input_scale
+2268:0.00.495.846 D create_tensor: loading tensor blk.21.ssm_alpha.scale
+2276:0.00.495.856 D create_tensor: loading tensor blk.21.ssm_alpha.input_scale
+2284:0.00.495.865 D create_tensor: loading tensor blk.22.ssm_alpha.scale
+2292:0.00.495.874 D create_tensor: loading tensor blk.22.ssm_alpha.input_scale
+2314:0.00.495.898 D create_tensor: loading tensor blk.24.ssm_alpha.scale
+2322:0.00.495.907 D create_tensor: loading tensor blk.24.ssm_alpha.input_scale
+2330:0.00.495.916 D create_tensor: loading tensor blk.25.ssm_alpha.scale
+2338:0.00.495.924 D create_tensor: loading tensor blk.25.ssm_alpha.input_scale
+2346:0.00.495.933 D create_tensor: loading tensor blk.26.ssm_alpha.scale
+2354:0.00.495.942 D create_tensor: loading tensor blk.26.ssm_alpha.input_scale
+2376:0.00.495.968 D create_tensor: loading tensor blk.28.ssm_alpha.scale
+2384:0.00.495.977 D create_tensor: loading tensor blk.28.ssm_alpha.input_scale
+2392:0.00.496.515 D create_tensor: loading tensor blk.29.ssm_alpha.scale
+2400:0.00.496.526 D create_tensor: loading tensor blk.29.ssm_alpha.input_scale
+2408:0.00.496.536 D create_tensor: loading tensor blk.30.ssm_alpha.scale
+2416:0.00.496.547 D create_tensor: loading tensor blk.30.ssm_alpha.input_scale
+2919:common_debug_cb_eval:             qk_conv_l2-0 = (f32)    L2_NORM(conv_output_silu-0 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2941:common_debug_cb_eval:        q_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+2963:common_debug_cb_eval:        k_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+3007:common_debug_cb_eval:                  node_42 = (f32)    MUL_MAT(blk.0.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-0{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+3023:common_debug_cb_eval:                  node_44 = (f32)        ADD(alpha-0{32, 2, 1, 1}, blk.0.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+3031:common_debug_cb_eval:             a_softplus-0 = (f32)   SOFTPLUS(node_44{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+3039:common_debug_cb_eval:                   gate-0 = (f32)        MUL(a_softplus-0{32, 2, 1, 1}, blk.0.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+3099:common_debug_cb_eval:           beta_sigmoid-0 = (f32)    SIGMOID(beta-0{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+4089:common_debug_cb_eval:             qk_conv_l2-1 = (f32)    L2_NORM(conv_output_silu-1 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+4111:common_debug_cb_eval:        q_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+4133:common_debug_cb_eval:        k_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+4177:common_debug_cb_eval:                 node_124 = (f32)    MUL_MAT(blk.1.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-1{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+4193:common_debug_cb_eval:                 node_126 = (f32)        ADD(alpha-1{32, 2, 1, 1}, blk.1.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+4201:common_debug_cb_eval:             a_softplus-1 = (f32)   SOFTPLUS(node_126{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+4209:common_debug_cb_eval:                   gate-1 = (f32)        MUL(a_softplus-1{32, 2, 1, 1}, blk.1.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+4269:common_debug_cb_eval:           beta_sigmoid-1 = (f32)    SIGMOID(beta-1{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+5259:common_debug_cb_eval:             qk_conv_l2-2 = (f32)    L2_NORM(conv_output_silu-2 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+5281:common_debug_cb_eval:        q_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+5303:common_debug_cb_eval:        k_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+5347:common_debug_cb_eval:                 node_206 = (f32)    MUL_MAT(blk.2.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-2{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+5363:common_debug_cb_eval:                 node_208 = (f32)        ADD(alpha-2{32, 2, 1, 1}, blk.2.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+5371:common_debug_cb_eval:             a_softplus-2 = (f32)   SOFTPLUS(node_208{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+5379:common_debug_cb_eval:                   gate-2 = (f32)        MUL(a_softplus-2{32, 2, 1, 1}, blk.2.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+5439:common_debug_cb_eval:           beta_sigmoid-2 = (f32)    SIGMOID(beta-2{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+7264:common_debug_cb_eval:             qk_conv_l2-4 = (f32)    L2_NORM(conv_output_silu-4 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+7286:common_debug_cb_eval:        q_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+7308:common_debug_cb_eval:        k_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+7352:common_debug_cb_eval:                 node_343 = (f32)    MUL_MAT(blk.4.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-4{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+7368:common_debug_cb_eval:                 node_345 = (f32)        ADD(alpha-4{32, 2, 1, 1}, blk.4.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+7376:common_debug_cb_eval:             a_softplus-4 = (f32)   SOFTPLUS(node_345{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+7384:common_debug_cb_eval:                   gate-4 = (f32)        MUL(a_softplus-4{32, 2, 1, 1}, blk.4.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+7444:common_debug_cb_eval:           beta_sigmoid-4 = (f32)    SIGMOID(beta-4{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+8434:common_debug_cb_eval:             qk_conv_l2-5 = (f32)    L2_NORM(conv_output_silu-5 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+8456:common_debug_cb_eval:        q_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+8478:common_debug_cb_eval:        k_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+8522:common_debug_cb_eval:                 node_425 = (f32)    MUL_MAT(blk.5.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-5{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+8538:common_debug_cb_eval:                 node_427 = (f32)        ADD(alpha-5{32, 2, 1, 1}, blk.5.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+8546:common_debug_cb_eval:             a_softplus-5 = (f32)   SOFTPLUS(node_427{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+8554:common_debug_cb_eval:                   gate-5 = (f32)        MUL(a_softplus-5{32, 2, 1, 1}, blk.5.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+8614:common_debug_cb_eval:           beta_sigmoid-5 = (f32)    SIGMOID(beta-5{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+9604:common_debug_cb_eval:             qk_conv_l2-6 = (f32)    L2_NORM(conv_output_silu-6 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+9626:common_debug_cb_eval:        q_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+9648:common_debug_cb_eval:        k_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+9692:common_debug_cb_eval:                 node_507 = (f32)    MUL_MAT(blk.6.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-6{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+9708:common_debug_cb_eval:                 node_509 = (f32)        ADD(alpha-6{32, 2, 1, 1}, blk.6.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+9716:common_debug_cb_eval:             a_softplus-6 = (f32)   SOFTPLUS(node_509{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+9724:common_debug_cb_eval:                   gate-6 = (f32)        MUL(a_softplus-6{32, 2, 1, 1}, blk.6.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+9784:common_debug_cb_eval:           beta_sigmoid-6 = (f32)    SIGMOID(beta-6{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+11609:common_debug_cb_eval:             qk_conv_l2-8 = (f32)    L2_NORM(conv_output_silu-8 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+11631:common_debug_cb_eval:        q_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+11653:common_debug_cb_eval:        k_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+11697:common_debug_cb_eval:                 node_644 = (f32)    MUL_MAT(blk.8.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-8{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+11713:common_debug_cb_eval:                 node_646 = (f32)        ADD(alpha-8{32, 2, 1, 1}, blk.8.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+11721:common_debug_cb_eval:             a_softplus-8 = (f32)   SOFTPLUS(node_646{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+11729:common_debug_cb_eval:                   gate-8 = (f32)        MUL(a_softplus-8{32, 2, 1, 1}, blk.8.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+11789:common_debug_cb_eval:           beta_sigmoid-8 = (f32)    SIGMOID(beta-8{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+12779:common_debug_cb_eval:             qk_conv_l2-9 = (f32)    L2_NORM(conv_output_silu-9 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+12801:common_debug_cb_eval:        q_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+12823:common_debug_cb_eval:        k_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+12867:common_debug_cb_eval:                 node_726 = (f32)    MUL_MAT(blk.9.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-9{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+12883:common_debug_cb_eval:                 node_728 = (f32)        ADD(alpha-9{32, 2, 1, 1}, blk.9.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+12891:common_debug_cb_eval:             a_softplus-9 = (f32)   SOFTPLUS(node_728{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+12899:common_debug_cb_eval:                   gate-9 = (f32)        MUL(a_softplus-9{32, 2, 1, 1}, blk.9.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+12959:common_debug_cb_eval:           beta_sigmoid-9 = (f32)    SIGMOID(beta-9{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+13949:common_debug_cb_eval:            qk_conv_l2-10 = (f32)    L2_NORM(conv_output_silu-10 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+13971:common_debug_cb_eval:       q_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+13993:common_debug_cb_eval:       k_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+14037:common_debug_cb_eval:                 node_808 = (f32)    MUL_MAT(blk.10.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-10{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+14053:common_debug_cb_eval:                 node_810 = (f32)        ADD(alpha-10{32, 2, 1, 1}, blk.10.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+14061:common_debug_cb_eval:            a_softplus-10 = (f32)   SOFTPLUS(node_810{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+14069:common_debug_cb_eval:                  gate-10 = (f32)        MUL(a_softplus-10{32, 2, 1, 1}, blk.10.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+14129:common_debug_cb_eval:          beta_sigmoid-10 = (f32)    SIGMOID(beta-10{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+15954:common_debug_cb_eval:            qk_conv_l2-12 = (f32)    L2_NORM(conv_output_silu-12 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+15976:common_debug_cb_eval:       q_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+15998:common_debug_cb_eval:       k_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+16042:common_debug_cb_eval:                 node_945 = (f32)    MUL_MAT(blk.12.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-12{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+16058:common_debug_cb_eval:                 node_947 = (f32)        ADD(alpha-12{32, 2, 1, 1}, blk.12.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+16066:common_debug_cb_eval:            a_softplus-12 = (f32)   SOFTPLUS(node_947{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+16074:common_debug_cb_eval:                  gate-12 = (f32)        MUL(a_softplus-12{32, 2, 1, 1}, blk.12.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+16134:common_debug_cb_eval:          beta_sigmoid-12 = (f32)    SIGMOID(beta-12{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+17124:common_debug_cb_eval:            qk_conv_l2-13 = (f32)    L2_NORM(conv_output_silu-13 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+17146:common_debug_cb_eval:       q_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+17168:common_debug_cb_eval:       k_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+17212:common_debug_cb_eval:                node_1027 = (f32)    MUL_MAT(blk.13.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-13{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+17228:common_debug_cb_eval:                node_1029 = (f32)        ADD(alpha-13{32, 2, 1, 1}, blk.13.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+17236:common_debug_cb_eval:            a_softplus-13 = (f32)   SOFTPLUS(node_1029{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+17244:common_debug_cb_eval:                  gate-13 = (f32)        MUL(a_softplus-13{32, 2, 1, 1}, blk.13.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+17304:common_debug_cb_eval:          beta_sigmoid-13 = (f32)    SIGMOID(beta-13{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+18294:common_debug_cb_eval:            qk_conv_l2-14 = (f32)    L2_NORM(conv_output_silu-14 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+18316:common_debug_cb_eval:       q_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+18338:common_debug_cb_eval:       k_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+18382:common_debug_cb_eval:                node_1109 = (f32)    MUL_MAT(blk.14.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-14{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+18398:common_debug_cb_eval:                node_1111 = (f32)        ADD(alpha-14{32, 2, 1, 1}, blk.14.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+18406:common_debug_cb_eval:            a_softplus-14 = (f32)   SOFTPLUS(node_1111{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+18414:common_debug_cb_eval:                  gate-14 = (f32)        MUL(a_softplus-14{32, 2, 1, 1}, blk.14.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+18474:common_debug_cb_eval:          beta_sigmoid-14 = (f32)    SIGMOID(beta-14{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+20299:common_debug_cb_eval:            qk_conv_l2-16 = (f32)    L2_NORM(conv_output_silu-16 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+20321:common_debug_cb_eval:       q_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+20343:common_debug_cb_eval:       k_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+20387:common_debug_cb_eval:                node_1246 = (f32)    MUL_MAT(blk.16.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-16{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+20403:common_debug_cb_eval:                node_1248 = (f32)        ADD(alpha-16{32, 2, 1, 1}, blk.16.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+20411:common_debug_cb_eval:            a_softplus-16 = (f32)   SOFTPLUS(node_1248{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+20419:common_debug_cb_eval:                  gate-16 = (f32)        MUL(a_softplus-16{32, 2, 1, 1}, blk.16.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+20479:common_debug_cb_eval:          beta_sigmoid-16 = (f32)    SIGMOID(beta-16{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+21469:common_debug_cb_eval:            qk_conv_l2-17 = (f32)    L2_NORM(conv_output_silu-17 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+21491:common_debug_cb_eval:       q_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+21513:common_debug_cb_eval:       k_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+21557:common_debug_cb_eval:                node_1328 = (f32)    MUL_MAT(blk.17.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-17{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+21573:common_debug_cb_eval:                node_1330 = (f32)        ADD(alpha-17{32, 2, 1, 1}, blk.17.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+21581:common_debug_cb_eval:            a_softplus-17 = (f32)   SOFTPLUS(node_1330{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+21589:common_debug_cb_eval:                  gate-17 = (f32)        MUL(a_softplus-17{32, 2, 1, 1}, blk.17.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+21649:common_debug_cb_eval:          beta_sigmoid-17 = (f32)    SIGMOID(beta-17{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+22639:common_debug_cb_eval:            qk_conv_l2-18 = (f32)    L2_NORM(conv_output_silu-18 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+22661:common_debug_cb_eval:       q_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+22683:common_debug_cb_eval:       k_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+22727:common_debug_cb_eval:                node_1410 = (f32)    MUL_MAT(blk.18.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-18{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+22743:common_debug_cb_eval:                node_1412 = (f32)        ADD(alpha-18{32, 2, 1, 1}, blk.18.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+22751:common_debug_cb_eval:            a_softplus-18 = (f32)   SOFTPLUS(node_1412{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+22759:common_debug_cb_eval:                  gate-18 = (f32)        MUL(a_softplus-18{32, 2, 1, 1}, blk.18.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+22819:common_debug_cb_eval:          beta_sigmoid-18 = (f32)    SIGMOID(beta-18{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+24644:common_debug_cb_eval:            qk_conv_l2-20 = (f32)    L2_NORM(conv_output_silu-20 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+24666:common_debug_cb_eval:       q_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+24688:common_debug_cb_eval:       k_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+24732:common_debug_cb_eval:                node_1547 = (f32)    MUL_MAT(blk.20.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-20{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+24748:common_debug_cb_eval:                node_1549 = (f32)        ADD(alpha-20{32, 2, 1, 1}, blk.20.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+24756:common_debug_cb_eval:            a_softplus-20 = (f32)   SOFTPLUS(node_1549{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+24764:common_debug_cb_eval:                  gate-20 = (f32)        MUL(a_softplus-20{32, 2, 1, 1}, blk.20.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+24824:common_debug_cb_eval:          beta_sigmoid-20 = (f32)    SIGMOID(beta-20{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+25814:common_debug_cb_eval:            qk_conv_l2-21 = (f32)    L2_NORM(conv_output_silu-21 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+25836:common_debug_cb_eval:       q_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+25858:common_debug_cb_eval:       k_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+25902:common_debug_cb_eval:                node_1629 = (f32)    MUL_MAT(blk.21.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-21{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+25918:common_debug_cb_eval:                node_1631 = (f32)        ADD(alpha-21{32, 2, 1, 1}, blk.21.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+25926:common_debug_cb_eval:            a_softplus-21 = (f32)   SOFTPLUS(node_1631{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+25934:common_debug_cb_eval:                  gate-21 = (f32)        MUL(a_softplus-21{32, 2, 1, 1}, blk.21.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+25994:common_debug_cb_eval:          beta_sigmoid-21 = (f32)    SIGMOID(beta-21{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+26984:common_debug_cb_eval:            qk_conv_l2-22 = (f32)    L2_NORM(conv_output_silu-22 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+27006:common_debug_cb_eval:       q_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+27028:common_debug_cb_eval:       k_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+27072:common_debug_cb_eval:                node_1711 = (f32)    MUL_MAT(blk.22.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-22{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+27088:common_debug_cb_eval:                node_1713 = (f32)        ADD(alpha-22{32, 2, 1, 1}, blk.22.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+27096:common_debug_cb_eval:            a_softplus-22 = (f32)   SOFTPLUS(node_1713{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+27104:common_debug_cb_eval:                  gate-22 = (f32)        MUL(a_softplus-22{32, 2, 1, 1}, blk.22.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+27164:common_debug_cb_eval:          beta_sigmoid-22 = (f32)    SIGMOID(beta-22{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+28989:common_debug_cb_eval:            qk_conv_l2-24 = (f32)    L2_NORM(conv_output_silu-24 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+29011:common_debug_cb_eval:       q_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+29033:common_debug_cb_eval:       k_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+29077:common_debug_cb_eval:                node_1848 = (f32)    MUL_MAT(blk.24.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-24{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+29093:common_debug_cb_eval:                node_1850 = (f32)        ADD(alpha-24{32, 2, 1, 1}, blk.24.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+29101:common_debug_cb_eval:            a_softplus-24 = (f32)   SOFTPLUS(node_1850{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+29109:common_debug_cb_eval:                  gate-24 = (f32)        MUL(a_softplus-24{32, 2, 1, 1}, blk.24.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+29169:common_debug_cb_eval:          beta_sigmoid-24 = (f32)    SIGMOID(beta-24{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+30159:common_debug_cb_eval:            qk_conv_l2-25 = (f32)    L2_NORM(conv_output_silu-25 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+30181:common_debug_cb_eval:       q_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+30203:common_debug_cb_eval:       k_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+30247:common_debug_cb_eval:                node_1930 = (f32)    MUL_MAT(blk.25.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-25{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+30263:common_debug_cb_eval:                node_1932 = (f32)        ADD(alpha-25{32, 2, 1, 1}, blk.25.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+30271:common_debug_cb_eval:            a_softplus-25 = (f32)   SOFTPLUS(node_1932{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+30279:common_debug_cb_eval:                  gate-25 = (f32)        MUL(a_softplus-25{32, 2, 1, 1}, blk.25.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+30339:common_debug_cb_eval:          beta_sigmoid-25 = (f32)    SIGMOID(beta-25{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+31329:common_debug_cb_eval:            qk_conv_l2-26 = (f32)    L2_NORM(conv_output_silu-26 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+31351:common_debug_cb_eval:       q_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+31373:common_debug_cb_eval:       k_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+31417:common_debug_cb_eval:                node_2012 = (f32)    MUL_MAT(blk.26.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-26{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+31433:common_debug_cb_eval:                node_2014 = (f32)        ADD(alpha-26{32, 2, 1, 1}, blk.26.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+31441:common_debug_cb_eval:            a_softplus-26 = (f32)   SOFTPLUS(node_2014{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+31449:common_debug_cb_eval:                  gate-26 = (f32)        MUL(a_softplus-26{32, 2, 1, 1}, blk.26.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+31509:common_debug_cb_eval:          beta_sigmoid-26 = (f32)    SIGMOID(beta-26{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+33334:common_debug_cb_eval:            qk_conv_l2-28 = (f32)    L2_NORM(conv_output_silu-28 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+33356:common_debug_cb_eval:       q_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+33378:common_debug_cb_eval:       k_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+33422:common_debug_cb_eval:                node_2149 = (f32)    MUL_MAT(blk.28.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-28{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+33438:common_debug_cb_eval:                node_2151 = (f32)        ADD(alpha-28{32, 2, 1, 1}, blk.28.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+33446:common_debug_cb_eval:            a_softplus-28 = (f32)   SOFTPLUS(node_2151{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+33454:common_debug_cb_eval:                  gate-28 = (f32)        MUL(a_softplus-28{32, 2, 1, 1}, blk.28.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+33514:common_debug_cb_eval:          beta_sigmoid-28 = (f32)    SIGMOID(beta-28{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+34504:common_debug_cb_eval:            qk_conv_l2-29 = (f32)    L2_NORM(conv_output_silu-29 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+34526:common_debug_cb_eval:       q_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+34548:common_debug_cb_eval:       k_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+34592:common_debug_cb_eval:                node_2231 = (f32)    MUL_MAT(blk.29.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-29{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+34608:common_debug_cb_eval:                node_2233 = (f32)        ADD(alpha-29{32, 2, 1, 1}, blk.29.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+34616:common_debug_cb_eval:            a_softplus-29 = (f32)   SOFTPLUS(node_2233{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+34624:common_debug_cb_eval:                  gate-29 = (f32)        MUL(a_softplus-29{32, 2, 1, 1}, blk.29.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+34684:common_debug_cb_eval:          beta_sigmoid-29 = (f32)    SIGMOID(beta-29{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+35674:common_debug_cb_eval:            qk_conv_l2-30 = (f32)    L2_NORM(conv_output_silu-30 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+35696:common_debug_cb_eval:       q_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+35718:common_debug_cb_eval:       k_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+35762:common_debug_cb_eval:                node_2313 = (f32)    MUL_MAT(blk.30.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-30{2560, 2, 1, 1}}) = {32, 2, 1, 1}
+35778:common_debug_cb_eval:                node_2315 = (f32)        ADD(alpha-30{32, 2, 1, 1}, blk.30.ssm_dt.bias{32, 1, 1, 1}}) = {32, 2, 1, 1}
+35786:common_debug_cb_eval:            a_softplus-30 = (f32)   SOFTPLUS(node_2315{32, 2, 1, 1}, }) = {32, 2, 1, 1}
+35794:common_debug_cb_eval:                  gate-30 = (f32)        MUL(a_softplus-30{32, 2, 1, 1}, blk.30.ssm_a{32, 1, 1, 1}}) = {32, 2, 1, 1}
+35854:common_debug_cb_eval:          beta_sigmoid-30 = (f32)    SIGMOID(beta-30{1, 32, 2, 1}, }) = {1, 32, 2, 1}
+37735:common_debug_cb_eval:             qk_conv_l2-0 = (f32)    L2_NORM(conv_output_silu-0 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+37748:common_debug_cb_eval:        q_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+37761:common_debug_cb_eval:        k_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+37787:common_debug_cb_eval:                  node_42 = (f32)    MUL_MAT(blk.0.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-0{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+37801:common_debug_cb_eval:                  node_44 = (f32)        ADD(alpha-0{32, 1, 1, 1}, blk.0.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+37808:common_debug_cb_eval:             a_softplus-0 = (f32)   SOFTPLUS(node_44{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+37815:common_debug_cb_eval:                   gate-0 = (f32)        MUL(a_softplus-0{32, 1, 1, 1}, blk.0.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+37855:common_debug_cb_eval:           beta_sigmoid-0 = (f32)    SIGMOID(beta-0{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+38614:common_debug_cb_eval:             qk_conv_l2-1 = (f32)    L2_NORM(conv_output_silu-1 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+38627:common_debug_cb_eval:        q_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+38640:common_debug_cb_eval:        k_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+38666:common_debug_cb_eval:                 node_124 = (f32)    MUL_MAT(blk.1.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-1{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+38680:common_debug_cb_eval:                 node_126 = (f32)        ADD(alpha-1{32, 1, 1, 1}, blk.1.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+38687:common_debug_cb_eval:             a_softplus-1 = (f32)   SOFTPLUS(node_126{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+38694:common_debug_cb_eval:                   gate-1 = (f32)        MUL(a_softplus-1{32, 1, 1, 1}, blk.1.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+38734:common_debug_cb_eval:           beta_sigmoid-1 = (f32)    SIGMOID(beta-1{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+39493:common_debug_cb_eval:             qk_conv_l2-2 = (f32)    L2_NORM(conv_output_silu-2 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+39506:common_debug_cb_eval:        q_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+39519:common_debug_cb_eval:        k_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+39545:common_debug_cb_eval:                 node_206 = (f32)    MUL_MAT(blk.2.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-2{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+39559:common_debug_cb_eval:                 node_208 = (f32)        ADD(alpha-2{32, 1, 1, 1}, blk.2.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+39566:common_debug_cb_eval:             a_softplus-2 = (f32)   SOFTPLUS(node_208{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+39573:common_debug_cb_eval:                   gate-2 = (f32)        MUL(a_softplus-2{32, 1, 1, 1}, blk.2.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+39613:common_debug_cb_eval:           beta_sigmoid-2 = (f32)    SIGMOID(beta-2{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+41016:common_debug_cb_eval:             qk_conv_l2-4 = (f32)    L2_NORM(conv_output_silu-4 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+41029:common_debug_cb_eval:        q_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41042:common_debug_cb_eval:        k_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41068:common_debug_cb_eval:                 node_343 = (f32)    MUL_MAT(blk.4.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-4{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+41082:common_debug_cb_eval:                 node_345 = (f32)        ADD(alpha-4{32, 1, 1, 1}, blk.4.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+41089:common_debug_cb_eval:             a_softplus-4 = (f32)   SOFTPLUS(node_345{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+41096:common_debug_cb_eval:                   gate-4 = (f32)        MUL(a_softplus-4{32, 1, 1, 1}, blk.4.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+41136:common_debug_cb_eval:           beta_sigmoid-4 = (f32)    SIGMOID(beta-4{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+41895:common_debug_cb_eval:             qk_conv_l2-5 = (f32)    L2_NORM(conv_output_silu-5 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+41908:common_debug_cb_eval:        q_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41921:common_debug_cb_eval:        k_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41947:common_debug_cb_eval:                 node_425 = (f32)    MUL_MAT(blk.5.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-5{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+41961:common_debug_cb_eval:                 node_427 = (f32)        ADD(alpha-5{32, 1, 1, 1}, blk.5.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+41968:common_debug_cb_eval:             a_softplus-5 = (f32)   SOFTPLUS(node_427{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+41975:common_debug_cb_eval:                   gate-5 = (f32)        MUL(a_softplus-5{32, 1, 1, 1}, blk.5.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+42015:common_debug_cb_eval:           beta_sigmoid-5 = (f32)    SIGMOID(beta-5{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+42774:common_debug_cb_eval:             qk_conv_l2-6 = (f32)    L2_NORM(conv_output_silu-6 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+42787:common_debug_cb_eval:        q_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+42800:common_debug_cb_eval:        k_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+42826:common_debug_cb_eval:                 node_507 = (f32)    MUL_MAT(blk.6.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-6{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+42840:common_debug_cb_eval:                 node_509 = (f32)        ADD(alpha-6{32, 1, 1, 1}, blk.6.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+42847:common_debug_cb_eval:             a_softplus-6 = (f32)   SOFTPLUS(node_509{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+42854:common_debug_cb_eval:                   gate-6 = (f32)        MUL(a_softplus-6{32, 1, 1, 1}, blk.6.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+42894:common_debug_cb_eval:           beta_sigmoid-6 = (f32)    SIGMOID(beta-6{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+44297:common_debug_cb_eval:             qk_conv_l2-8 = (f32)    L2_NORM(conv_output_silu-8 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+44310:common_debug_cb_eval:        q_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+44323:common_debug_cb_eval:        k_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+44349:common_debug_cb_eval:                 node_644 = (f32)    MUL_MAT(blk.8.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-8{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+44363:common_debug_cb_eval:                 node_646 = (f32)        ADD(alpha-8{32, 1, 1, 1}, blk.8.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+44370:common_debug_cb_eval:             a_softplus-8 = (f32)   SOFTPLUS(node_646{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+44377:common_debug_cb_eval:                   gate-8 = (f32)        MUL(a_softplus-8{32, 1, 1, 1}, blk.8.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+44417:common_debug_cb_eval:           beta_sigmoid-8 = (f32)    SIGMOID(beta-8{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+45176:common_debug_cb_eval:             qk_conv_l2-9 = (f32)    L2_NORM(conv_output_silu-9 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+45189:common_debug_cb_eval:        q_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+45202:common_debug_cb_eval:        k_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+45228:common_debug_cb_eval:                 node_726 = (f32)    MUL_MAT(blk.9.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-9{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+45242:common_debug_cb_eval:                 node_728 = (f32)        ADD(alpha-9{32, 1, 1, 1}, blk.9.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+45249:common_debug_cb_eval:             a_softplus-9 = (f32)   SOFTPLUS(node_728{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+45256:common_debug_cb_eval:                   gate-9 = (f32)        MUL(a_softplus-9{32, 1, 1, 1}, blk.9.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+45296:common_debug_cb_eval:           beta_sigmoid-9 = (f32)    SIGMOID(beta-9{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+46055:common_debug_cb_eval:            qk_conv_l2-10 = (f32)    L2_NORM(conv_output_silu-10 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+46068:common_debug_cb_eval:       q_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+46081:common_debug_cb_eval:       k_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+46107:common_debug_cb_eval:                 node_808 = (f32)    MUL_MAT(blk.10.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-10{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+46121:common_debug_cb_eval:                 node_810 = (f32)        ADD(alpha-10{32, 1, 1, 1}, blk.10.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+46128:common_debug_cb_eval:            a_softplus-10 = (f32)   SOFTPLUS(node_810{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+46135:common_debug_cb_eval:                  gate-10 = (f32)        MUL(a_softplus-10{32, 1, 1, 1}, blk.10.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+46175:common_debug_cb_eval:          beta_sigmoid-10 = (f32)    SIGMOID(beta-10{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+47578:common_debug_cb_eval:            qk_conv_l2-12 = (f32)    L2_NORM(conv_output_silu-12 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+47591:common_debug_cb_eval:       q_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+47604:common_debug_cb_eval:       k_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+47630:common_debug_cb_eval:                 node_945 = (f32)    MUL_MAT(blk.12.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-12{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+47644:common_debug_cb_eval:                 node_947 = (f32)        ADD(alpha-12{32, 1, 1, 1}, blk.12.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+47651:common_debug_cb_eval:            a_softplus-12 = (f32)   SOFTPLUS(node_947{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+47658:common_debug_cb_eval:                  gate-12 = (f32)        MUL(a_softplus-12{32, 1, 1, 1}, blk.12.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+47698:common_debug_cb_eval:          beta_sigmoid-12 = (f32)    SIGMOID(beta-12{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+48457:common_debug_cb_eval:            qk_conv_l2-13 = (f32)    L2_NORM(conv_output_silu-13 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+48470:common_debug_cb_eval:       q_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+48483:common_debug_cb_eval:       k_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+48509:common_debug_cb_eval:                node_1027 = (f32)    MUL_MAT(blk.13.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-13{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+48523:common_debug_cb_eval:                node_1029 = (f32)        ADD(alpha-13{32, 1, 1, 1}, blk.13.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+48530:common_debug_cb_eval:            a_softplus-13 = (f32)   SOFTPLUS(node_1029{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+48537:common_debug_cb_eval:                  gate-13 = (f32)        MUL(a_softplus-13{32, 1, 1, 1}, blk.13.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+48577:common_debug_cb_eval:          beta_sigmoid-13 = (f32)    SIGMOID(beta-13{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+49336:common_debug_cb_eval:            qk_conv_l2-14 = (f32)    L2_NORM(conv_output_silu-14 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+49349:common_debug_cb_eval:       q_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+49362:common_debug_cb_eval:       k_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+49388:common_debug_cb_eval:                node_1109 = (f32)    MUL_MAT(blk.14.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-14{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+49402:common_debug_cb_eval:                node_1111 = (f32)        ADD(alpha-14{32, 1, 1, 1}, blk.14.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+49409:common_debug_cb_eval:            a_softplus-14 = (f32)   SOFTPLUS(node_1111{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+49416:common_debug_cb_eval:                  gate-14 = (f32)        MUL(a_softplus-14{32, 1, 1, 1}, blk.14.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+49456:common_debug_cb_eval:          beta_sigmoid-14 = (f32)    SIGMOID(beta-14{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+50859:common_debug_cb_eval:            qk_conv_l2-16 = (f32)    L2_NORM(conv_output_silu-16 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+50872:common_debug_cb_eval:       q_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+50885:common_debug_cb_eval:       k_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+50911:common_debug_cb_eval:                node_1246 = (f32)    MUL_MAT(blk.16.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-16{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+50925:common_debug_cb_eval:                node_1248 = (f32)        ADD(alpha-16{32, 1, 1, 1}, blk.16.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+50932:common_debug_cb_eval:            a_softplus-16 = (f32)   SOFTPLUS(node_1248{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+50939:common_debug_cb_eval:                  gate-16 = (f32)        MUL(a_softplus-16{32, 1, 1, 1}, blk.16.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+50979:common_debug_cb_eval:          beta_sigmoid-16 = (f32)    SIGMOID(beta-16{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+51738:common_debug_cb_eval:            qk_conv_l2-17 = (f32)    L2_NORM(conv_output_silu-17 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+51751:common_debug_cb_eval:       q_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+51764:common_debug_cb_eval:       k_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+51790:common_debug_cb_eval:                node_1328 = (f32)    MUL_MAT(blk.17.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-17{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+51804:common_debug_cb_eval:                node_1330 = (f32)        ADD(alpha-17{32, 1, 1, 1}, blk.17.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+51811:common_debug_cb_eval:            a_softplus-17 = (f32)   SOFTPLUS(node_1330{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+51818:common_debug_cb_eval:                  gate-17 = (f32)        MUL(a_softplus-17{32, 1, 1, 1}, blk.17.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+51858:common_debug_cb_eval:          beta_sigmoid-17 = (f32)    SIGMOID(beta-17{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+52617:common_debug_cb_eval:            qk_conv_l2-18 = (f32)    L2_NORM(conv_output_silu-18 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+52630:common_debug_cb_eval:       q_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+52643:common_debug_cb_eval:       k_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+52669:common_debug_cb_eval:                node_1410 = (f32)    MUL_MAT(blk.18.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-18{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+52683:common_debug_cb_eval:                node_1412 = (f32)        ADD(alpha-18{32, 1, 1, 1}, blk.18.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+52690:common_debug_cb_eval:            a_softplus-18 = (f32)   SOFTPLUS(node_1412{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+52697:common_debug_cb_eval:                  gate-18 = (f32)        MUL(a_softplus-18{32, 1, 1, 1}, blk.18.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+52737:common_debug_cb_eval:          beta_sigmoid-18 = (f32)    SIGMOID(beta-18{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+54140:common_debug_cb_eval:            qk_conv_l2-20 = (f32)    L2_NORM(conv_output_silu-20 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+54153:common_debug_cb_eval:       q_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+54166:common_debug_cb_eval:       k_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+54192:common_debug_cb_eval:                node_1547 = (f32)    MUL_MAT(blk.20.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-20{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+54206:common_debug_cb_eval:                node_1549 = (f32)        ADD(alpha-20{32, 1, 1, 1}, blk.20.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+54213:common_debug_cb_eval:            a_softplus-20 = (f32)   SOFTPLUS(node_1549{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+54220:common_debug_cb_eval:                  gate-20 = (f32)        MUL(a_softplus-20{32, 1, 1, 1}, blk.20.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+54260:common_debug_cb_eval:          beta_sigmoid-20 = (f32)    SIGMOID(beta-20{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+55019:common_debug_cb_eval:            qk_conv_l2-21 = (f32)    L2_NORM(conv_output_silu-21 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+55032:common_debug_cb_eval:       q_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55045:common_debug_cb_eval:       k_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55071:common_debug_cb_eval:                node_1629 = (f32)    MUL_MAT(blk.21.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-21{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+55085:common_debug_cb_eval:                node_1631 = (f32)        ADD(alpha-21{32, 1, 1, 1}, blk.21.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+55092:common_debug_cb_eval:            a_softplus-21 = (f32)   SOFTPLUS(node_1631{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+55099:common_debug_cb_eval:                  gate-21 = (f32)        MUL(a_softplus-21{32, 1, 1, 1}, blk.21.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+55139:common_debug_cb_eval:          beta_sigmoid-21 = (f32)    SIGMOID(beta-21{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+55898:common_debug_cb_eval:            qk_conv_l2-22 = (f32)    L2_NORM(conv_output_silu-22 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+55911:common_debug_cb_eval:       q_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55924:common_debug_cb_eval:       k_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55950:common_debug_cb_eval:                node_1711 = (f32)    MUL_MAT(blk.22.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-22{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+55964:common_debug_cb_eval:                node_1713 = (f32)        ADD(alpha-22{32, 1, 1, 1}, blk.22.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+55971:common_debug_cb_eval:            a_softplus-22 = (f32)   SOFTPLUS(node_1713{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+55978:common_debug_cb_eval:                  gate-22 = (f32)        MUL(a_softplus-22{32, 1, 1, 1}, blk.22.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+56018:common_debug_cb_eval:          beta_sigmoid-22 = (f32)    SIGMOID(beta-22{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+57421:common_debug_cb_eval:            qk_conv_l2-24 = (f32)    L2_NORM(conv_output_silu-24 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+57434:common_debug_cb_eval:       q_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+57447:common_debug_cb_eval:       k_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+57473:common_debug_cb_eval:                node_1848 = (f32)    MUL_MAT(blk.24.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-24{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+57487:common_debug_cb_eval:                node_1850 = (f32)        ADD(alpha-24{32, 1, 1, 1}, blk.24.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+57494:common_debug_cb_eval:            a_softplus-24 = (f32)   SOFTPLUS(node_1850{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+57501:common_debug_cb_eval:                  gate-24 = (f32)        MUL(a_softplus-24{32, 1, 1, 1}, blk.24.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+57541:common_debug_cb_eval:          beta_sigmoid-24 = (f32)    SIGMOID(beta-24{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+58300:common_debug_cb_eval:            qk_conv_l2-25 = (f32)    L2_NORM(conv_output_silu-25 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+58313:common_debug_cb_eval:       q_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+58326:common_debug_cb_eval:       k_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+58352:common_debug_cb_eval:                node_1930 = (f32)    MUL_MAT(blk.25.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-25{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+58366:common_debug_cb_eval:                node_1932 = (f32)        ADD(alpha-25{32, 1, 1, 1}, blk.25.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+58373:common_debug_cb_eval:            a_softplus-25 = (f32)   SOFTPLUS(node_1932{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+58380:common_debug_cb_eval:                  gate-25 = (f32)        MUL(a_softplus-25{32, 1, 1, 1}, blk.25.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+58420:common_debug_cb_eval:          beta_sigmoid-25 = (f32)    SIGMOID(beta-25{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+59179:common_debug_cb_eval:            qk_conv_l2-26 = (f32)    L2_NORM(conv_output_silu-26 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+59192:common_debug_cb_eval:       q_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+59205:common_debug_cb_eval:       k_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+59231:common_debug_cb_eval:                node_2012 = (f32)    MUL_MAT(blk.26.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-26{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+59245:common_debug_cb_eval:                node_2014 = (f32)        ADD(alpha-26{32, 1, 1, 1}, blk.26.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+59252:common_debug_cb_eval:            a_softplus-26 = (f32)   SOFTPLUS(node_2014{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+59259:common_debug_cb_eval:                  gate-26 = (f32)        MUL(a_softplus-26{32, 1, 1, 1}, blk.26.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+59299:common_debug_cb_eval:          beta_sigmoid-26 = (f32)    SIGMOID(beta-26{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+60702:common_debug_cb_eval:            qk_conv_l2-28 = (f32)    L2_NORM(conv_output_silu-28 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+60715:common_debug_cb_eval:       q_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+60728:common_debug_cb_eval:       k_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+60754:common_debug_cb_eval:                node_2149 = (f32)    MUL_MAT(blk.28.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-28{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+60768:common_debug_cb_eval:                node_2151 = (f32)        ADD(alpha-28{32, 1, 1, 1}, blk.28.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+60775:common_debug_cb_eval:            a_softplus-28 = (f32)   SOFTPLUS(node_2151{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+60782:common_debug_cb_eval:                  gate-28 = (f32)        MUL(a_softplus-28{32, 1, 1, 1}, blk.28.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+60822:common_debug_cb_eval:          beta_sigmoid-28 = (f32)    SIGMOID(beta-28{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+61581:common_debug_cb_eval:            qk_conv_l2-29 = (f32)    L2_NORM(conv_output_silu-29 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+61594:common_debug_cb_eval:       q_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+61607:common_debug_cb_eval:       k_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+61633:common_debug_cb_eval:                node_2231 = (f32)    MUL_MAT(blk.29.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-29{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+61647:common_debug_cb_eval:                node_2233 = (f32)        ADD(alpha-29{32, 1, 1, 1}, blk.29.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+61654:common_debug_cb_eval:            a_softplus-29 = (f32)   SOFTPLUS(node_2233{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+61661:common_debug_cb_eval:                  gate-29 = (f32)        MUL(a_softplus-29{32, 1, 1, 1}, blk.29.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+61701:common_debug_cb_eval:          beta_sigmoid-29 = (f32)    SIGMOID(beta-29{1, 32, 1, 1}, }) = {1, 32, 1, 1}
+62460:common_debug_cb_eval:            qk_conv_l2-30 = (f32)    L2_NORM(conv_output_silu-30 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+62473:common_debug_cb_eval:       q_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+62486:common_debug_cb_eval:       k_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+62512:common_debug_cb_eval:                node_2313 = (f32)    MUL_MAT(blk.30.ssm_alpha.weight{2560, 32, 1, 1}, attn_norm-30{2560, 1, 1, 1}}) = {32, 1, 1, 1}
+62526:common_debug_cb_eval:                node_2315 = (f32)        ADD(alpha-30{32, 1, 1, 1}, blk.30.ssm_dt.bias{32, 1, 1, 1}}) = {32, 1, 1, 1}
+62533:common_debug_cb_eval:            a_softplus-30 = (f32)   SOFTPLUS(node_2315{32, 1, 1, 1}, }) = {32, 1, 1, 1}
+62540:common_debug_cb_eval:                  gate-30 = (f32)        MUL(a_softplus-30{32, 1, 1, 1}, blk.30.ssm_a{32, 1, 1, 1}}) = {32, 1, 1, 1}
+62580:common_debug_cb_eval:          beta_sigmoid-30 = (f32)    SIGMOID(beta-30{1, 32, 1, 1}, }) = {1, 32, 1, 1}

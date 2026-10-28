@@ -1,0 +1,145 @@
+39 0.00.057.424 I llama_model_loader: - kv  32:        prism.hadamard.inverse_weight_names arr[str,1]       = ["token_embd.weight"]
+41 0.00.057.425 I llama_model_loader: - kv  34:                       tokenizer.ggml.model str              = gpt2
+42 0.00.057.425 I llama_model_loader: - kv  35:                         tokenizer.ggml.pre str              = qwen35
+43 0.00.074.213 I llama_model_loader: - kv  36:                      tokenizer.ggml.tokens arr[str,248320]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+44 0.00.078.279 I llama_model_loader: - kv  37:                  tokenizer.ggml.token_type arr[i32,248320]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+45 0.00.094.691 I llama_model_loader: - kv  38:                      tokenizer.ggml.merges arr[str,247587]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+46 0.00.094.693 I llama_model_loader: - kv  39:                tokenizer.ggml.eos_token_id u32              = 248046
+47 0.00.094.693 I llama_model_loader: - kv  40:            tokenizer.ggml.padding_token_id u32              = 248044
+48 0.00.094.693 I llama_model_loader: - kv  41:               tokenizer.ggml.add_bos_token bool             = false
+49 0.00.094.695 I llama_model_loader: - kv  42:                    tokenizer.chat_template str              = {%- set image_count = namespace(value...
+52 0.00.094.696 I llama_model_loader: - kv  45:                tokenizer.ggml.bos_token_id u32              = 248044
+63 0.00.157.803 D init_tokenizer: initializing tokenizer for type 2
+64 0.00.175.907 I load: 0 unused tokens
+65 0.00.175.923 D load: control token: 248075 '<tts_text_bos_single>' is not marked as EOG
+66 0.00.175.924 D load: control token: 248073 '<tts_text_bos>' is not marked as EOG
+67 0.00.175.924 D load: control token: 248072 '<tts_pad>' is not marked as EOG
+68 0.00.175.924 D load: control token: 248071 '<|audio_end|>' is not marked as EOG
+69 0.00.175.925 D load: control token: 248061 '<|fim_middle|>' is not marked as EOG
+70 0.00.175.925 D load: control token: 248055 '<|vision_pad|>' is not marked as EOG
+71 0.00.175.925 D load: control token: 248052 '<|quad_end|>' is not marked as EOG
+72 0.00.175.925 D load: control token: 248049 '<|box_start|>' is not marked as EOG
+73 0.00.175.926 D load: control token: 248048 '<|object_ref_end|>' is not marked as EOG
+74 0.00.175.927 D load: control token: 248045 '<|im_start|>' is not marked as EOG
+75 0.00.176.226 D load: control token: 248057 '<|video_pad|>' is not marked as EOG
+76 0.00.177.891 D load: control token: 248070 '<|audio_start|>' is not marked as EOG
+77 0.00.177.982 D load: control token: 248056 '<|image_pad|>' is not marked as EOG
+78 0.00.178.168 D load: control token: 248054 '<|vision_end|>' is not marked as EOG
+79 0.00.180.561 D load: control token: 248060 '<|fim_prefix|>' is not marked as EOG
+80 0.00.180.869 D load: control token: 248050 '<|box_end|>' is not marked as EOG
+81 0.00.183.987 D load: control token: 248074 '<tts_text_eod>' is not marked as EOG
+82 0.00.188.301 D load: control token: 248053 '<|vision_start|>' is not marked as EOG
+83 0.00.189.488 D load: control token: 248062 '<|fim_suffix|>' is not marked as EOG
+84 0.00.190.378 D load: control token: 248047 '<|object_ref_start|>' is not marked as EOG
+85 0.00.191.037 D load: control token: 248051 '<|quad_start|>' is not marked as EOG
+86 0.00.191.905 D load: control token: 248076 '<|audio_pad|>' is not marked as EOG
+87 0.00.200.066 I load: printing all EOG tokens:
+93 0.00.200.440 I load: special tokens cache size = 33
+94 0.00.246.709 I load: token to piece cache size = 1.7581 MB
+148 0.00.246.734 I print_info: BOS token             = 248044 '<|endoftext|>'
+149 0.00.246.734 I print_info: EOS token             = 248046 '<|im_end|>'
+150 0.00.246.734 I print_info: EOT token             = 248046 '<|im_end|>'
+151 0.00.246.734 I print_info: PAD token             = 248044 '<|endoftext|>'
+152 0.00.246.734 I print_info: LF token              = 198 'Ċ'
+153 0.00.246.734 I print_info: FIM PRE token         = 248060 '<|fim_prefix|>'
+154 0.00.246.734 I print_info: FIM SUF token         = 248062 '<|fim_suffix|>'
+155 0.00.246.734 I print_info: FIM MID token         = 248061 '<|fim_middle|>'
+156 0.00.246.735 I print_info: FIM PAD token         = 248063 '<|fim_pad|>'
+157 0.00.246.735 I print_info: FIM REP token         = 248064 '<|repo_name|>'
+158 0.00.246.735 I print_info: FIM SEP token         = 248065 '<|file_sep|>'
+159 0.00.246.735 I print_info: EOG token             = 248044 '<|endoftext|>'
+160 0.00.246.735 I print_info: EOG token             = 248046 '<|im_end|>'
+161 0.00.246.735 I print_info: EOG token             = 248063 '<|fim_pad|>'
+162 0.00.246.735 I print_info: EOG token             = 248064 '<|repo_name|>'
+163 0.00.246.735 I print_info: EOG token             = 248065 '<|file_sep|>'
+164 0.00.246.735 I print_info: max token length      = 256
+199 0.00.248.268 D create_tensor: loading tensor token_embd.weight
+202 0.00.248.284 D create_tensor: loading tensor token_embd.weight
+1249 0.00.260.548 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+1250 0.00.260.549 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1253 0.00.260.888 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1255 0.00.261.163 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+1258 0.00.261.452 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1261 0.00.261.720 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1263 0.00.261.984 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1265 0.00.262.247 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1267 0.00.262.513 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+1268 0.00.263.299 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+1269 0.00.263.584 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+1316 0.00.314.755 I llama_model_loader: - kv  32:        prism.hadamard.inverse_weight_names arr[str,1]       = ["token_embd.weight"]
+1318 0.00.314.756 I llama_model_loader: - kv  34:                       tokenizer.ggml.model str              = gpt2
+1319 0.00.314.756 I llama_model_loader: - kv  35:                         tokenizer.ggml.pre str              = qwen35
+1320 0.00.331.000 I llama_model_loader: - kv  36:                      tokenizer.ggml.tokens arr[str,248320]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+1321 0.00.335.039 I llama_model_loader: - kv  37:                  tokenizer.ggml.token_type arr[i32,248320]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+1322 0.00.351.112 I llama_model_loader: - kv  38:                      tokenizer.ggml.merges arr[str,247587]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+1323 0.00.351.114 I llama_model_loader: - kv  39:                tokenizer.ggml.eos_token_id u32              = 248046
+1324 0.00.351.114 I llama_model_loader: - kv  40:            tokenizer.ggml.padding_token_id u32              = 248044
+1325 0.00.351.114 I llama_model_loader: - kv  41:               tokenizer.ggml.add_bos_token bool             = false
+1326 0.00.351.115 I llama_model_loader: - kv  42:                    tokenizer.chat_template str              = {%- set image_count = namespace(value...
+1329 0.00.351.116 I llama_model_loader: - kv  45:                tokenizer.ggml.bos_token_id u32              = 248044
+1340 0.00.407.307 D init_tokenizer: initializing tokenizer for type 2
+1341 0.00.423.567 I load: 0 unused tokens
+1342 0.00.423.579 D load: control token: 248075 '<tts_text_bos_single>' is not marked as EOG
+1343 0.00.423.579 D load: control token: 248073 '<tts_text_bos>' is not marked as EOG
+1344 0.00.423.580 D load: control token: 248072 '<tts_pad>' is not marked as EOG
+1345 0.00.423.580 D load: control token: 248071 '<|audio_end|>' is not marked as EOG
+1346 0.00.423.581 D load: control token: 248061 '<|fim_middle|>' is not marked as EOG
+1347 0.00.423.581 D load: control token: 248055 '<|vision_pad|>' is not marked as EOG
+1348 0.00.423.581 D load: control token: 248052 '<|quad_end|>' is not marked as EOG
+1349 0.00.423.581 D load: control token: 248049 '<|box_start|>' is not marked as EOG
+1350 0.00.423.582 D load: control token: 248048 '<|object_ref_end|>' is not marked as EOG
+1351 0.00.423.582 D load: control token: 248045 '<|im_start|>' is not marked as EOG
+1352 0.00.423.872 D load: control token: 248057 '<|video_pad|>' is not marked as EOG
+1353 0.00.425.525 D load: control token: 248070 '<|audio_start|>' is not marked as EOG
+1354 0.00.425.616 D load: control token: 248056 '<|image_pad|>' is not marked as EOG
+1355 0.00.425.802 D load: control token: 248054 '<|vision_end|>' is not marked as EOG
+1356 0.00.428.164 D load: control token: 248060 '<|fim_prefix|>' is not marked as EOG
+1357 0.00.428.474 D load: control token: 248050 '<|box_end|>' is not marked as EOG
+1358 0.00.431.618 D load: control token: 248074 '<tts_text_eod>' is not marked as EOG
+1359 0.00.435.914 D load: control token: 248053 '<|vision_start|>' is not marked as EOG
+1360 0.00.437.058 D load: control token: 248062 '<|fim_suffix|>' is not marked as EOG
+1361 0.00.437.915 D load: control token: 248047 '<|object_ref_start|>' is not marked as EOG
+1362 0.00.438.557 D load: control token: 248051 '<|quad_start|>' is not marked as EOG
+1363 0.00.439.415 D load: control token: 248076 '<|audio_pad|>' is not marked as EOG
+1364 0.00.447.695 I load: printing all EOG tokens:
+1370 0.00.448.065 I load: special tokens cache size = 33
+1371 0.00.494.351 I load: token to piece cache size = 1.7581 MB
+1425 0.00.494.374 I print_info: BOS token             = 248044 '<|endoftext|>'
+1426 0.00.494.374 I print_info: EOS token             = 248046 '<|im_end|>'
+1427 0.00.494.374 I print_info: EOT token             = 248046 '<|im_end|>'
+1428 0.00.494.374 I print_info: PAD token             = 248044 '<|endoftext|>'
+1429 0.00.494.374 I print_info: LF token              = 198 'Ċ'
+1430 0.00.494.374 I print_info: FIM PRE token         = 248060 '<|fim_prefix|>'
+1431 0.00.494.375 I print_info: FIM SUF token         = 248062 '<|fim_suffix|>'
+1432 0.00.494.375 I print_info: FIM MID token         = 248061 '<|fim_middle|>'
+1433 0.00.494.375 I print_info: FIM PAD token         = 248063 '<|fim_pad|>'
+1434 0.00.494.375 I print_info: FIM REP token         = 248064 '<|repo_name|>'
+1435 0.00.494.375 I print_info: FIM SEP token         = 248065 '<|file_sep|>'
+1436 0.00.494.375 I print_info: EOG token             = 248044 '<|endoftext|>'
+1437 0.00.494.375 I print_info: EOG token             = 248046 '<|im_end|>'
+1438 0.00.494.375 I print_info: EOG token             = 248063 '<|fim_pad|>'
+1439 0.00.494.375 I print_info: EOG token             = 248064 '<|repo_name|>'
+1440 0.00.494.376 I print_info: EOG token             = 248065 '<|file_sep|>'
+1441 0.00.494.376 I print_info: max token length      = 256
+1476 0.00.494.517 D create_tensor: loading tensor token_embd.weight
+1479 0.00.494.534 D create_tensor: loading tensor token_embd.weight
+2432 0.00.496.570 D done_getting_tensors: tensor 'token_embd.weight' (ptq1_0) (and 426 others) cannot be used with preferred buffer type Vulkan_Host, using CPU instead
+2534 0.01.178.853 D sched_reserve: worst-case: n_tokens = 512, n_seqs = 1, n_outputs = 1
+2535 0.01.178.854 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2538 0.01.179.298 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2540 0.01.179.653 D graph_reserve: reserving a graph for ubatch with n_tokens =   16, n_seqs =  1, n_outputs =   16
+2543 0.01.180.024 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2546 0.01.180.371 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2548 0.01.180.717 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2550 0.01.181.057 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2552 0.01.181.398 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2553 0.01.199.025 D graph_reserve: reserving a graph for ubatch with n_tokens =    1, n_seqs =  1, n_outputs =    1
+2554 0.01.199.687 D graph_reserve: reserving a graph for ubatch with n_tokens =  512, n_seqs =  1, n_outputs =  512
+2565 common_debug_cb_eval:                   node_0 = (f32)   GET_ROWS(token_embd.weight{2560, 248320, 1, 1}, inp_tokens{2, 1, 1, 1}}) = {2560, 2, 1, 1}
+37419 common_debug_cb_eval:            result_output = (f32)    MUL_MAT(token_embd.weight{2560, 248320, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {248320, 1, 1, 1}
+37429 common_debug_cb_eval:                   node_0 = (f32)   GET_ROWS(token_embd.weight{2560, 248320, 1, 1}, inp_tokens{1, 1, 1, 1}}) = {2560, 1, 1, 1}
+63798 common_debug_cb_eval:            result_output = (f32)    MUL_MAT(token_embd.weight{2560, 248320, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {248320, 1, 1, 1}
+63806 Input prompt: "Hello"
+63811 0.15.506.056 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+63812 0.15.506.056 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+63813 0.15.506.057 I llama_perf_context_print:       total time =    7024.19 ms /     2 tokens

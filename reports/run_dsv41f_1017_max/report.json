@@ -1,0 +1,295 @@
+{
+ "submission": "/mnt/workspace/bonsai-runs/run_dsv41f_1017_max",
+ "started": "2026-10-28 04:08:42",
+ "submission_bytes": 19778925,
+ "build_ok": true,
+ "build_log": "",
+ "correctness": {
+  "score": 0.4870166293592995,
+  "suites": {
+   "tokenizer": 0.0,
+   "dequant": 1.0,
+   "logits": 0.002294528604840436,
+   "positions": 0.42968847185231607,
+   "greedy": 0.90625
+  },
+  "details": {
+   "tokenizer": {
+    "error": "RuntimeError('tokenize: unknown error')"
+   },
+   "dequant": {
+    "exact": 5,
+    "total": 5,
+    "tensors": 426,
+    "details": [
+     {
+      "name": "blk.0.attn_gate.weight",
+      "shape": [
+       4096,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 143,
+       "rank": 2,
+       "ne": [
+        2560,
+        4096,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.3.attn_v.weight",
+      "shape": [
+       1024,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 143,
+       "rank": 2,
+       "ne": [
+        2560,
+        1024,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.0.ssm_alpha.weight",
+      "shape": [
+       32,
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 2,
+       "ne": [
+        2560,
+        32,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "blk.0.ssm_conv1d.weight",
+      "shape": [
+       8192,
+       4
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 2,
+       "ne": [
+        4,
+        8192,
+        1,
+        1
+       ]
+      }
+     },
+     {
+      "name": "output_norm.weight",
+      "shape": [
+       2560
+      ],
+      "ok": true,
+      "info_ok": true,
+      "info": {
+       "type": 0,
+       "rank": 1,
+       "ne": [
+        2560,
+        1,
+        1,
+        1
+       ]
+      }
+     }
+    ]
+   },
+   "logits": {
+    "cases": [
+     {
+      "name": "ctx512",
+      "n_ctx": 512,
+      "top1": 0,
+      "kl": 2.378835853831677,
+      "cos": 0.7645271420478821,
+      "score": 1.952232435252884e-104
+     },
+     {
+      "name": "ctx2048",
+      "n_ctx": 2048,
+      "top1": 0,
+      "kl": 0.2795464089257288,
+      "cos": 0.9835418462753296,
+      "score": 2.894101165202747e-13
+     },
+     {
+      "name": "ctx4096",
+      "n_ctx": 4096,
+      "top1": 0,
+      "kl": 0.21186842740872425,
+      "cos": 0.9870085716247559,
+      "score": 2.516118552575877e-10
+     },
+     {
+      "name": "ctx8192",
+      "n_ctx": 8192,
+      "top1": 0,
+      "kl": 0.21276293002180366,
+      "cos": 0.9904589056968689,
+      "score": 0.009178114167460479
+     }
+    ]
+   },
+   "positions": {
+    "top1": 0.859375,
+    "kl": 0.13150914801688915,
+    "score": 0.42968847185231607,
+    "cases": [
+     {
+      "name": "pos512",
+      "samples": 32,
+      "top1": 0.875,
+      "kl": 0.11050719453256297
+     },
+     {
+      "name": "pos2048",
+      "samples": 32,
+      "top1": 0.84375,
+      "kl": 0.15251110150121536
+     }
+    ]
+   },
+   "greedy": {
+    "matched": 174,
+    "total": 192,
+    "cases": [
+     {
+      "name": "greedy_short",
+      "n_ctx": 1024,
+      "matched": 64,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       11
+      ]
+     },
+     {
+      "name": "greedy_med",
+      "n_ctx": 4096,
+      "matched": 55,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       353
+      ]
+     },
+     {
+      "name": "greedy_long",
+      "n_ctx": 16384,
+      "matched": 55,
+      "steps": 64,
+      "generate_ok": true,
+      "generate_first": [
+       1619
+      ]
+     }
+    ]
+   }
+  },
+  "accepted": false,
+  "partial": false,
+  "finished": [
+   "tokenizer",
+   "dequant",
+   "logits",
+   "positions",
+   "greedy"
+  ],
+  "suites_total": 5
+ },
+ "correctness_current": null,
+ "perf_mode": "illustrative",
+ "correctness_wall_s": 1069.4151714910004,
+ "perf_threshold_s": 900.0,
+ "agent_vram_peak_bytes": 4276535296,
+ "agent_host_rss_bytes": 242872320,
+ "child_processes": {
+  "cpu_s": 0.0,
+  "maxrss_kb": 0,
+  "live": []
+ },
+ "perf": {
+  "rows": {
+   "pp512": {
+    "agent": 44.91273203137386,
+    "ref": 2596.9663618625973,
+    "speedup": 0.0172943064226529
+   },
+   "pp2048": {
+    "agent": 42.11912414080504,
+    "ref": 2621.7357351415285,
+    "speedup": 0.016065358371648138
+   },
+   "pp4096": {
+    "agent": 39.046401133987885,
+    "ref": 2965.5254008666757,
+    "speedup": 0.013166773456931633
+   },
+   "tg128 @ d0": {
+    "agent": 33.70354380144307,
+    "ref": 179.59937516664328,
+    "speedup": 0.18765958272500036
+   },
+   "tg128 @ d512": {
+    "agent": 32.723508326428394,
+    "ref": 183.14495698861512,
+    "speedup": 0.17867545393817527
+   },
+   "tg128 @ d2048": {
+    "agent": 30.399345187448063,
+    "ref": 177.621091798823,
+    "speedup": 0.17114715870499736
+   }
+  },
+  "speedup_geomean": 0.0,
+  "reference": {
+   "pp": {
+    "512": 2596.9663618625973,
+    "2048": 2621.7357351415285,
+    "4096": 2965.5254008666757,
+    "8192": 2711.5153036728375
+   },
+   "tg": {
+    "0": 179.59937516664328,
+    "512": 183.14495698861512,
+    "2048": 177.621091798823,
+    "4096": 137.10284920930437,
+    "8192": 131.63661118630017
+   },
+   "vram_peak_bytes": 2062639104,
+   "host_peak_rss_bytes": 2140409856
+  }
+ },
+ "vram": {
+  "agent_peak_bytes": 4276535296,
+  "ref_peak_bytes": 2062639104,
+  "cap_bytes": 3093958656.0,
+  "agent_host_rss_bytes": 242872320,
+  "rss_cap_bytes": 4287893504,
+  "passed": false
+ }
+}

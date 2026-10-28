@@ -1,0 +1,49 @@
+#version 450
+layout(local_size_x = 128) in;
+layout(std430, binding = 0) readonly buffer QB { float qkv[]; };
+layout(std430, binding = 1) readonly buffer GB { float gb[]; };
+layout(std430, binding = 2) buffer SB { float state[]; };
+layout(std430, binding = 3) readonly buffer ZB { float z[]; };
+layout(std430, binding = 4) readonly buffer NB { float nw[]; };
+layout(std430, binding = 5) writeonly buffer OB { float outv[]; };
+layout(push_constant) uniform PC { uint nw_off; uint flags; } pc;
+
+shared float qs[128];
+shared float ks[128];
+shared float red[128];
+
+void main() {
+    uint h = gl_WorkGroupID.x;
+    uint j = gl_LocalInvocationID.x;
+    float gate = gb[h];
+    float beta = gb[32u + h];
+    float decay = exp(gate);
+    uint kh = h % 16u;
+    qs[j] = qkv[kh * 128u + j];
+    ks[j] = qkv[2048u + kh * 128u + j];
+    barrier();
+    uint sbase = h * 16384u;
+    float dot = 0.0;
+    for (uint i = 0u; i < 128u; i++) dot += ks[i] * state[sbase + i * 128u + j];
+    dot *= decay;
+    float vj = qkv[4096u + h * 128u + j];
+    float delta = beta * (vj - dot);
+    float acc = 0.0;
+    for (uint i = 0u; i < 128u; i++) {
+        float s = state[sbase + i * 128u + j] * decay + ks[i] * delta;
+        state[sbase + i * 128u + j] = s;
+        acc += qs[i] * s;
+    }
+    red[j] = acc * acc;
+    barrier();
+    for (uint s = 64u; s > 0u; s >>= 1) {
+        if (j < s) red[j] += red[j + s];
+        barrier();
+    }
+    float rms = sqrt(red[0] / 128.0 + 1e-6);
+    float zo = z[h * 128u + j];
+    float zs = zo / (1.0 + exp(-zo));
+    float on = acc / rms * nw[pc.nw_off + j] * zs;
+    uint nh = (h < 16u) ? 2u * h : 2u * (h - 16u) + 1u;
+    outv[nh * 128u + j] = on;
+}

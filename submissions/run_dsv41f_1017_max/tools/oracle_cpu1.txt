@@ -1,0 +1,6 @@
+load data/Ternary-Bonsai-2-4B-PTQ1_0.gguf
+ctx 0 512 cpu
+eval 0 1 9419
+logits 0 tools/oracle_logits_t1_cpu.bin
+gen 0 8 1
+quit

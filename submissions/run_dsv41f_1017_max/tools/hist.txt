@@ -1,0 +1,39 @@
+token_embd.weight blocks 4966400
+ pos 0 min 0 max 255 mean 136.9808201111469 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 1 min 0 max 255 mean 132.4817515705541 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 2 min 0 max 255 mean 130.86499798646906 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 22 min 0 max 255 mean 131.1262361066366 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 23 min 0 max 255 mean 135.31061533505155 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 24 min 0 max 253 mean 123.64590629027062 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 25 min 0 max 253 mean 141.8833458843428 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 26 min 0 max 255 mean 122.63996154155927 nuniq 256 missing_sample [] missing_count 0
+ pos 27 min 30 max 39 mean 34.67446339400773 nuniq 10 missing_sample [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] missing_count 246
+ u16@24 max 65021 min 0 mean 36445.782452682026
+ u16@0 max 65535 min 0 mean 34052.309222173004
+ f16@26 min/max 0.005913 0.03062 nan 0
+blk.0.attn_qkv.weight blocks 163840
+ pos 0 min 0 max 255 mean 127.8248046875 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 1 min 0 max 255 mean 128.0825927734375 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 2 min 0 max 255 mean 127.60386352539062 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 22 min 0 max 255 mean 127.95053100585938 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 23 min 0 max 255 mean 128.30855712890624 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 24 min 0 max 253 mean 126.686181640625 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 25 min 0 max 253 mean 126.7710205078125 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 26 min 0 max 255 mean 121.6490966796875 nuniq 256 missing_sample [] missing_count 0
+ pos 27 min 29 max 44 mean 34.71799926757812 nuniq 16 missing_sample [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] missing_count 240
+ u16@24 max 65021 min 0 mean 32580.067431640626
+ u16@0 max 65535 min 0 mean 32916.9685546875
+ f16@26 min/max 0.005074 0.07477 nan 0
+blk.3.attn_q.weight blocks 163840
+ pos 0 min 0 max 255 mean 133.42711181640624 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 1 min 0 max 255 mean 129.33325805664063 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 2 min 0 max 255 mean 124.59735107421875 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 22 min 0 max 255 mean 125.3705810546875 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 23 min 0 max 255 mean 126.15042724609376 nuniq 243 missing_sample [1, 20, 40, 60, 79, 99, 119, 138, 158, 178, 197, 217] missing_count 13
+ pos 24 min 0 max 253 mean 129.3188232421875 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 25 min 0 max 253 mean 128.5607177734375 nuniq 81 missing_sample [1, 2, 3, 5, 6, 8, 9, 11, 12, 14, 15, 17] missing_count 175
+ pos 26 min 0 max 255 mean 124.84199829101563 nuniq 256 missing_sample [] missing_count 0
+ pos 27 min 26 max 42 mean 35.246148681640626 nuniq 17 missing_sample [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] missing_count 239
+ u16@24 max 65021 min 0 mean 33040.862573242186
+ u16@0 max 65535 min 0 mean 33242.741174316405
+ f16@26 min/max 0.003386 0.04935 nan 0

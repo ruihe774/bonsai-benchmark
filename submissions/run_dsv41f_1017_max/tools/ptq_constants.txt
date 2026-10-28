@@ -1,0 +1,142 @@
+5473     TQ1_0   = 34
+5474     TQ2_0   = 35
+5477     Q1_0    = 41
+5478     Q2_0    = 42
+5479     PQ2_0   = 142
+5480     PTQ1_0  = 143
+5531     MOSTLY_TQ1_0         = 36  # except 1d tensors
+5532     MOSTLY_TQ2_0         = 37  # except 1d tensors
+5535     MOSTLY_Q1_0          = 40  # except 1d tensors
+5536     MOSTLY_Q2_0          = 41  # except 1d tensors
+5537     MOSTLY_PQ2_0         = 128  # except 1d tensors
+5538     MOSTLY_PTQ1_0        = 129  # except 1d tensors
+5669     GGMLQuantizationType.TQ1_0:   (256, 2 + 4 * 13),
+5670     GGMLQuantizationType.TQ2_0:   (256, 2 + 64),
+5673     GGMLQuantizationType.Q1_0:    (128, 2 + 16),
+5674     GGMLQuantizationType.Q2_0:    (64, 2 + 16),
+5675     GGMLQuantizationType.PQ2_0:   (128, 2 + 32),
+5676     GGMLQuantizationType.PTQ1_0:  (128, 2 + 24 + 2),
+----
+SECTION at 5639
+5639 GGML_QUANT_SIZES: dict[GGMLQuantizationType, tuple[int, int]] = {
+5640     GGMLQuantizationType.F32:     (1, 4),
+5641     GGMLQuantizationType.F16:     (1, 2),
+5642     GGMLQuantizationType.Q4_0:    (32, 2 + 16),
+5643     GGMLQuantizationType.Q4_1:    (32, 2 + 2 + 16),
+5644     GGMLQuantizationType.Q5_0:    (32, 2 + 4 + 16),
+5645     GGMLQuantizationType.Q5_1:    (32, 2 + 2 + 4 + 16),
+5646     GGMLQuantizationType.Q8_0:    (32, 2 + 32),
+5647     GGMLQuantizationType.Q8_1:    (32, 4 + 4 + 32),
+5648     GGMLQuantizationType.Q2_K:    (256, 2 + 2 + QK_K // 16 + QK_K // 4),
+5649     GGMLQuantizationType.Q3_K:    (256, 2 + QK_K // 4 + QK_K // 8 + 12),
+5650     GGMLQuantizationType.Q4_K:    (256, 2 + 2 + QK_K // 2 + 12),
+5651     GGMLQuantizationType.Q5_K:    (256, 2 + 2 + QK_K // 2 + QK_K // 8 + 12),
+5652     GGMLQuantizationType.Q6_K:    (256, 2 + QK_K // 2 + QK_K // 4 + QK_K // 16),
+5653     GGMLQuantizationType.Q8_K:    (256, 4 + QK_K + QK_K // 8),
+5654     GGMLQuantizationType.IQ2_XXS: (256, 2 + QK_K // 4),
+5655     GGMLQuantizationType.IQ2_XS:  (256, 2 + QK_K // 4 + QK_K // 32),
+5656     GGMLQuantizationType.IQ3_XXS: (256, 2 + QK_K // 4 + QK_K // 8),
+5657     GGMLQuantizationType.IQ1_S:   (256, 2 + QK_K // 8 + QK_K // 16),
+5658     GGMLQuantizationType.IQ4_NL:  (32, 2 + 16),
+5659     GGMLQuantizationType.IQ3_S:   (256, 2 + QK_K // 4 + QK_K // 8 + QK_K // 32 + 4),
+5660     GGMLQuantizationType.IQ2_S:   (256, 2 + QK_K // 4 + QK_K // 16),
+5661     GGMLQuantizationType.IQ4_XS:  (256, 2 + 2 + QK_K // 2 + QK_K // 64),
+5662     GGMLQuantizationType.I8:      (1, 1),
+5663     GGMLQuantizationType.I16:     (1, 2),
+5664     GGMLQuantizationType.I32:     (1, 4),
+5665     GGMLQuantizationType.I64:     (1, 8),
+5666     GGMLQuantizationType.F64:     (1, 8),
+5667     GGMLQuantizationType.IQ1_M:   (256, QK_K // 8 + QK_K // 16  + QK_K // 32),
+5668     GGMLQuantizationType.BF16:    (1, 2),
+5669     GGMLQuantizationType.TQ1_0:   (256, 2 + 4 * 13),
+5670     GGMLQuantizationType.TQ2_0:   (256, 2 + 64),
+5671     GGMLQuantizationType.MXFP4:   (32, 1 + 16),
+5672     GGMLQuantizationType.NVFP4:   (64, 4 + 32),
+5673     GGMLQuantizationType.Q1_0:    (128, 2 + 16),
+5674     GGMLQuantizationType.Q2_0:    (64, 2 + 16),
+5675     GGMLQuantizationType.PQ2_0:   (128, 2 + 32),
+5676     GGMLQuantizationType.PTQ1_0:  (128, 2 + 24 + 2),
+5677 }
+5678 
+5679 
+5680 # Aliases for backward compatibility.
+5681 
+5682 # general
+5683 KEY_GENERAL_ARCHITECTURE         = Keys.General.ARCHITECTURE
+5684 KEY_GENERAL_QUANTIZATION_VERSION = Keys.General.QUANTIZATION_VERSION
+5685 KEY_GENERAL_ALIGNMENT            = Keys.General.ALIGNMENT
+5686 KEY_GENERAL_NAME                 = Keys.General.NAME
+5687 KEY_GENERAL_AUTHOR               = Keys.General.AUTHOR
+5688 KEY_GENERAL_URL                  = Keys.General.URL
+5689 KEY_GENERAL_DESCRIPTION          = Keys.General.DESCRIPTION
+5690 KEY_GENERAL_LICENSE              = Keys.General.LICENSE
+5691 KEY_GENERAL_SOURCE_URL           = Keys.General.SOURCE_URL
+5692 KEY_GENERAL_FILE_TYPE            = Keys.General.FILE_TYPE
+5693 
+5694 # LLM
+5695 KEY_VOCAB_SIZE            = Keys.LLM.VOCAB_SIZE
+5696 KEY_CONTEXT_LENGTH        = Keys.LLM.CONTEXT_LENGTH
+5697 KEY_EMBEDDING_LENGTH      = Keys.LLM.EMBEDDING_LENGTH
+5698 KEY_BLOCK_COUNT           = Keys.LLM.BLOCK_COUNT
+5699 KEY_FEED_FORWARD_LENGTH   = Keys.LLM.FEED_FORWARD_LENGTH
+5700 KEY_USE_PARALLEL_RESIDUAL = Keys.LLM.USE_PARALLEL_RESIDUAL
+5701 KEY_TENSOR_DATA_LAYOUT    = Keys.LLM.TENSOR_DATA_LAYOUT
+5702 
+5703 # attention
+5704 KEY_ATTENTION_HEAD_COUNT        = Keys.Attention.HEAD_COUNT
+5705 KEY_ATTENTION_HEAD_COUNT_KV     = Keys.Attention.HEAD_COUNT_KV
+5706 KEY_ATTENTION_MAX_ALIBI_BIAS    = Keys.Attention.MAX_ALIBI_BIAS
+5707 KEY_ATTENTION_CLAMP_KQV         = Keys.Attention.CLAMP_KQV
+5708 KEY_ATTENTION_LAYERNORM_EPS     = Keys.Attention.LAYERNORM_EPS
+5709 KEY_ATTENTION_LAYERNORM_RMS_EPS = Keys.Attention.LAYERNORM_RMS_EPS
+5710 
+5711 # RoPE
+5712 KEY_ROPE_DIMENSION_COUNT           = Keys.Rope.DIMENSION_COUNT
+5713 KEY_ROPE_FREQ_BASE                 = Keys.Rope.FREQ_BASE
+5714 KEY_ROPE_SCALING_TYPE              = Keys.Rope.SCALING_TYPE
+5715 KEY_ROPE_SCALING_FACTOR            = Keys.Rope.SCALING_FACTOR
+5716 KEY_ROPE_SCALING_ORIG_CTX_LEN      = Keys.Rope.SCALING_ORIG_CTX_LEN
+5717 KEY_ROPE_SCALING_FINETUNED         = Keys.Rope.SCALING_FINETUNED
+5718 
+5719 # SSM
+5720 KEY_SSM_CONV_KERNEL    = Keys.SSM.CONV_KERNEL
+5721 KEY_SSM_INNER_SIZE     = Keys.SSM.INNER_SIZE
+5722 KEY_SSM_STATE_SIZE     = Keys.SSM.STATE_SIZE
+5723 KEY_SSM_TIME_STEP_RANK = Keys.SSM.TIME_STEP_RANK
+5724 KEY_SSM_GROUP_COUNT    = Keys.SSM.GROUP_COUNT
+5725 KEY_SSM_DT_B_C_RMS     = Keys.SSM.DT_B_C_RMS
+5726 
+5727 # KDA
+5728 KEY_KDA_HEAD_DIM         = Keys.KDA.HEAD_DIM
+5729 KEY_KDA_SAFE_GATE        = Keys.KDA.SAFE_GATE
+5730 KEY_KDA_GATE_LOWER_BOUND = Keys.KDA.GATE_LOWER_BOUND
+5731 
+5732 # tokenization
+5733 KEY_TOKENIZER_MODEL      = Keys.Tokenizer.MODEL
+5734 KEY_TOKENIZER_PRE        = Keys.Tokenizer.PRE
+5735 KEY_TOKENIZER_LIST       = Keys.Tokenizer.LIST
+5736 KEY_TOKENIZER_TOKEN_TYPE = Keys.Tokenizer.TOKEN_TYPE
+5737 KEY_TOKENIZER_SCORES     = Keys.Tokenizer.SCORES
+5738 KEY_TOKENIZER_MERGES     = Keys.Tokenizer.MERGES
+5739 KEY_TOKENIZER_BOS_ID     = Keys.Tokenizer.BOS_ID
+5740 KEY_TOKENIZER_EOS_ID     = Keys.Tokenizer.EOS_ID
+5741 KEY_TOKENIZER_EOT_ID     = Keys.Tokenizer.EOT_ID
+5742 KEY_TOKENIZER_EOM_ID     = Keys.Tokenizer.EOM_ID
+5743 KEY_TOKENIZER_UNK_ID     = Keys.Tokenizer.UNK_ID
+5744 KEY_TOKENIZER_SEP_ID     = Keys.Tokenizer.SEP_ID
+5745 KEY_TOKENIZER_PAD_ID     = Keys.Tokenizer.PAD_ID
+5746 KEY_TOKENIZER_MASK_ID    = Keys.Tokenizer.MASK_ID
+5747 KEY_TOKENIZER_HF_JSON    = Keys.Tokenizer.HF_JSON
+5748 KEY_TOKENIZER_RWKV       = Keys.Tokenizer.RWKV
+5749 
+5750 KEY_TOKENIZER_FIM_PRE_ID = Keys.Tokenizer.FIM_PRE_ID
+5751 KEY_TOKENIZER_FIM_SUF_ID = Keys.Tokenizer.FIM_SUF_ID
+5752 KEY_TOKENIZER_FIM_MID_ID = Keys.Tokenizer.FIM_MID_ID
+5753 KEY_TOKENIZER_FIM_PAD_ID = Keys.Tokenizer.FIM_PAD_ID
+5754 KEY_TOKENIZER_FIM_REP_ID = Keys.Tokenizer.FIM_REP_ID
+5755 KEY_TOKENIZER_FIM_SEP_ID = Keys.Tokenizer.FIM_SEP_ID
+5756 
+5757 # deprecated
+5758 KEY_TOKENIZER_PREFIX_ID  = Keys.Tokenizer.PREFIX_ID
+5759 KEY_TOKENIZER_SUFFIX_ID  = Keys.Tokenizer.SUFFIX_ID
+5760 KEY_TOKENIZER_MIDDLE_ID  = Keys.Tokenizer.MIDDLE_ID

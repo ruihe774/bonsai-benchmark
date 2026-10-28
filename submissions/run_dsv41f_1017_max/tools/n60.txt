@@ -1,0 +1,12 @@
+3340:common_debug_cb_eval:                  node_60 = (f32)        MUL(Vulkan0#norm-0#0{128, 32, 2, 1}, Vulkan0#blk.0.ssm_norm.weight#0{128, 1, 1, 1}}) = {128, 32, 2, 1}
+3362:common_debug_cb_eval:                  node_61 = (f32)     SWIGLU(Vulkan0#z-0 (reshaped)#0{128, 32, 2, 1}, node_60{128, 32, 2, 1}}) = {128, 32, 2, 1}
+11253:common_debug_cb_eval:                 node_603 = (f32)        MUL(ffn_swiglu-7{9216, 2, 1, 1}, prism.hadamard.signs.9216{9216, 1, 1, 1}}) = {9216, 2, 1, 1}
+11261:common_debug_cb_eval:               (reshaped) = (f32)    RESHAPE(node_603{9216, 2, 1, 1}, }) = {512, 18, 2, 1}
+11283:common_debug_cb_eval:                 node_605 = (f32)    MUL_MAT(prism.hadamard.512{512, 512, 1, 1},  (reshaped){512, 18, 2, 1}}) = {512, 18, 2, 1}
+11305:common_debug_cb_eval:               (reshaped) = (f32)    RESHAPE(node_605{512, 18, 2, 1}, }) = {9216, 2, 1, 1}
+38059:common_debug_cb_eval:                  node_60 = (f32)        MUL(Vulkan0#norm-0#0{128, 32, 1, 1}, Vulkan0#blk.0.ssm_norm.weight#0{128, 1, 1, 1}}) = {128, 32, 1, 1}
+38072:common_debug_cb_eval:                  node_61 = (f32)     SWIGLU(Vulkan0#z-0 (reshaped)#0{128, 32, 1, 1}, node_60{128, 32, 1, 1}}) = {128, 32, 1, 1}
+43994:common_debug_cb_eval:                 node_603 = (f32)        MUL(ffn_swiglu-7{9216, 1, 1, 1}, prism.hadamard.signs.9216{9216, 1, 1, 1}}) = {9216, 1, 1, 1}
+44001:common_debug_cb_eval:               (reshaped) = (f32)    RESHAPE(node_603{9216, 1, 1, 1}, }) = {512, 18, 1, 1}
+44014:common_debug_cb_eval:                 node_605 = (f32)    MUL_MAT(prism.hadamard.512{512, 512, 1, 1},  (reshaped){512, 18, 1, 1}}) = {512, 18, 1, 1}
+44027:common_debug_cb_eval:               (reshaped) = (f32)    RESHAPE(node_605{512, 18, 1, 1}, }) = {9216, 1, 1, 1}

@@ -1,0 +1,160 @@
+6217:common_debug_cb_eval:              Qcur_full-3 = (f32)    MUL_MAT(blk.3.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+6225:common_debug_cb_eval:          Qcur_reshaped-3 = (f32)       VIEW(Qcur_full-3{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+6247:common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Qcur_reshaped-3{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+6269:common_debug_cb_eval:            Qcur_normed-3 = (f32)        MUL(Vulkan0#norm-3#0{256, 16, 2, 1}, Vulkan0#blk.3.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+6291:common_debug_cb_eval:                   Qcur-3 = (f32)       ROPE(Qcur_normed-3{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+6451:common_debug_cb_eval:            Qcur-3 (view) = (f32)       VIEW(Qcur-3{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+6473:common_debug_cb_eval: Qcur-3 (view) (permuted) = (f32)    PERMUTE(Qcur-3 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+6664:common_debug_cb_eval:                 node_281 = (f32) FLASH_ATTN_EXT(CPU#Qcur-3 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l3 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+6694:common_debug_cb_eval:       Qcur_full-3 (view) = (f32)       VIEW(Qcur_full-3{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+6716:common_debug_cb_eval:          gate_reshaped-3 = (f32)       CONT(Qcur_full-3 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+10562:common_debug_cb_eval:              Qcur_full-7 = (f32)    MUL_MAT(blk.7.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+10570:common_debug_cb_eval:          Qcur_reshaped-7 = (f32)       VIEW(Qcur_full-7{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+10592:common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Qcur_reshaped-7{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+10614:common_debug_cb_eval:            Qcur_normed-7 = (f32)        MUL(Vulkan0#norm-7#0{256, 16, 2, 1}, Vulkan0#blk.7.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+10636:common_debug_cb_eval:                   Qcur-7 = (f32)       ROPE(Qcur_normed-7{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+10796:common_debug_cb_eval:            Qcur-7 (view) = (f32)       VIEW(Qcur-7{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+10818:common_debug_cb_eval: Qcur-7 (view) (permuted) = (f32)    PERMUTE(Qcur-7 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+11009:common_debug_cb_eval:                 node_582 = (f32) FLASH_ATTN_EXT(CPU#Qcur-7 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l7 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+11039:common_debug_cb_eval:       Qcur_full-7 (view) = (f32)       VIEW(Qcur_full-7{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+11061:common_debug_cb_eval:          gate_reshaped-7 = (f32)       CONT(Qcur_full-7 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+14907:common_debug_cb_eval:             Qcur_full-11 = (f32)    MUL_MAT(blk.11.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+14915:common_debug_cb_eval:         Qcur_reshaped-11 = (f32)       VIEW(Qcur_full-11{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+14937:common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Qcur_reshaped-11{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+14959:common_debug_cb_eval:           Qcur_normed-11 = (f32)        MUL(Vulkan0#norm-11#0{256, 16, 2, 1}, Vulkan0#blk.11.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+14981:common_debug_cb_eval:                  Qcur-11 = (f32)       ROPE(Qcur_normed-11{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+15141:common_debug_cb_eval:           Qcur-11 (view) = (f32)       VIEW(Qcur-11{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+15163:common_debug_cb_eval: Qcur-11 (view) (permuted) = (f32)    PERMUTE(Qcur-11 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+15354:common_debug_cb_eval:                 node_883 = (f32) FLASH_ATTN_EXT(CPU#Qcur-11 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l11 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+15384:common_debug_cb_eval:      Qcur_full-11 (view) = (f32)       VIEW(Qcur_full-11{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+15406:common_debug_cb_eval:         gate_reshaped-11 = (f32)       CONT(Qcur_full-11 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+19252:common_debug_cb_eval:             Qcur_full-15 = (f32)    MUL_MAT(blk.15.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+19260:common_debug_cb_eval:         Qcur_reshaped-15 = (f32)       VIEW(Qcur_full-15{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+19282:common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Qcur_reshaped-15{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+19304:common_debug_cb_eval:           Qcur_normed-15 = (f32)        MUL(Vulkan0#norm-15#0{256, 16, 2, 1}, Vulkan0#blk.15.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+19326:common_debug_cb_eval:                  Qcur-15 = (f32)       ROPE(Qcur_normed-15{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+19486:common_debug_cb_eval:           Qcur-15 (view) = (f32)       VIEW(Qcur-15{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+19508:common_debug_cb_eval: Qcur-15 (view) (permuted) = (f32)    PERMUTE(Qcur-15 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+19699:common_debug_cb_eval:                node_1184 = (f32) FLASH_ATTN_EXT(CPU#Qcur-15 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l15 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+19729:common_debug_cb_eval:      Qcur_full-15 (view) = (f32)       VIEW(Qcur_full-15{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+19751:common_debug_cb_eval:         gate_reshaped-15 = (f32)       CONT(Qcur_full-15 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+23597:common_debug_cb_eval:             Qcur_full-19 = (f32)    MUL_MAT(blk.19.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+23605:common_debug_cb_eval:         Qcur_reshaped-19 = (f32)       VIEW(Qcur_full-19{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+23627:common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Qcur_reshaped-19{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+23649:common_debug_cb_eval:           Qcur_normed-19 = (f32)        MUL(Vulkan0#norm-19#0{256, 16, 2, 1}, Vulkan0#blk.19.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+23671:common_debug_cb_eval:                  Qcur-19 = (f32)       ROPE(Qcur_normed-19{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+23831:common_debug_cb_eval:           Qcur-19 (view) = (f32)       VIEW(Qcur-19{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+23853:common_debug_cb_eval: Qcur-19 (view) (permuted) = (f32)    PERMUTE(Qcur-19 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+24044:common_debug_cb_eval:                node_1485 = (f32) FLASH_ATTN_EXT(CPU#Qcur-19 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l19 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+24074:common_debug_cb_eval:      Qcur_full-19 (view) = (f32)       VIEW(Qcur_full-19{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+24096:common_debug_cb_eval:         gate_reshaped-19 = (f32)       CONT(Qcur_full-19 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+27942:common_debug_cb_eval:             Qcur_full-23 = (f32)    MUL_MAT(blk.23.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+27950:common_debug_cb_eval:         Qcur_reshaped-23 = (f32)       VIEW(Qcur_full-23{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+27972:common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Qcur_reshaped-23{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+27994:common_debug_cb_eval:           Qcur_normed-23 = (f32)        MUL(Vulkan0#norm-23#0{256, 16, 2, 1}, Vulkan0#blk.23.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+28016:common_debug_cb_eval:                  Qcur-23 = (f32)       ROPE(Qcur_normed-23{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+28176:common_debug_cb_eval:           Qcur-23 (view) = (f32)       VIEW(Qcur-23{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+28198:common_debug_cb_eval: Qcur-23 (view) (permuted) = (f32)    PERMUTE(Qcur-23 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+28389:common_debug_cb_eval:                node_1786 = (f32) FLASH_ATTN_EXT(CPU#Qcur-23 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l23 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+28419:common_debug_cb_eval:      Qcur_full-23 (view) = (f32)       VIEW(Qcur_full-23{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+28441:common_debug_cb_eval:         gate_reshaped-23 = (f32)       CONT(Qcur_full-23 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+32287:common_debug_cb_eval:             Qcur_full-27 = (f32)    MUL_MAT(blk.27.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+32295:common_debug_cb_eval:         Qcur_reshaped-27 = (f32)       VIEW(Qcur_full-27{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+32317:common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Qcur_reshaped-27{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+32339:common_debug_cb_eval:           Qcur_normed-27 = (f32)        MUL(Vulkan0#norm-27#0{256, 16, 2, 1}, Vulkan0#blk.27.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+32361:common_debug_cb_eval:                  Qcur-27 = (f32)       ROPE(Qcur_normed-27{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+32521:common_debug_cb_eval:           Qcur-27 (view) = (f32)       VIEW(Qcur-27{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+32543:common_debug_cb_eval: Qcur-27 (view) (permuted) = (f32)    PERMUTE(Qcur-27 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+32734:common_debug_cb_eval:                node_2087 = (f32) FLASH_ATTN_EXT(CPU#Qcur-27 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l27 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+32764:common_debug_cb_eval:      Qcur_full-27 (view) = (f32)       VIEW(Qcur_full-27{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+32786:common_debug_cb_eval:         gate_reshaped-27 = (f32)       CONT(Qcur_full-27 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+36632:common_debug_cb_eval:             Qcur_full-31 = (f32)    MUL_MAT(blk.31.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+36640:common_debug_cb_eval:         Qcur_reshaped-31 = (f32)       VIEW(Qcur_full-31{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+36662:common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Qcur_reshaped-31{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+36684:common_debug_cb_eval:           Qcur_normed-31 = (f32)        MUL(Vulkan0#norm-31#0{256, 16, 2, 1}, Vulkan0#blk.31.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+36706:common_debug_cb_eval:                  Qcur-31 = (f32)       ROPE(Qcur_normed-31{256, 16, 2, 1}, Vulkan0#leaf_59#0{8, 1, 1, 1}}) = {256, 16, 2, 1}
+36866:common_debug_cb_eval:           Qcur-31 (view) = (f32)       VIEW(Qcur-31{256, 16, 2, 1}, }) = {256, 16, 2, 1}
+36888:common_debug_cb_eval: Qcur-31 (view) (permuted) = (f32)    PERMUTE(Qcur-31 (view){256, 16, 2, 1}, }) = {256, 2, 16, 1}
+37079:common_debug_cb_eval:                node_2388 = (f32) FLASH_ATTN_EXT(CPU#Qcur-31 (view) (permuted)#0{256, 2, 16, 1}, cache_k_l31 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 2, 1}
+37109:common_debug_cb_eval:      Qcur_full-31 (view) = (f32)       VIEW(Qcur_full-31{8192, 2, 1, 1}, }) = {256, 16, 2, 1}
+37131:common_debug_cb_eval:         gate_reshaped-31 = (f32)       CONT(Qcur_full-31 (view){256, 16, 2, 1}, }) = {4096, 2, 1, 1}
+40173:common_debug_cb_eval:              Qcur_full-3 = (f32)    MUL_MAT(blk.3.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+40180:common_debug_cb_eval:          Qcur_reshaped-3 = (f32)       VIEW(Qcur_full-3{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+40193:common_debug_cb_eval:                   norm-3 = (f32)   RMS_NORM(Qcur_reshaped-3{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+40206:common_debug_cb_eval:            Qcur_normed-3 = (f32)        MUL(norm-3{256, 16, 1, 1}, blk.3.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+40219:common_debug_cb_eval:                   Qcur-3 = (f32)       ROPE(Qcur_normed-3{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+40336:common_debug_cb_eval:            Qcur-3 (view) = (f32)       VIEW(Qcur-3{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+40349:common_debug_cb_eval: Qcur-3 (view) (permuted) = (f32)    PERMUTE(Qcur-3 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+40534:common_debug_cb_eval:                 node_281 = (f32) FLASH_ATTN_EXT(Qcur-3 (view) (permuted){256, 1, 16, 1}, cache_k_l3 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+40554:common_debug_cb_eval:       Qcur_full-3 (view) = (f32)       VIEW(Qcur_full-3{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+40567:common_debug_cb_eval:          gate_reshaped-3 = (f32)       CONT(Qcur_full-3 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+43454:common_debug_cb_eval:              Qcur_full-7 = (f32)    MUL_MAT(blk.7.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+43461:common_debug_cb_eval:          Qcur_reshaped-7 = (f32)       VIEW(Qcur_full-7{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+43474:common_debug_cb_eval:                   norm-7 = (f32)   RMS_NORM(Qcur_reshaped-7{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+43487:common_debug_cb_eval:            Qcur_normed-7 = (f32)        MUL(norm-7{256, 16, 1, 1}, blk.7.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+43500:common_debug_cb_eval:                   Qcur-7 = (f32)       ROPE(Qcur_normed-7{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+43617:common_debug_cb_eval:            Qcur-7 (view) = (f32)       VIEW(Qcur-7{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+43630:common_debug_cb_eval: Qcur-7 (view) (permuted) = (f32)    PERMUTE(Qcur-7 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+43815:common_debug_cb_eval:                 node_582 = (f32) FLASH_ATTN_EXT(Qcur-7 (view) (permuted){256, 1, 16, 1}, cache_k_l7 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+43835:common_debug_cb_eval:       Qcur_full-7 (view) = (f32)       VIEW(Qcur_full-7{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+43848:common_debug_cb_eval:          gate_reshaped-7 = (f32)       CONT(Qcur_full-7 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+46735:common_debug_cb_eval:             Qcur_full-11 = (f32)    MUL_MAT(blk.11.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+46742:common_debug_cb_eval:         Qcur_reshaped-11 = (f32)       VIEW(Qcur_full-11{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+46755:common_debug_cb_eval:                  norm-11 = (f32)   RMS_NORM(Qcur_reshaped-11{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+46768:common_debug_cb_eval:           Qcur_normed-11 = (f32)        MUL(norm-11{256, 16, 1, 1}, blk.11.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+46781:common_debug_cb_eval:                  Qcur-11 = (f32)       ROPE(Qcur_normed-11{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+46898:common_debug_cb_eval:           Qcur-11 (view) = (f32)       VIEW(Qcur-11{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+46911:common_debug_cb_eval: Qcur-11 (view) (permuted) = (f32)    PERMUTE(Qcur-11 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+47096:common_debug_cb_eval:                 node_883 = (f32) FLASH_ATTN_EXT(Qcur-11 (view) (permuted){256, 1, 16, 1}, cache_k_l11 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+47116:common_debug_cb_eval:      Qcur_full-11 (view) = (f32)       VIEW(Qcur_full-11{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+47129:common_debug_cb_eval:         gate_reshaped-11 = (f32)       CONT(Qcur_full-11 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+50016:common_debug_cb_eval:             Qcur_full-15 = (f32)    MUL_MAT(blk.15.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+50023:common_debug_cb_eval:         Qcur_reshaped-15 = (f32)       VIEW(Qcur_full-15{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+50036:common_debug_cb_eval:                  norm-15 = (f32)   RMS_NORM(Qcur_reshaped-15{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+50049:common_debug_cb_eval:           Qcur_normed-15 = (f32)        MUL(norm-15{256, 16, 1, 1}, blk.15.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+50062:common_debug_cb_eval:                  Qcur-15 = (f32)       ROPE(Qcur_normed-15{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+50179:common_debug_cb_eval:           Qcur-15 (view) = (f32)       VIEW(Qcur-15{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+50192:common_debug_cb_eval: Qcur-15 (view) (permuted) = (f32)    PERMUTE(Qcur-15 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+50377:common_debug_cb_eval:                node_1184 = (f32) FLASH_ATTN_EXT(Qcur-15 (view) (permuted){256, 1, 16, 1}, cache_k_l15 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+50397:common_debug_cb_eval:      Qcur_full-15 (view) = (f32)       VIEW(Qcur_full-15{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+50410:common_debug_cb_eval:         gate_reshaped-15 = (f32)       CONT(Qcur_full-15 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+53297:common_debug_cb_eval:             Qcur_full-19 = (f32)    MUL_MAT(blk.19.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+53304:common_debug_cb_eval:         Qcur_reshaped-19 = (f32)       VIEW(Qcur_full-19{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+53317:common_debug_cb_eval:                  norm-19 = (f32)   RMS_NORM(Qcur_reshaped-19{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+53330:common_debug_cb_eval:           Qcur_normed-19 = (f32)        MUL(norm-19{256, 16, 1, 1}, blk.19.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+53343:common_debug_cb_eval:                  Qcur-19 = (f32)       ROPE(Qcur_normed-19{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+53460:common_debug_cb_eval:           Qcur-19 (view) = (f32)       VIEW(Qcur-19{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+53473:common_debug_cb_eval: Qcur-19 (view) (permuted) = (f32)    PERMUTE(Qcur-19 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+53658:common_debug_cb_eval:                node_1485 = (f32) FLASH_ATTN_EXT(Qcur-19 (view) (permuted){256, 1, 16, 1}, cache_k_l19 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+53678:common_debug_cb_eval:      Qcur_full-19 (view) = (f32)       VIEW(Qcur_full-19{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+53691:common_debug_cb_eval:         gate_reshaped-19 = (f32)       CONT(Qcur_full-19 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+56578:common_debug_cb_eval:             Qcur_full-23 = (f32)    MUL_MAT(blk.23.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+56585:common_debug_cb_eval:         Qcur_reshaped-23 = (f32)       VIEW(Qcur_full-23{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+56598:common_debug_cb_eval:                  norm-23 = (f32)   RMS_NORM(Qcur_reshaped-23{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+56611:common_debug_cb_eval:           Qcur_normed-23 = (f32)        MUL(norm-23{256, 16, 1, 1}, blk.23.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+56624:common_debug_cb_eval:                  Qcur-23 = (f32)       ROPE(Qcur_normed-23{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+56741:common_debug_cb_eval:           Qcur-23 (view) = (f32)       VIEW(Qcur-23{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+56754:common_debug_cb_eval: Qcur-23 (view) (permuted) = (f32)    PERMUTE(Qcur-23 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+56939:common_debug_cb_eval:                node_1786 = (f32) FLASH_ATTN_EXT(Qcur-23 (view) (permuted){256, 1, 16, 1}, cache_k_l23 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+56959:common_debug_cb_eval:      Qcur_full-23 (view) = (f32)       VIEW(Qcur_full-23{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+56972:common_debug_cb_eval:         gate_reshaped-23 = (f32)       CONT(Qcur_full-23 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+59859:common_debug_cb_eval:             Qcur_full-27 = (f32)    MUL_MAT(blk.27.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+59866:common_debug_cb_eval:         Qcur_reshaped-27 = (f32)       VIEW(Qcur_full-27{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+59879:common_debug_cb_eval:                  norm-27 = (f32)   RMS_NORM(Qcur_reshaped-27{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+59892:common_debug_cb_eval:           Qcur_normed-27 = (f32)        MUL(norm-27{256, 16, 1, 1}, blk.27.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+59905:common_debug_cb_eval:                  Qcur-27 = (f32)       ROPE(Qcur_normed-27{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+60022:common_debug_cb_eval:           Qcur-27 (view) = (f32)       VIEW(Qcur-27{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+60035:common_debug_cb_eval: Qcur-27 (view) (permuted) = (f32)    PERMUTE(Qcur-27 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+60220:common_debug_cb_eval:                node_2087 = (f32) FLASH_ATTN_EXT(Qcur-27 (view) (permuted){256, 1, 16, 1}, cache_k_l27 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+60240:common_debug_cb_eval:      Qcur_full-27 (view) = (f32)       VIEW(Qcur_full-27{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+60253:common_debug_cb_eval:         gate_reshaped-27 = (f32)       CONT(Qcur_full-27 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}
+63140:common_debug_cb_eval:             Qcur_full-31 = (f32)    MUL_MAT(blk.31.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {8192, 1, 1, 1}
+63147:common_debug_cb_eval:         Qcur_reshaped-31 = (f32)       VIEW(Qcur_full-31{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+63160:common_debug_cb_eval:                  norm-31 = (f32)   RMS_NORM(Qcur_reshaped-31{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+63173:common_debug_cb_eval:           Qcur_normed-31 = (f32)        MUL(norm-31{256, 16, 1, 1}, blk.31.attn_q_norm.weight{256, 1, 1, 1}}) = {256, 16, 1, 1}
+63186:common_debug_cb_eval:                  Qcur-31 = (f32)       ROPE(Qcur_normed-31{256, 16, 1, 1}, leaf_59{4, 1, 1, 1}}) = {256, 16, 1, 1}
+63303:common_debug_cb_eval:           Qcur-31 (view) = (f32)       VIEW(Qcur-31{256, 16, 1, 1}, }) = {256, 16, 1, 1}
+63316:common_debug_cb_eval: Qcur-31 (view) (permuted) = (f32)    PERMUTE(Qcur-31 (view){256, 16, 1, 1}, }) = {256, 1, 16, 1}
+63501:common_debug_cb_eval:                node_2388 = (f32) FLASH_ATTN_EXT(Qcur-31 (view) (permuted){256, 1, 16, 1}, cache_k_l31 (view) (permuted){256, 256, 4, 1}}) = {256, 16, 1, 1}
+63521:common_debug_cb_eval:      Qcur_full-31 (view) = (f32)       VIEW(Qcur_full-31{8192, 1, 1, 1}, }) = {256, 16, 1, 1}
+63534:common_debug_cb_eval:         gate_reshaped-31 = (f32)       CONT(Qcur_full-31 (view){256, 16, 1, 1}, }) = {4096, 1, 1, 1}

@@ -1,0 +1,8 @@
+load data/Ternary-Bonsai-2-4B-PTQ1_0.gguf
+info
+tokenize 48656c6c6f
+ctx 0 512 vulkan
+eval 0 3 12675 0 32
+logits 0 tools/oracle_logits_hello.bin
+gen 0 8 1
+quit

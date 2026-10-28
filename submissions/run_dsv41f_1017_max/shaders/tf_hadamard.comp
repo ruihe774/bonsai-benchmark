@@ -1,0 +1,39 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) readonly buffer SB { float signs[]; };
+layout(std430, binding = 2) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint n; uint sign_base; uint inverse; uint nblk; } pc;
+
+shared float s[512];
+
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    uint blk = gl_WorkGroupID.x;
+    uint row = gl_WorkGroupID.y;
+    uint base = row * pc.n + blk * 512u;
+    uint sbase = pc.sign_base + blk * 512u;
+    s[tid] = x[base + tid];
+    s[tid + 256u] = x[base + tid + 256u];
+    barrier();
+    if (pc.inverse == 0u) {
+        s[tid] *= signs[sbase + tid];
+        s[tid + 256u] *= signs[sbase + tid + 256u];
+        barrier();
+    }
+    for (uint b = 0u; b < 9u; b++) {
+        uint step = 1u << b;
+        uint j = (tid / step) * (2u * step) + (tid % step);
+        float a = s[j]; float c = s[j + step];
+        s[j] = a + c; s[j + step] = a - c;
+        barrier();
+    }
+    float scale = 0.04419417382415922;
+    if (pc.inverse != 0u) {
+        y[base + tid] = s[tid] * scale * signs[sbase + tid];
+        y[base + tid + 256u] = s[tid + 256u] * scale * signs[sbase + tid + 256u];
+    } else {
+        y[base + tid] = s[tid] * scale;
+        y[base + tid + 256u] = s[tid + 256u] * scale;
+    }
+}

@@ -13,41 +13,47 @@ is a secondary gate to prevent pre-dequantization.
 
 ## Results
 
-| metric                    | llama.cpp Vulkan (baseline) | DeepSeek-V4.1-Flash-1017 (high) | GPT-6.1 Sol (high) |
-|---------------------------|-----------------------------|---------------------------------|--------------------|
-| **correctness (primary)** | -                           | failed                          | 0.9958             |
-| &nbsp;&nbsp;&nbsp;&nbsp;tokenizer | -                   | 1.0000                          | 1.0000             |
-| &nbsp;&nbsp;&nbsp;&nbsp;dequant   | -                   | 1.0000                          | 1.0000             |
-| &nbsp;&nbsp;&nbsp;&nbsp;logits    | -                   | 0.9965                          | 0.9965             |
-| &nbsp;&nbsp;&nbsp;&nbsp;positions | -                   | 0.9788                          | 0.9789             |
-| &nbsp;&nbsp;&nbsp;&nbsp;greedy    | -                   | failed                          | 1.0000             |
-| **performance (geomean)** | -                           | failed                          | 0.511×             |
-| &nbsp;&nbsp;&nbsp;&nbsp;pp512 (tok/s)  | 2593.73            | failed                          | 1292.96 (0.498×)   |
-| &nbsp;&nbsp;&nbsp;&nbsp;pp2048 (tok/s) | 2639.73            | failed                          | 1274.20 (0.483×)   |
-| &nbsp;&nbsp;&nbsp;&nbsp;pp4096 (tok/s) | 2984.00            | failed                          | 1249.07 (0.419×)   |
-| &nbsp;&nbsp;&nbsp;&nbsp;pp8192 (tok/s) | 2729.58            | failed                          | 1202.89 (0.441×)   |
-| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d0 (tok/s)    | 179.30     | failed                          | 97.04 (0.541×)     |
-| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d512 (tok/s)  | 183.61     | failed                          | 95.46 (0.520×)     |
-| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d2048 (tok/s) | 177.67     | failed                          | 91.14 (0.513×)     |
-| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d4096 (tok/s) | 137.00     | failed                          | 86.28 (0.630×)     |
-| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d8192 (tok/s) | 131.84     | failed                          | 77.07 (0.585×)     |
-| peak VRAM (MiB)           | 1967.1                      | failed                          | 1720.0             |
-| peak host RSS (MiB)       | 2041.6                      | failed                          | 1130.4             |
-| wall time (min)           | -                           | 67                              | 115                |
+| metric                    | llama.cpp Vulkan (baseline) | DeepSeek-V4.1-Flash-1017 (high) | DeepSeek-V4.1-Flash-1017 (max) | GPT-6.1 Sol (high) |
+|---------------------------|-----------------------------|---------------------------------|--------------------------------|--------------------|
+| **correctness (primary)** | -                           | failed                          | 0.4870                         | 0.9958             |
+| &nbsp;&nbsp;&nbsp;&nbsp;tokenizer | -                   | 1.0000                          | 0.0000                         | 1.0000             |
+| &nbsp;&nbsp;&nbsp;&nbsp;dequant   | -                   | 1.0000                          | 1.0000                         | 1.0000             |
+| &nbsp;&nbsp;&nbsp;&nbsp;logits    | -                   | 0.9965                          | 0.0023                         | 0.9965             |
+| &nbsp;&nbsp;&nbsp;&nbsp;positions | -                   | 0.9788                          | 0.4297                         | 0.9789             |
+| &nbsp;&nbsp;&nbsp;&nbsp;greedy    | -                   | failed                          | 0.9062                         | 1.0000             |
+| **performance (geomean)** | -                           | failed                          | 0.000 (gate failed)            | 0.511×             |
+| &nbsp;&nbsp;&nbsp;&nbsp;pp512 (tok/s)  | 2593.73            | failed                          | 44.91 (0.017×)                 | 1292.96 (0.498×)   |
+| &nbsp;&nbsp;&nbsp;&nbsp;pp2048 (tok/s) | 2639.73            | failed                          | 42.12 (0.016×)                 | 1274.20 (0.483×)   |
+| &nbsp;&nbsp;&nbsp;&nbsp;pp4096 (tok/s) | 2984.00            | failed                          | 39.05 (0.013×)                 | 1249.07 (0.419×)   |
+| &nbsp;&nbsp;&nbsp;&nbsp;pp8192 (tok/s) | 2729.58            | failed                          | n/m                            | 1202.89 (0.441×)   |
+| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d0 (tok/s)    | 179.30     | failed                          | 33.70 (0.188×)                 | 97.04 (0.541×)     |
+| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d512 (tok/s)  | 183.61     | failed                          | 32.72 (0.179×)                 | 95.46 (0.520×)     |
+| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d2048 (tok/s) | 177.67     | failed                          | 30.40 (0.171×)                 | 91.14 (0.513×)     |
+| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d4096 (tok/s) | 137.00     | failed                          | n/m                            | 86.28 (0.630×)     |
+| &nbsp;&nbsp;&nbsp;&nbsp;tg128 @ d8192 (tok/s) | 131.84     | failed                          | n/m                            | 77.07 (0.585×)     |
+| peak VRAM (MiB)           | 1967.1                      | failed                          | 4078.4 (gate fail)             | 1720.0             |
+| peak host RSS (MiB)       | 2041.6                      | failed                          | 231.6                          | 1130.4             |
+| wall time (min)           | -                           | 67                              | 63                             | 115                |
 
 (For DeepSeek, the official Anthropic-compatible endpoint was used.
 For GPT, cc-switch was used to convert official OpenAI Responses endpoint.
-The auto compact window of DeepSeek was set to 786432, while that of GPT models was set to 300000,
-which was a similar setting to 272k used in Codex.
-Both used at most one concurrent subagent. Correctness is the
+The auto compact window of the DeepSeek high run was set to 786432; the max run
+and the GPT model used 300000, a similar setting to 272k used in Codex.
+All runs used at most one concurrent subagent. Correctness is the
 weighted score over five hidden suites (acceptance ≥ 0.90); llama.cpp is the
-golden reference, not an agent run, hence `-`. DeepSeek's verifier crashed
+golden reference, not an agent run, hence `-`. DeepSeek's high verifier crashed
 (SIGSEGV) in the 8192-token greedy case; the four finished suites give a 0.6958
 partial subtotal, and its greedy, performance and memory rows were never
-measured. Performance is tok/s on the RX 9070; parentheses are the speedup
-against the same llama.cpp Vulkan reference, and the geomean is over the nine
-rows. Memory values are peaks sampled across the graded run; wall time is the
-runner's session elapsed time. This comparison is illustrative.)
+measured. The DeepSeek max run was rejected: it exited on its own after 63 min,
+its tokenizer ABI count query returned an invalid value (0.0000), its logits
+and positions fell well short of the CPU golden, and its peak VRAM exceeded
+the gate, which zeroes performance; its correctness suites ran past the
+time threshold, so performance is the one-rep illustrative subset and `n/m`
+marks the 8192 cases it skipped. Performance is tok/s on the RX 9070;
+parentheses are the speedup against the same llama.cpp Vulkan reference, and
+the geomean is over the nine rows. Memory values are peaks sampled across the
+graded run; wall time is the runner's session elapsed time. This comparison is
+illustrative.)
 
 ## Layout
 

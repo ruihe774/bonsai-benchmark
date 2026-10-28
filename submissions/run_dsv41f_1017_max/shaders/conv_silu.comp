@@ -1,0 +1,22 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) readonly buffer WB { float cw[]; };
+layout(std430, binding = 2) buffer HB { float hist[]; };
+layout(std430, binding = 3) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint n; uint w_off; uint flags; uint flags2; } pc;
+
+void main() {
+    uint c = gl_WorkGroupID.x * 256u + gl_LocalInvocationID.x;
+    if (c >= pc.n) return;
+    float h0 = hist[c];
+    float h1 = hist[pc.n + c];
+    float h2 = hist[2u * pc.n + c];
+    float xv = x[c];
+    uint wb = pc.w_off + c * 4u;
+    float o = cw[wb] * h0 + cw[wb + 1u] * h1 + cw[wb + 2u] * h2 + cw[wb + 3u] * xv;
+    hist[c] = h1;
+    hist[pc.n + c] = h2;
+    hist[2u * pc.n + c] = xv;
+    y[c] = o / (1.0 + exp(-o));
+}

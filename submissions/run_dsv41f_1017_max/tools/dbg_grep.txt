@@ -1,0 +1,50 @@
+-ot,   --override-tensor <tensor name pattern>=<buffer type>,...
+                                        override tensor buffer type
+                                        (env: LLAMA_ARG_OVERRIDE_TENSOR)
+-cmoe, --cpu-moe                        keep all Mixture of Experts (MoE) weights in the CPU
+                                        (env: LLAMA_ARG_CPU_MOE)
+--
+-sm,   --split-mode {none,layer,row,tensor}
+                                        how to split the model across multiple GPUs, one of:
+                                        - none: use one GPU only
+--
+                                        - tensor: split weights and KV across GPUs (parallelized,
+                                        EXPERIMENTAL)
+                                        (env: LLAMA_ARG_SPLIT_MODE)
+-ts,   --tensor-split N0,N1,N2,...      fraction of the model to offload to each GPU, comma-separated list of
+                                        proportions, e.g. 3,1
+                                        (env: LLAMA_ARG_TENSOR_SPLIT)
+-mg,   --main-gpu INDEX                 the GPU to use for the model (with split-mode = none), or for
+                                        intermediate results and KV (with split-mode = row) (default: 0)
+--
+--check-tensors                         check model tensor data for invalid values (default: false)
+--override-kv KEY=TYPE:VALUE,...        advanced option to override model metadata by key. to specify multiple
+                                        overrides, either use comma-separated values.
+--
+--op-offload, --no-op-offload           whether to offload host tensor operations to device (default: true)
+--lora FNAME                            path to LoRA adapter (use comma-separated values to load multiple
+                                        adapters)
+--
+                                        debugging)
+--offline                               Offline mode: forces use of cache, prevents network access
+                                        (env: LLAMA_ARG_OFFLINE)
+--
+                                         - 5: debug
+                                        (default: 3)
+                                        
+--
+--tensor-filter REGEX                   filter tensor names for debug output (regex pattern, can be specified
+                                        multiple times)
+
+--
+  Print tensors:
+
+  ./ref/bin/llama-debug -m model.gguf -p "Hello my name is" --verbose
+
+  The tensors to be printed can be filtered with --tensor-filter option.
+
+  Save logits/embeddings:
+--
+  ./ref/bin/llama-debug -m model.gguf -p "Hello my name is" --save-logits
+
+  Add --embedding to save embeddings

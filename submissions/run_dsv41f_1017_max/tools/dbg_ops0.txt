@@ -1,0 +1,6 @@
+2565 common_debug_cb_eval:        model.input_embed = (f32)        MUL( (reshaped){2560, 2, 1, 1}, prism.hadamard.signs.2560{2560, 1, 1, 1}}) = {2560, 2, 1, 1}
+2573 common_debug_cb_eval:              result_norm = (f32)        MUL(norm{2560, 1, 1, 1}, output_norm.weight{2560, 1, 1, 1}}) = {2560, 1, 1, 1}
+2580 common_debug_cb_eval:            result_output = (f32)    MUL_MAT(token_embd.weight{2560, 248320, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {248320, 1, 1, 1}
+2590 common_debug_cb_eval:        model.input_embed = (f32)        MUL( (reshaped){2560, 1, 1, 1}, prism.hadamard.signs.2560{2560, 1, 1, 1}}) = {2560, 1, 1, 1}
+2597 common_debug_cb_eval:              result_norm = (f32)        MUL(norm{2560, 1, 1, 1}, output_norm.weight{2560, 1, 1, 1}}) = {2560, 1, 1, 1}
+2604 common_debug_cb_eval:            result_output = (f32)    MUL_MAT(token_embd.weight{2560, 248320, 1, 1},  (reshaped){2560, 1, 1, 1}}) = {248320, 1, 1, 1}

@@ -1,0 +1,8 @@
+stride24_qh_last fwd best 636 /1280 perm (-1, 0, 1)
+stride24_qh_last rev best 465 /1280 perm (-1, 0, 1)
+stride24_qh_first fwd best 439 /1280 perm (-1, 0, 1)
+stride24_qh_first rev best 448 /1280 perm (0, 1, -1)
+contig_qh_last fwd best 467 /1280 perm (-1, 0, 1)
+contig_qh_last rev best 455 /1280 perm (-1, 1, 0)
+contig_qh_first fwd best 446 /1280 perm (1, 0, -1)
+contig_qh_first rev best 445 /1280 perm (1, 0, -1)

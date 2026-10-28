@@ -1,0 +1,48 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer WB { uint w[]; };
+layout(std430, binding = 1) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint n; uint w_off; uint blk_base; uint flags; } pc;
+
+float f16(uint h) {
+    uint sign = (h & 0x8000u) << 16;
+    uint e = (h >> 10) & 0x1fu;
+    uint m = h & 0x3ffu;
+    uint bits;
+    if (e == 0u) {
+        if (m == 0u) { bits = sign; }
+        else {
+            uint ex = 127u - 15u + 1u;
+            while ((m & 0x400u) == 0u) { m <<= 1; ex -= 1u; }
+            m &= 0x3ffu;
+            bits = sign | (ex << 23) | (m << 13);
+        }
+    } else if (e == 31u) {
+        bits = sign | 0x7f800000u | (m << 13);
+    } else {
+        bits = sign | ((e + 112u) << 23) | (m << 13);
+    }
+    return uintBitsToFloat(bits);
+}
+
+void main() {
+    uint i = gl_WorkGroupID.x * 256u + gl_LocalInvocationID.x;
+    if (i >= pc.n) return;
+    uint tid = i & 127u;
+    uint byteIdx; uint p; uint is4;
+    if (tid < 80u) { byteIdx = tid % 16u; p = tid / 16u; is4 = 0u; }
+    else if (tid < 120u) { uint j = tid - 80u; byteIdx = 16u + j % 8u; p = j / 8u; is4 = 0u; }
+    else { uint j = tid - 120u; byteIdx = 24u + j % 2u; p = j / 2u; is4 = 1u; }
+    uint word = byteIdx >> 2;
+    uint shift = (byteIdx & 3u) * 8u;
+    uint pw[5] = uint[5](1u, 3u, 9u, 27u, 81u);
+    uint mul = is4 == 1u ? 81u : 243u;
+    uint div = pw[is4 == 1u ? (3u - p) : (4u - p)];
+    uint blk = pc.blk_base + (i >> 7);
+    uint w6 = w[pc.w_off + blk * 7u + 6u];
+    uint ww = w[pc.w_off + blk * 7u + word];
+    uint byte = (ww >> shift) & 255u;
+    uint v = (byte * mul) >> 8u;
+    uint digit = (v / div) % 3u;
+    y[i] = f16(w6 >> 16) * (float(digit) - 1.0);
+}

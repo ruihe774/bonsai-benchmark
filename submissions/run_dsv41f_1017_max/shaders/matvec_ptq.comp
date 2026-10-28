@@ -1,0 +1,63 @@
+#version 450
+layout(local_size_x = 128) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) readonly buffer WB { uint w[]; };
+layout(std430, binding = 2) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint n_in; uint w_off; uint flags; uint flags2; } pc;
+
+shared float red[128];
+
+float f16(uint h) {
+    uint sign = (h & 0x8000u) << 16;
+    uint e = (h >> 10) & 0x1fu;
+    uint m = h & 0x3ffu;
+    uint bits;
+    if (e == 0u) {
+        if (m == 0u) { bits = sign; }
+        else {
+            uint ex = 127u - 15u + 1u;
+            while ((m & 0x400u) == 0u) { m <<= 1; ex -= 1u; }
+            m &= 0x3ffu;
+            bits = sign | (ex << 23) | (m << 13);
+        }
+    } else if (e == 31u) {
+        bits = sign | 0x7f800000u | (m << 13);
+    } else {
+        bits = sign | ((e + 112u) << 23) | (m << 13);
+    }
+    return uintBitsToFloat(bits);
+}
+
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    uint row = gl_WorkGroupID.x;
+    uint nb = pc.n_in >> 7;
+    uint byteIdx; uint p; uint is4;
+    if (tid < 80u) { byteIdx = tid % 16u; p = tid / 16u; is4 = 0u; }
+    else if (tid < 120u) { uint j = tid - 80u; byteIdx = 16u + j % 8u; p = j / 8u; is4 = 0u; }
+    else { uint j = tid - 120u; byteIdx = 24u + j % 2u; p = j / 2u; is4 = 1u; }
+    uint word = byteIdx >> 2;
+    uint shift = (byteIdx & 3u) * 8u;
+    uint pw[5] = uint[5](1u, 3u, 9u, 27u, 81u);
+    uint mul = is4 == 1u ? 81u : 243u;
+    uint div = pw[is4 == 1u ? (3u - p) : (4u - p)];
+    float acc = 0.0;
+    uint wb = row * nb;
+    for (uint b = 0u; b < nb; b++) {
+        uint blk = wb + b;
+        uint w6 = w[pc.w_off + blk * 7u + 6u];
+        uint ww = w[pc.w_off + blk * 7u + word];
+        uint byte = (ww >> shift) & 255u;
+        uint v = (byte * mul) >> 8u;
+        uint digit = (v / div) % 3u;
+        float val = f16(w6 >> 16) * (float(digit) - 1.0);
+        acc += x[b * 128u + tid] * val;
+    }
+    red[tid] = acc;
+    barrier();
+    for (uint s = 64u; s > 0u; s >>= 1) {
+        if (tid < s) red[tid] += red[tid + s];
+        barrier();
+    }
+    if (tid == 0u) y[row] = red[0];
+}

@@ -1,0 +1,8 @@
+2617:common_debug_cb_eval:        model.input_embed = (f32)        MUL( (reshaped){2560, 2, 1, 1}, prism.hadamard.signs.2560{2560, 1, 1, 1}}) = {2560, 2, 1, 1}
+2633:common_debug_cb_eval:              attn_norm-0 = (f32)        MUL(norm-0{2560, 2, 1, 1}, blk.0.attn_norm.weight{2560, 1, 1, 1}}) = {2560, 2, 1, 1}
+3296:common_debug_cb_eval:            attn_output-0 = (f32)       VIEW(node_52{4096, 130, 1, 1}, }) = {128, 32, 2, 1}
+3725:common_debug_cb_eval:             ffn_swiglu-0 = (f32)     SWIGLU(ffn_gate-0{9216, 2, 1, 1}, ffn_up-0{9216, 2, 1, 1}}) = {9216, 2, 1, 1}
+37465:common_debug_cb_eval:        model.input_embed = (f32)        MUL( (reshaped){2560, 1, 1, 1}, prism.hadamard.signs.2560{2560, 1, 1, 1}}) = {2560, 1, 1, 1}
+37479:common_debug_cb_eval:              attn_norm-0 = (f32)        MUL(norm-0{2560, 1, 1, 1}, blk.0.attn_norm.weight{2560, 1, 1, 1}}) = {2560, 1, 1, 1}
+38033:common_debug_cb_eval:            attn_output-0 = (f32)       VIEW(node_52{4096, 129, 1, 1}, }) = {128, 32, 1, 1}
+38304:common_debug_cb_eval:             ffn_swiglu-0 = (f32)     SWIGLU(ffn_gate-0{9216, 1, 1, 1}, ffn_up-0{9216, 1, 1, 1}}) = {9216, 1, 1, 1}

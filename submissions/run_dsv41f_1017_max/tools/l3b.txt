@@ -1,0 +1,11 @@
+253:6156: attn_norm-3 :: MUL(norm-3{2560, 2, 1, 1}, blk.3.attn_norm.weight{2560, 1, 1, 1}}) = {2560, 2, 1, 1}
+258:6216: Qcur_full-3 :: MUL_MAT(blk.3.attn_q.weight{2560, 8192, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {8192, 2, 1, 1}
+261:6268: Qcur_normed-3 :: MUL(Vulkan0#norm-3#0{256, 16, 2, 1}, Vulkan0#blk.3.attn_q_norm.weight#0{256, 1, 1, 1}}) = {256, 16, 2, 1}
+263:6312: Vcur-3 :: MUL_MAT(blk.3.attn_v.weight{2560, 1024, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {1024, 2, 1, 1}
+265:6336: Kcur-3 :: MUL_MAT(blk.3.attn_k.weight{2560, 1024, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {1024, 2, 1, 1}
+268:6376: Kcur_normed-3 :: MUL(norm-3{256, 4, 2, 1}, blk.3.attn_k_norm.weight{256, 1, 1, 1}}) = {256, 4, 2, 1}
+284:6799: attn_output-3 :: MUL_MAT(blk.3.attn_output.weight{4096, 2560, 1, 1},  (reshaped){4096, 2, 1, 1}}) = {2560, 2, 1, 1}
+287:6823: attn_post_norm-3 :: MUL(norm-3{2560, 2, 1, 1}, blk.3.post_attention_norm.weight{2560, 1, 1, 1}}) = {2560, 2, 1, 1}
+292:6883: ffn_gate-3 :: MUL_MAT(blk.3.ffn_gate.weight{2560, 9216, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {9216, 2, 1, 1}
+293:6891: ffn_up-3 :: MUL_MAT(blk.3.ffn_up.weight{2560, 9216, 1, 1},  (reshaped){2560, 2, 1, 1}}) = {9216, 2, 1, 1}
+299:6967: ffn_out-3 :: MUL_MAT(blk.3.ffn_down.weight{9216, 2560, 1, 1},  (reshaped){9216, 2, 1, 1}}) = {2560, 2, 1, 1}

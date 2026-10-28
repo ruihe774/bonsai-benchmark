@@ -1,0 +1,444 @@
+40:0.00.057.424 I llama_model_loader: - kv  33:               prism.hadamard.gdn_v_grouped bool             = true
+1252:0.00.260.888 I resolve_fused_ops: resolving fused Gated Delta Net support:
+1254:0.00.261.162 I resolve_fused_ops: fused Gated Delta Net (autoregressive) enabled
+1256:0.00.261.451 I resolve_fused_ops: fused Gated Delta Net (chunked) enabled
+1317:0.00.314.756 I llama_model_loader: - kv  33:               prism.hadamard.gdn_v_grouped bool             = true
+2537:0.01.179.298 I resolve_fused_ops: resolving fused Gated Delta Net support:
+2539:0.01.179.652 I resolve_fused_ops: fused Gated Delta Net (autoregressive) enabled
+2541:0.01.180.023 I resolve_fused_ops: fused Gated Delta Net (chunked) enabled
+2881:common_debug_cb_eval:        conv_output_raw-0 = (f32)   SSM_CONV(conv_input-0{5, 8192, 1, 1}, blk.0.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+2889:common_debug_cb_eval:       conv_output_silu-0 = (f32)       SILU(conv_output_raw-0{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+2897:common_debug_cb_eval: conv_output_silu-0 (view) = (f32)       VIEW(conv_output_silu-0{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+2919:common_debug_cb_eval:             qk_conv_l2-0 = (f32)    L2_NORM(conv_output_silu-0 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+2941:common_debug_cb_eval:        q_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+2963:common_debug_cb_eval:        k_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+2985:common_debug_cb_eval:        v_conv_predelta-0 = (f32)       VIEW(conv_output_silu-0{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+3121:common_debug_cb_eval:         state_predelta-0 = (f32)    RESHAPE(node_31{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+3180:common_debug_cb_eval:                  node_52 = (f32) GATED_DELTA_NET(q_conv_predelta-0{128, 16, 2, 1}, k_conv_predelta-0{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+3296:common_debug_cb_eval:            attn_output-0 = (f32)       VIEW(node_52{4096, 130, 1, 1}, }) = {128, 32, 2, 1}
+3318:common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_output-0{128, 32, 2, 1}, }) = {128, 32, 2, 1}
+4051:common_debug_cb_eval:        conv_output_raw-1 = (f32)   SSM_CONV(conv_input-1{5, 8192, 1, 1}, blk.1.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+4059:common_debug_cb_eval:       conv_output_silu-1 = (f32)       SILU(conv_output_raw-1{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+4067:common_debug_cb_eval: conv_output_silu-1 (view) = (f32)       VIEW(conv_output_silu-1{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+4089:common_debug_cb_eval:             qk_conv_l2-1 = (f32)    L2_NORM(conv_output_silu-1 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+4111:common_debug_cb_eval:        q_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+4133:common_debug_cb_eval:        k_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+4155:common_debug_cb_eval:        v_conv_predelta-1 = (f32)       VIEW(conv_output_silu-1{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+4291:common_debug_cb_eval:         state_predelta-1 = (f32)    RESHAPE(node_113{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+4350:common_debug_cb_eval:                 node_134 = (f32) GATED_DELTA_NET(q_conv_predelta-1{128, 16, 2, 1}, k_conv_predelta-1{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+5221:common_debug_cb_eval:        conv_output_raw-2 = (f32)   SSM_CONV(conv_input-2{5, 8192, 1, 1}, blk.2.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+5229:common_debug_cb_eval:       conv_output_silu-2 = (f32)       SILU(conv_output_raw-2{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+5237:common_debug_cb_eval: conv_output_silu-2 (view) = (f32)       VIEW(conv_output_silu-2{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+5259:common_debug_cb_eval:             qk_conv_l2-2 = (f32)    L2_NORM(conv_output_silu-2 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+5281:common_debug_cb_eval:        q_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+5303:common_debug_cb_eval:        k_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+5325:common_debug_cb_eval:        v_conv_predelta-2 = (f32)       VIEW(conv_output_silu-2{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+5461:common_debug_cb_eval:         state_predelta-2 = (f32)    RESHAPE(node_195{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+5520:common_debug_cb_eval:                 node_216 = (f32) GATED_DELTA_NET(q_conv_predelta-2{128, 16, 2, 1}, k_conv_predelta-2{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+7226:common_debug_cb_eval:        conv_output_raw-4 = (f32)   SSM_CONV(conv_input-4{5, 8192, 1, 1}, blk.4.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+7234:common_debug_cb_eval:       conv_output_silu-4 = (f32)       SILU(conv_output_raw-4{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+7242:common_debug_cb_eval: conv_output_silu-4 (view) = (f32)       VIEW(conv_output_silu-4{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+7264:common_debug_cb_eval:             qk_conv_l2-4 = (f32)    L2_NORM(conv_output_silu-4 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+7286:common_debug_cb_eval:        q_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+7308:common_debug_cb_eval:        k_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+7330:common_debug_cb_eval:        v_conv_predelta-4 = (f32)       VIEW(conv_output_silu-4{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+7466:common_debug_cb_eval:         state_predelta-4 = (f32)    RESHAPE(node_332{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+7525:common_debug_cb_eval:                 node_353 = (f32) GATED_DELTA_NET(q_conv_predelta-4{128, 16, 2, 1}, k_conv_predelta-4{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+8396:common_debug_cb_eval:        conv_output_raw-5 = (f32)   SSM_CONV(conv_input-5{5, 8192, 1, 1}, blk.5.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+8404:common_debug_cb_eval:       conv_output_silu-5 = (f32)       SILU(conv_output_raw-5{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+8412:common_debug_cb_eval: conv_output_silu-5 (view) = (f32)       VIEW(conv_output_silu-5{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+8434:common_debug_cb_eval:             qk_conv_l2-5 = (f32)    L2_NORM(conv_output_silu-5 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+8456:common_debug_cb_eval:        q_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+8478:common_debug_cb_eval:        k_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+8500:common_debug_cb_eval:        v_conv_predelta-5 = (f32)       VIEW(conv_output_silu-5{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+8636:common_debug_cb_eval:         state_predelta-5 = (f32)    RESHAPE(node_414{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+8695:common_debug_cb_eval:                 node_435 = (f32) GATED_DELTA_NET(q_conv_predelta-5{128, 16, 2, 1}, k_conv_predelta-5{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+9566:common_debug_cb_eval:        conv_output_raw-6 = (f32)   SSM_CONV(conv_input-6{5, 8192, 1, 1}, blk.6.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+9574:common_debug_cb_eval:       conv_output_silu-6 = (f32)       SILU(conv_output_raw-6{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+9582:common_debug_cb_eval: conv_output_silu-6 (view) = (f32)       VIEW(conv_output_silu-6{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+9604:common_debug_cb_eval:             qk_conv_l2-6 = (f32)    L2_NORM(conv_output_silu-6 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+9626:common_debug_cb_eval:        q_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+9648:common_debug_cb_eval:        k_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+9670:common_debug_cb_eval:        v_conv_predelta-6 = (f32)       VIEW(conv_output_silu-6{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+9806:common_debug_cb_eval:         state_predelta-6 = (f32)    RESHAPE(node_496{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+9865:common_debug_cb_eval:                 node_517 = (f32) GATED_DELTA_NET(q_conv_predelta-6{128, 16, 2, 1}, k_conv_predelta-6{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+11571:common_debug_cb_eval:        conv_output_raw-8 = (f32)   SSM_CONV(conv_input-8{5, 8192, 1, 1}, blk.8.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+11579:common_debug_cb_eval:       conv_output_silu-8 = (f32)       SILU(conv_output_raw-8{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+11587:common_debug_cb_eval: conv_output_silu-8 (view) = (f32)       VIEW(conv_output_silu-8{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+11609:common_debug_cb_eval:             qk_conv_l2-8 = (f32)    L2_NORM(conv_output_silu-8 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+11631:common_debug_cb_eval:        q_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+11653:common_debug_cb_eval:        k_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+11675:common_debug_cb_eval:        v_conv_predelta-8 = (f32)       VIEW(conv_output_silu-8{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+11811:common_debug_cb_eval:         state_predelta-8 = (f32)    RESHAPE(node_633{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+11870:common_debug_cb_eval:                 node_654 = (f32) GATED_DELTA_NET(q_conv_predelta-8{128, 16, 2, 1}, k_conv_predelta-8{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+12741:common_debug_cb_eval:        conv_output_raw-9 = (f32)   SSM_CONV(conv_input-9{5, 8192, 1, 1}, blk.9.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+12749:common_debug_cb_eval:       conv_output_silu-9 = (f32)       SILU(conv_output_raw-9{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+12757:common_debug_cb_eval: conv_output_silu-9 (view) = (f32)       VIEW(conv_output_silu-9{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+12779:common_debug_cb_eval:             qk_conv_l2-9 = (f32)    L2_NORM(conv_output_silu-9 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+12801:common_debug_cb_eval:        q_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+12823:common_debug_cb_eval:        k_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+12845:common_debug_cb_eval:        v_conv_predelta-9 = (f32)       VIEW(conv_output_silu-9{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+12981:common_debug_cb_eval:         state_predelta-9 = (f32)    RESHAPE(node_715{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+13040:common_debug_cb_eval:                 node_736 = (f32) GATED_DELTA_NET(q_conv_predelta-9{128, 16, 2, 1}, k_conv_predelta-9{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+13911:common_debug_cb_eval:       conv_output_raw-10 = (f32)   SSM_CONV(conv_input-10{5, 8192, 1, 1}, blk.10.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+13919:common_debug_cb_eval:      conv_output_silu-10 = (f32)       SILU(conv_output_raw-10{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+13927:common_debug_cb_eval: conv_output_silu-10 (view) = (f32)       VIEW(conv_output_silu-10{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+13949:common_debug_cb_eval:            qk_conv_l2-10 = (f32)    L2_NORM(conv_output_silu-10 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+13971:common_debug_cb_eval:       q_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+13993:common_debug_cb_eval:       k_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+14015:common_debug_cb_eval:       v_conv_predelta-10 = (f32)       VIEW(conv_output_silu-10{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+14151:common_debug_cb_eval:        state_predelta-10 = (f32)    RESHAPE(node_797{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+14210:common_debug_cb_eval:                 node_818 = (f32) GATED_DELTA_NET(q_conv_predelta-10{128, 16, 2, 1}, k_conv_predelta-10{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+15916:common_debug_cb_eval:       conv_output_raw-12 = (f32)   SSM_CONV(conv_input-12{5, 8192, 1, 1}, blk.12.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+15924:common_debug_cb_eval:      conv_output_silu-12 = (f32)       SILU(conv_output_raw-12{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+15932:common_debug_cb_eval: conv_output_silu-12 (view) = (f32)       VIEW(conv_output_silu-12{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+15954:common_debug_cb_eval:            qk_conv_l2-12 = (f32)    L2_NORM(conv_output_silu-12 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+15976:common_debug_cb_eval:       q_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+15998:common_debug_cb_eval:       k_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+16020:common_debug_cb_eval:       v_conv_predelta-12 = (f32)       VIEW(conv_output_silu-12{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+16156:common_debug_cb_eval:        state_predelta-12 = (f32)    RESHAPE(node_934{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+16215:common_debug_cb_eval:                 node_955 = (f32) GATED_DELTA_NET(q_conv_predelta-12{128, 16, 2, 1}, k_conv_predelta-12{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+17086:common_debug_cb_eval:       conv_output_raw-13 = (f32)   SSM_CONV(conv_input-13{5, 8192, 1, 1}, blk.13.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+17094:common_debug_cb_eval:      conv_output_silu-13 = (f32)       SILU(conv_output_raw-13{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+17102:common_debug_cb_eval: conv_output_silu-13 (view) = (f32)       VIEW(conv_output_silu-13{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+17124:common_debug_cb_eval:            qk_conv_l2-13 = (f32)    L2_NORM(conv_output_silu-13 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+17146:common_debug_cb_eval:       q_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+17168:common_debug_cb_eval:       k_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+17190:common_debug_cb_eval:       v_conv_predelta-13 = (f32)       VIEW(conv_output_silu-13{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+17326:common_debug_cb_eval:        state_predelta-13 = (f32)    RESHAPE(node_1016{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+17385:common_debug_cb_eval:                node_1037 = (f32) GATED_DELTA_NET(q_conv_predelta-13{128, 16, 2, 1}, k_conv_predelta-13{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+18256:common_debug_cb_eval:       conv_output_raw-14 = (f32)   SSM_CONV(conv_input-14{5, 8192, 1, 1}, blk.14.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+18264:common_debug_cb_eval:      conv_output_silu-14 = (f32)       SILU(conv_output_raw-14{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+18272:common_debug_cb_eval: conv_output_silu-14 (view) = (f32)       VIEW(conv_output_silu-14{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+18294:common_debug_cb_eval:            qk_conv_l2-14 = (f32)    L2_NORM(conv_output_silu-14 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+18316:common_debug_cb_eval:       q_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+18338:common_debug_cb_eval:       k_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+18360:common_debug_cb_eval:       v_conv_predelta-14 = (f32)       VIEW(conv_output_silu-14{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+18496:common_debug_cb_eval:        state_predelta-14 = (f32)    RESHAPE(node_1098{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+18555:common_debug_cb_eval:                node_1119 = (f32) GATED_DELTA_NET(q_conv_predelta-14{128, 16, 2, 1}, k_conv_predelta-14{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+20261:common_debug_cb_eval:       conv_output_raw-16 = (f32)   SSM_CONV(conv_input-16{5, 8192, 1, 1}, blk.16.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+20269:common_debug_cb_eval:      conv_output_silu-16 = (f32)       SILU(conv_output_raw-16{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+20277:common_debug_cb_eval: conv_output_silu-16 (view) = (f32)       VIEW(conv_output_silu-16{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+20299:common_debug_cb_eval:            qk_conv_l2-16 = (f32)    L2_NORM(conv_output_silu-16 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+20321:common_debug_cb_eval:       q_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+20343:common_debug_cb_eval:       k_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+20365:common_debug_cb_eval:       v_conv_predelta-16 = (f32)       VIEW(conv_output_silu-16{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+20501:common_debug_cb_eval:        state_predelta-16 = (f32)    RESHAPE(node_1235{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+20560:common_debug_cb_eval:                node_1256 = (f32) GATED_DELTA_NET(q_conv_predelta-16{128, 16, 2, 1}, k_conv_predelta-16{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+21431:common_debug_cb_eval:       conv_output_raw-17 = (f32)   SSM_CONV(conv_input-17{5, 8192, 1, 1}, blk.17.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+21439:common_debug_cb_eval:      conv_output_silu-17 = (f32)       SILU(conv_output_raw-17{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+21447:common_debug_cb_eval: conv_output_silu-17 (view) = (f32)       VIEW(conv_output_silu-17{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+21469:common_debug_cb_eval:            qk_conv_l2-17 = (f32)    L2_NORM(conv_output_silu-17 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+21491:common_debug_cb_eval:       q_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+21513:common_debug_cb_eval:       k_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+21535:common_debug_cb_eval:       v_conv_predelta-17 = (f32)       VIEW(conv_output_silu-17{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+21671:common_debug_cb_eval:        state_predelta-17 = (f32)    RESHAPE(node_1317{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+21730:common_debug_cb_eval:                node_1338 = (f32) GATED_DELTA_NET(q_conv_predelta-17{128, 16, 2, 1}, k_conv_predelta-17{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+22601:common_debug_cb_eval:       conv_output_raw-18 = (f32)   SSM_CONV(conv_input-18{5, 8192, 1, 1}, blk.18.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+22609:common_debug_cb_eval:      conv_output_silu-18 = (f32)       SILU(conv_output_raw-18{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+22617:common_debug_cb_eval: conv_output_silu-18 (view) = (f32)       VIEW(conv_output_silu-18{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+22639:common_debug_cb_eval:            qk_conv_l2-18 = (f32)    L2_NORM(conv_output_silu-18 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+22661:common_debug_cb_eval:       q_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+22683:common_debug_cb_eval:       k_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+22705:common_debug_cb_eval:       v_conv_predelta-18 = (f32)       VIEW(conv_output_silu-18{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+22841:common_debug_cb_eval:        state_predelta-18 = (f32)    RESHAPE(node_1399{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+22900:common_debug_cb_eval:                node_1420 = (f32) GATED_DELTA_NET(q_conv_predelta-18{128, 16, 2, 1}, k_conv_predelta-18{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+24606:common_debug_cb_eval:       conv_output_raw-20 = (f32)   SSM_CONV(conv_input-20{5, 8192, 1, 1}, blk.20.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+24614:common_debug_cb_eval:      conv_output_silu-20 = (f32)       SILU(conv_output_raw-20{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+24622:common_debug_cb_eval: conv_output_silu-20 (view) = (f32)       VIEW(conv_output_silu-20{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+24644:common_debug_cb_eval:            qk_conv_l2-20 = (f32)    L2_NORM(conv_output_silu-20 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+24666:common_debug_cb_eval:       q_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+24688:common_debug_cb_eval:       k_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+24710:common_debug_cb_eval:       v_conv_predelta-20 = (f32)       VIEW(conv_output_silu-20{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+24846:common_debug_cb_eval:        state_predelta-20 = (f32)    RESHAPE(node_1536{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+24905:common_debug_cb_eval:                node_1557 = (f32) GATED_DELTA_NET(q_conv_predelta-20{128, 16, 2, 1}, k_conv_predelta-20{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+25776:common_debug_cb_eval:       conv_output_raw-21 = (f32)   SSM_CONV(conv_input-21{5, 8192, 1, 1}, blk.21.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+25784:common_debug_cb_eval:      conv_output_silu-21 = (f32)       SILU(conv_output_raw-21{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+25792:common_debug_cb_eval: conv_output_silu-21 (view) = (f32)       VIEW(conv_output_silu-21{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+25814:common_debug_cb_eval:            qk_conv_l2-21 = (f32)    L2_NORM(conv_output_silu-21 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+25836:common_debug_cb_eval:       q_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+25858:common_debug_cb_eval:       k_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+25880:common_debug_cb_eval:       v_conv_predelta-21 = (f32)       VIEW(conv_output_silu-21{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+26016:common_debug_cb_eval:        state_predelta-21 = (f32)    RESHAPE(node_1618{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+26075:common_debug_cb_eval:                node_1639 = (f32) GATED_DELTA_NET(q_conv_predelta-21{128, 16, 2, 1}, k_conv_predelta-21{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+26946:common_debug_cb_eval:       conv_output_raw-22 = (f32)   SSM_CONV(conv_input-22{5, 8192, 1, 1}, blk.22.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+26954:common_debug_cb_eval:      conv_output_silu-22 = (f32)       SILU(conv_output_raw-22{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+26962:common_debug_cb_eval: conv_output_silu-22 (view) = (f32)       VIEW(conv_output_silu-22{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+26984:common_debug_cb_eval:            qk_conv_l2-22 = (f32)    L2_NORM(conv_output_silu-22 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+27006:common_debug_cb_eval:       q_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+27028:common_debug_cb_eval:       k_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+27050:common_debug_cb_eval:       v_conv_predelta-22 = (f32)       VIEW(conv_output_silu-22{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+27186:common_debug_cb_eval:        state_predelta-22 = (f32)    RESHAPE(node_1700{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+27245:common_debug_cb_eval:                node_1721 = (f32) GATED_DELTA_NET(q_conv_predelta-22{128, 16, 2, 1}, k_conv_predelta-22{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+28951:common_debug_cb_eval:       conv_output_raw-24 = (f32)   SSM_CONV(conv_input-24{5, 8192, 1, 1}, blk.24.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+28959:common_debug_cb_eval:      conv_output_silu-24 = (f32)       SILU(conv_output_raw-24{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+28967:common_debug_cb_eval: conv_output_silu-24 (view) = (f32)       VIEW(conv_output_silu-24{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+28989:common_debug_cb_eval:            qk_conv_l2-24 = (f32)    L2_NORM(conv_output_silu-24 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+29011:common_debug_cb_eval:       q_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+29033:common_debug_cb_eval:       k_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+29055:common_debug_cb_eval:       v_conv_predelta-24 = (f32)       VIEW(conv_output_silu-24{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+29191:common_debug_cb_eval:        state_predelta-24 = (f32)    RESHAPE(node_1837{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+29250:common_debug_cb_eval:                node_1858 = (f32) GATED_DELTA_NET(q_conv_predelta-24{128, 16, 2, 1}, k_conv_predelta-24{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+30121:common_debug_cb_eval:       conv_output_raw-25 = (f32)   SSM_CONV(conv_input-25{5, 8192, 1, 1}, blk.25.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+30129:common_debug_cb_eval:      conv_output_silu-25 = (f32)       SILU(conv_output_raw-25{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+30137:common_debug_cb_eval: conv_output_silu-25 (view) = (f32)       VIEW(conv_output_silu-25{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+30159:common_debug_cb_eval:            qk_conv_l2-25 = (f32)    L2_NORM(conv_output_silu-25 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+30181:common_debug_cb_eval:       q_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+30203:common_debug_cb_eval:       k_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+30225:common_debug_cb_eval:       v_conv_predelta-25 = (f32)       VIEW(conv_output_silu-25{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+30361:common_debug_cb_eval:        state_predelta-25 = (f32)    RESHAPE(node_1919{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+30420:common_debug_cb_eval:                node_1940 = (f32) GATED_DELTA_NET(q_conv_predelta-25{128, 16, 2, 1}, k_conv_predelta-25{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+31291:common_debug_cb_eval:       conv_output_raw-26 = (f32)   SSM_CONV(conv_input-26{5, 8192, 1, 1}, blk.26.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+31299:common_debug_cb_eval:      conv_output_silu-26 = (f32)       SILU(conv_output_raw-26{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+31307:common_debug_cb_eval: conv_output_silu-26 (view) = (f32)       VIEW(conv_output_silu-26{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+31329:common_debug_cb_eval:            qk_conv_l2-26 = (f32)    L2_NORM(conv_output_silu-26 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+31351:common_debug_cb_eval:       q_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+31373:common_debug_cb_eval:       k_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+31395:common_debug_cb_eval:       v_conv_predelta-26 = (f32)       VIEW(conv_output_silu-26{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+31531:common_debug_cb_eval:        state_predelta-26 = (f32)    RESHAPE(node_2001{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+31590:common_debug_cb_eval:                node_2022 = (f32) GATED_DELTA_NET(q_conv_predelta-26{128, 16, 2, 1}, k_conv_predelta-26{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+33296:common_debug_cb_eval:       conv_output_raw-28 = (f32)   SSM_CONV(conv_input-28{5, 8192, 1, 1}, blk.28.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+33304:common_debug_cb_eval:      conv_output_silu-28 = (f32)       SILU(conv_output_raw-28{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+33312:common_debug_cb_eval: conv_output_silu-28 (view) = (f32)       VIEW(conv_output_silu-28{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+33334:common_debug_cb_eval:            qk_conv_l2-28 = (f32)    L2_NORM(conv_output_silu-28 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+33356:common_debug_cb_eval:       q_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+33378:common_debug_cb_eval:       k_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+33400:common_debug_cb_eval:       v_conv_predelta-28 = (f32)       VIEW(conv_output_silu-28{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+33536:common_debug_cb_eval:        state_predelta-28 = (f32)    RESHAPE(node_2138{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+33595:common_debug_cb_eval:                node_2159 = (f32) GATED_DELTA_NET(q_conv_predelta-28{128, 16, 2, 1}, k_conv_predelta-28{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+34466:common_debug_cb_eval:       conv_output_raw-29 = (f32)   SSM_CONV(conv_input-29{5, 8192, 1, 1}, blk.29.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+34474:common_debug_cb_eval:      conv_output_silu-29 = (f32)       SILU(conv_output_raw-29{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+34482:common_debug_cb_eval: conv_output_silu-29 (view) = (f32)       VIEW(conv_output_silu-29{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+34504:common_debug_cb_eval:            qk_conv_l2-29 = (f32)    L2_NORM(conv_output_silu-29 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+34526:common_debug_cb_eval:       q_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+34548:common_debug_cb_eval:       k_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+34570:common_debug_cb_eval:       v_conv_predelta-29 = (f32)       VIEW(conv_output_silu-29{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+34706:common_debug_cb_eval:        state_predelta-29 = (f32)    RESHAPE(node_2220{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+34765:common_debug_cb_eval:                node_2241 = (f32) GATED_DELTA_NET(q_conv_predelta-29{128, 16, 2, 1}, k_conv_predelta-29{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+35636:common_debug_cb_eval:       conv_output_raw-30 = (f32)   SSM_CONV(conv_input-30{5, 8192, 1, 1}, blk.30.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 2, 1, 1}
+35644:common_debug_cb_eval:      conv_output_silu-30 = (f32)       SILU(conv_output_raw-30{8192, 2, 1, 1}, }) = {8192, 2, 1, 1}
+35652:common_debug_cb_eval: conv_output_silu-30 (view) = (f32)       VIEW(conv_output_silu-30{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+35674:common_debug_cb_eval:            qk_conv_l2-30 = (f32)    L2_NORM(conv_output_silu-30 (view){128, 32, 2, 1}, }) = {128, 32, 2, 1}
+35696:common_debug_cb_eval:       q_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+35718:common_debug_cb_eval:       k_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 2, 1}, }) = {128, 16, 2, 1}
+35740:common_debug_cb_eval:       v_conv_predelta-30 = (f32)       VIEW(conv_output_silu-30{8192, 2, 1, 1}, }) = {128, 32, 2, 1}
+35876:common_debug_cb_eval:        state_predelta-30 = (f32)    RESHAPE(node_2302{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+35935:common_debug_cb_eval:                node_2323 = (f32) GATED_DELTA_NET(q_conv_predelta-30{128, 16, 2, 1}, k_conv_predelta-30{128, 16, 2, 1}}) = {4096, 130, 1, 1}
+37708:common_debug_cb_eval:        conv_output_raw-0 = (f32)   SSM_CONV(conv_input-0{4, 8192, 1, 1}, blk.0.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+37715:common_debug_cb_eval:       conv_output_silu-0 = (f32)       SILU(conv_output_raw-0{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+37722:common_debug_cb_eval: conv_output_silu-0 (view) = (f32)       VIEW(conv_output_silu-0{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+37735:common_debug_cb_eval:             qk_conv_l2-0 = (f32)    L2_NORM(conv_output_silu-0 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+37748:common_debug_cb_eval:        q_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+37761:common_debug_cb_eval:        k_conv_predelta-0 = (f32)       VIEW(qk_conv_l2-0{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+37774:common_debug_cb_eval:        v_conv_predelta-0 = (f32)       VIEW(conv_output_silu-0{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+37868:common_debug_cb_eval:         state_predelta-0 = (f32)    RESHAPE(node_31{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+37927:common_debug_cb_eval:                  node_52 = (f32) GATED_DELTA_NET(q_conv_predelta-0{128, 16, 1, 1}, k_conv_predelta-0{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+38033:common_debug_cb_eval:            attn_output-0 = (f32)       VIEW(node_52{4096, 129, 1, 1}, }) = {128, 32, 1, 1}
+38046:common_debug_cb_eval:                   norm-0 = (f32)   RMS_NORM(attn_output-0{128, 32, 1, 1}, }) = {128, 32, 1, 1}
+38587:common_debug_cb_eval:        conv_output_raw-1 = (f32)   SSM_CONV(conv_input-1{4, 8192, 1, 1}, blk.1.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+38594:common_debug_cb_eval:       conv_output_silu-1 = (f32)       SILU(conv_output_raw-1{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+38601:common_debug_cb_eval: conv_output_silu-1 (view) = (f32)       VIEW(conv_output_silu-1{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+38614:common_debug_cb_eval:             qk_conv_l2-1 = (f32)    L2_NORM(conv_output_silu-1 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+38627:common_debug_cb_eval:        q_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+38640:common_debug_cb_eval:        k_conv_predelta-1 = (f32)       VIEW(qk_conv_l2-1{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+38653:common_debug_cb_eval:        v_conv_predelta-1 = (f32)       VIEW(conv_output_silu-1{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+38747:common_debug_cb_eval:         state_predelta-1 = (f32)    RESHAPE(node_113{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+38806:common_debug_cb_eval:                 node_134 = (f32) GATED_DELTA_NET(q_conv_predelta-1{128, 16, 1, 1}, k_conv_predelta-1{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+39466:common_debug_cb_eval:        conv_output_raw-2 = (f32)   SSM_CONV(conv_input-2{4, 8192, 1, 1}, blk.2.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+39473:common_debug_cb_eval:       conv_output_silu-2 = (f32)       SILU(conv_output_raw-2{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+39480:common_debug_cb_eval: conv_output_silu-2 (view) = (f32)       VIEW(conv_output_silu-2{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+39493:common_debug_cb_eval:             qk_conv_l2-2 = (f32)    L2_NORM(conv_output_silu-2 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+39506:common_debug_cb_eval:        q_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+39519:common_debug_cb_eval:        k_conv_predelta-2 = (f32)       VIEW(qk_conv_l2-2{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+39532:common_debug_cb_eval:        v_conv_predelta-2 = (f32)       VIEW(conv_output_silu-2{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+39626:common_debug_cb_eval:         state_predelta-2 = (f32)    RESHAPE(node_195{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+39685:common_debug_cb_eval:                 node_216 = (f32) GATED_DELTA_NET(q_conv_predelta-2{128, 16, 1, 1}, k_conv_predelta-2{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+40989:common_debug_cb_eval:        conv_output_raw-4 = (f32)   SSM_CONV(conv_input-4{4, 8192, 1, 1}, blk.4.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+40996:common_debug_cb_eval:       conv_output_silu-4 = (f32)       SILU(conv_output_raw-4{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+41003:common_debug_cb_eval: conv_output_silu-4 (view) = (f32)       VIEW(conv_output_silu-4{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+41016:common_debug_cb_eval:             qk_conv_l2-4 = (f32)    L2_NORM(conv_output_silu-4 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+41029:common_debug_cb_eval:        q_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41042:common_debug_cb_eval:        k_conv_predelta-4 = (f32)       VIEW(qk_conv_l2-4{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41055:common_debug_cb_eval:        v_conv_predelta-4 = (f32)       VIEW(conv_output_silu-4{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+41149:common_debug_cb_eval:         state_predelta-4 = (f32)    RESHAPE(node_332{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+41208:common_debug_cb_eval:                 node_353 = (f32) GATED_DELTA_NET(q_conv_predelta-4{128, 16, 1, 1}, k_conv_predelta-4{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+41868:common_debug_cb_eval:        conv_output_raw-5 = (f32)   SSM_CONV(conv_input-5{4, 8192, 1, 1}, blk.5.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+41875:common_debug_cb_eval:       conv_output_silu-5 = (f32)       SILU(conv_output_raw-5{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+41882:common_debug_cb_eval: conv_output_silu-5 (view) = (f32)       VIEW(conv_output_silu-5{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+41895:common_debug_cb_eval:             qk_conv_l2-5 = (f32)    L2_NORM(conv_output_silu-5 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+41908:common_debug_cb_eval:        q_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41921:common_debug_cb_eval:        k_conv_predelta-5 = (f32)       VIEW(qk_conv_l2-5{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+41934:common_debug_cb_eval:        v_conv_predelta-5 = (f32)       VIEW(conv_output_silu-5{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+42028:common_debug_cb_eval:         state_predelta-5 = (f32)    RESHAPE(node_414{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+42087:common_debug_cb_eval:                 node_435 = (f32) GATED_DELTA_NET(q_conv_predelta-5{128, 16, 1, 1}, k_conv_predelta-5{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+42747:common_debug_cb_eval:        conv_output_raw-6 = (f32)   SSM_CONV(conv_input-6{4, 8192, 1, 1}, blk.6.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+42754:common_debug_cb_eval:       conv_output_silu-6 = (f32)       SILU(conv_output_raw-6{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+42761:common_debug_cb_eval: conv_output_silu-6 (view) = (f32)       VIEW(conv_output_silu-6{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+42774:common_debug_cb_eval:             qk_conv_l2-6 = (f32)    L2_NORM(conv_output_silu-6 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+42787:common_debug_cb_eval:        q_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+42800:common_debug_cb_eval:        k_conv_predelta-6 = (f32)       VIEW(qk_conv_l2-6{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+42813:common_debug_cb_eval:        v_conv_predelta-6 = (f32)       VIEW(conv_output_silu-6{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+42907:common_debug_cb_eval:         state_predelta-6 = (f32)    RESHAPE(node_496{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+42966:common_debug_cb_eval:                 node_517 = (f32) GATED_DELTA_NET(q_conv_predelta-6{128, 16, 1, 1}, k_conv_predelta-6{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+44270:common_debug_cb_eval:        conv_output_raw-8 = (f32)   SSM_CONV(conv_input-8{4, 8192, 1, 1}, blk.8.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+44277:common_debug_cb_eval:       conv_output_silu-8 = (f32)       SILU(conv_output_raw-8{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+44284:common_debug_cb_eval: conv_output_silu-8 (view) = (f32)       VIEW(conv_output_silu-8{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+44297:common_debug_cb_eval:             qk_conv_l2-8 = (f32)    L2_NORM(conv_output_silu-8 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+44310:common_debug_cb_eval:        q_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+44323:common_debug_cb_eval:        k_conv_predelta-8 = (f32)       VIEW(qk_conv_l2-8{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+44336:common_debug_cb_eval:        v_conv_predelta-8 = (f32)       VIEW(conv_output_silu-8{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+44430:common_debug_cb_eval:         state_predelta-8 = (f32)    RESHAPE(node_633{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+44489:common_debug_cb_eval:                 node_654 = (f32) GATED_DELTA_NET(q_conv_predelta-8{128, 16, 1, 1}, k_conv_predelta-8{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+45149:common_debug_cb_eval:        conv_output_raw-9 = (f32)   SSM_CONV(conv_input-9{4, 8192, 1, 1}, blk.9.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+45156:common_debug_cb_eval:       conv_output_silu-9 = (f32)       SILU(conv_output_raw-9{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+45163:common_debug_cb_eval: conv_output_silu-9 (view) = (f32)       VIEW(conv_output_silu-9{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+45176:common_debug_cb_eval:             qk_conv_l2-9 = (f32)    L2_NORM(conv_output_silu-9 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+45189:common_debug_cb_eval:        q_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+45202:common_debug_cb_eval:        k_conv_predelta-9 = (f32)       VIEW(qk_conv_l2-9{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+45215:common_debug_cb_eval:        v_conv_predelta-9 = (f32)       VIEW(conv_output_silu-9{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+45309:common_debug_cb_eval:         state_predelta-9 = (f32)    RESHAPE(node_715{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+45368:common_debug_cb_eval:                 node_736 = (f32) GATED_DELTA_NET(q_conv_predelta-9{128, 16, 1, 1}, k_conv_predelta-9{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+46028:common_debug_cb_eval:       conv_output_raw-10 = (f32)   SSM_CONV(conv_input-10{4, 8192, 1, 1}, blk.10.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+46035:common_debug_cb_eval:      conv_output_silu-10 = (f32)       SILU(conv_output_raw-10{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+46042:common_debug_cb_eval: conv_output_silu-10 (view) = (f32)       VIEW(conv_output_silu-10{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+46055:common_debug_cb_eval:            qk_conv_l2-10 = (f32)    L2_NORM(conv_output_silu-10 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+46068:common_debug_cb_eval:       q_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+46081:common_debug_cb_eval:       k_conv_predelta-10 = (f32)       VIEW(qk_conv_l2-10{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+46094:common_debug_cb_eval:       v_conv_predelta-10 = (f32)       VIEW(conv_output_silu-10{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+46188:common_debug_cb_eval:        state_predelta-10 = (f32)    RESHAPE(node_797{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+46247:common_debug_cb_eval:                 node_818 = (f32) GATED_DELTA_NET(q_conv_predelta-10{128, 16, 1, 1}, k_conv_predelta-10{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+47551:common_debug_cb_eval:       conv_output_raw-12 = (f32)   SSM_CONV(conv_input-12{4, 8192, 1, 1}, blk.12.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+47558:common_debug_cb_eval:      conv_output_silu-12 = (f32)       SILU(conv_output_raw-12{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+47565:common_debug_cb_eval: conv_output_silu-12 (view) = (f32)       VIEW(conv_output_silu-12{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+47578:common_debug_cb_eval:            qk_conv_l2-12 = (f32)    L2_NORM(conv_output_silu-12 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+47591:common_debug_cb_eval:       q_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+47604:common_debug_cb_eval:       k_conv_predelta-12 = (f32)       VIEW(qk_conv_l2-12{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+47617:common_debug_cb_eval:       v_conv_predelta-12 = (f32)       VIEW(conv_output_silu-12{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+47711:common_debug_cb_eval:        state_predelta-12 = (f32)    RESHAPE(node_934{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+47770:common_debug_cb_eval:                 node_955 = (f32) GATED_DELTA_NET(q_conv_predelta-12{128, 16, 1, 1}, k_conv_predelta-12{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+48430:common_debug_cb_eval:       conv_output_raw-13 = (f32)   SSM_CONV(conv_input-13{4, 8192, 1, 1}, blk.13.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+48437:common_debug_cb_eval:      conv_output_silu-13 = (f32)       SILU(conv_output_raw-13{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+48444:common_debug_cb_eval: conv_output_silu-13 (view) = (f32)       VIEW(conv_output_silu-13{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+48457:common_debug_cb_eval:            qk_conv_l2-13 = (f32)    L2_NORM(conv_output_silu-13 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+48470:common_debug_cb_eval:       q_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+48483:common_debug_cb_eval:       k_conv_predelta-13 = (f32)       VIEW(qk_conv_l2-13{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+48496:common_debug_cb_eval:       v_conv_predelta-13 = (f32)       VIEW(conv_output_silu-13{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+48590:common_debug_cb_eval:        state_predelta-13 = (f32)    RESHAPE(node_1016{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+48649:common_debug_cb_eval:                node_1037 = (f32) GATED_DELTA_NET(q_conv_predelta-13{128, 16, 1, 1}, k_conv_predelta-13{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+49309:common_debug_cb_eval:       conv_output_raw-14 = (f32)   SSM_CONV(conv_input-14{4, 8192, 1, 1}, blk.14.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+49316:common_debug_cb_eval:      conv_output_silu-14 = (f32)       SILU(conv_output_raw-14{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+49323:common_debug_cb_eval: conv_output_silu-14 (view) = (f32)       VIEW(conv_output_silu-14{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+49336:common_debug_cb_eval:            qk_conv_l2-14 = (f32)    L2_NORM(conv_output_silu-14 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+49349:common_debug_cb_eval:       q_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+49362:common_debug_cb_eval:       k_conv_predelta-14 = (f32)       VIEW(qk_conv_l2-14{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+49375:common_debug_cb_eval:       v_conv_predelta-14 = (f32)       VIEW(conv_output_silu-14{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+49469:common_debug_cb_eval:        state_predelta-14 = (f32)    RESHAPE(node_1098{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+49528:common_debug_cb_eval:                node_1119 = (f32) GATED_DELTA_NET(q_conv_predelta-14{128, 16, 1, 1}, k_conv_predelta-14{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+50832:common_debug_cb_eval:       conv_output_raw-16 = (f32)   SSM_CONV(conv_input-16{4, 8192, 1, 1}, blk.16.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+50839:common_debug_cb_eval:      conv_output_silu-16 = (f32)       SILU(conv_output_raw-16{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+50846:common_debug_cb_eval: conv_output_silu-16 (view) = (f32)       VIEW(conv_output_silu-16{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+50859:common_debug_cb_eval:            qk_conv_l2-16 = (f32)    L2_NORM(conv_output_silu-16 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+50872:common_debug_cb_eval:       q_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+50885:common_debug_cb_eval:       k_conv_predelta-16 = (f32)       VIEW(qk_conv_l2-16{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+50898:common_debug_cb_eval:       v_conv_predelta-16 = (f32)       VIEW(conv_output_silu-16{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+50992:common_debug_cb_eval:        state_predelta-16 = (f32)    RESHAPE(node_1235{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+51051:common_debug_cb_eval:                node_1256 = (f32) GATED_DELTA_NET(q_conv_predelta-16{128, 16, 1, 1}, k_conv_predelta-16{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+51711:common_debug_cb_eval:       conv_output_raw-17 = (f32)   SSM_CONV(conv_input-17{4, 8192, 1, 1}, blk.17.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+51718:common_debug_cb_eval:      conv_output_silu-17 = (f32)       SILU(conv_output_raw-17{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+51725:common_debug_cb_eval: conv_output_silu-17 (view) = (f32)       VIEW(conv_output_silu-17{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+51738:common_debug_cb_eval:            qk_conv_l2-17 = (f32)    L2_NORM(conv_output_silu-17 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+51751:common_debug_cb_eval:       q_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+51764:common_debug_cb_eval:       k_conv_predelta-17 = (f32)       VIEW(qk_conv_l2-17{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+51777:common_debug_cb_eval:       v_conv_predelta-17 = (f32)       VIEW(conv_output_silu-17{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+51871:common_debug_cb_eval:        state_predelta-17 = (f32)    RESHAPE(node_1317{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+51930:common_debug_cb_eval:                node_1338 = (f32) GATED_DELTA_NET(q_conv_predelta-17{128, 16, 1, 1}, k_conv_predelta-17{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+52590:common_debug_cb_eval:       conv_output_raw-18 = (f32)   SSM_CONV(conv_input-18{4, 8192, 1, 1}, blk.18.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+52597:common_debug_cb_eval:      conv_output_silu-18 = (f32)       SILU(conv_output_raw-18{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+52604:common_debug_cb_eval: conv_output_silu-18 (view) = (f32)       VIEW(conv_output_silu-18{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+52617:common_debug_cb_eval:            qk_conv_l2-18 = (f32)    L2_NORM(conv_output_silu-18 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+52630:common_debug_cb_eval:       q_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+52643:common_debug_cb_eval:       k_conv_predelta-18 = (f32)       VIEW(qk_conv_l2-18{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+52656:common_debug_cb_eval:       v_conv_predelta-18 = (f32)       VIEW(conv_output_silu-18{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+52750:common_debug_cb_eval:        state_predelta-18 = (f32)    RESHAPE(node_1399{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+52809:common_debug_cb_eval:                node_1420 = (f32) GATED_DELTA_NET(q_conv_predelta-18{128, 16, 1, 1}, k_conv_predelta-18{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+54113:common_debug_cb_eval:       conv_output_raw-20 = (f32)   SSM_CONV(conv_input-20{4, 8192, 1, 1}, blk.20.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+54120:common_debug_cb_eval:      conv_output_silu-20 = (f32)       SILU(conv_output_raw-20{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+54127:common_debug_cb_eval: conv_output_silu-20 (view) = (f32)       VIEW(conv_output_silu-20{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+54140:common_debug_cb_eval:            qk_conv_l2-20 = (f32)    L2_NORM(conv_output_silu-20 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+54153:common_debug_cb_eval:       q_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+54166:common_debug_cb_eval:       k_conv_predelta-20 = (f32)       VIEW(qk_conv_l2-20{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+54179:common_debug_cb_eval:       v_conv_predelta-20 = (f32)       VIEW(conv_output_silu-20{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+54273:common_debug_cb_eval:        state_predelta-20 = (f32)    RESHAPE(node_1536{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+54332:common_debug_cb_eval:                node_1557 = (f32) GATED_DELTA_NET(q_conv_predelta-20{128, 16, 1, 1}, k_conv_predelta-20{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+54992:common_debug_cb_eval:       conv_output_raw-21 = (f32)   SSM_CONV(conv_input-21{4, 8192, 1, 1}, blk.21.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+54999:common_debug_cb_eval:      conv_output_silu-21 = (f32)       SILU(conv_output_raw-21{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+55006:common_debug_cb_eval: conv_output_silu-21 (view) = (f32)       VIEW(conv_output_silu-21{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+55019:common_debug_cb_eval:            qk_conv_l2-21 = (f32)    L2_NORM(conv_output_silu-21 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+55032:common_debug_cb_eval:       q_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55045:common_debug_cb_eval:       k_conv_predelta-21 = (f32)       VIEW(qk_conv_l2-21{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55058:common_debug_cb_eval:       v_conv_predelta-21 = (f32)       VIEW(conv_output_silu-21{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+55152:common_debug_cb_eval:        state_predelta-21 = (f32)    RESHAPE(node_1618{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+55211:common_debug_cb_eval:                node_1639 = (f32) GATED_DELTA_NET(q_conv_predelta-21{128, 16, 1, 1}, k_conv_predelta-21{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+55871:common_debug_cb_eval:       conv_output_raw-22 = (f32)   SSM_CONV(conv_input-22{4, 8192, 1, 1}, blk.22.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+55878:common_debug_cb_eval:      conv_output_silu-22 = (f32)       SILU(conv_output_raw-22{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+55885:common_debug_cb_eval: conv_output_silu-22 (view) = (f32)       VIEW(conv_output_silu-22{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+55898:common_debug_cb_eval:            qk_conv_l2-22 = (f32)    L2_NORM(conv_output_silu-22 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+55911:common_debug_cb_eval:       q_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55924:common_debug_cb_eval:       k_conv_predelta-22 = (f32)       VIEW(qk_conv_l2-22{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+55937:common_debug_cb_eval:       v_conv_predelta-22 = (f32)       VIEW(conv_output_silu-22{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+56031:common_debug_cb_eval:        state_predelta-22 = (f32)    RESHAPE(node_1700{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+56090:common_debug_cb_eval:                node_1721 = (f32) GATED_DELTA_NET(q_conv_predelta-22{128, 16, 1, 1}, k_conv_predelta-22{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+57394:common_debug_cb_eval:       conv_output_raw-24 = (f32)   SSM_CONV(conv_input-24{4, 8192, 1, 1}, blk.24.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+57401:common_debug_cb_eval:      conv_output_silu-24 = (f32)       SILU(conv_output_raw-24{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+57408:common_debug_cb_eval: conv_output_silu-24 (view) = (f32)       VIEW(conv_output_silu-24{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+57421:common_debug_cb_eval:            qk_conv_l2-24 = (f32)    L2_NORM(conv_output_silu-24 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+57434:common_debug_cb_eval:       q_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+57447:common_debug_cb_eval:       k_conv_predelta-24 = (f32)       VIEW(qk_conv_l2-24{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+57460:common_debug_cb_eval:       v_conv_predelta-24 = (f32)       VIEW(conv_output_silu-24{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+57554:common_debug_cb_eval:        state_predelta-24 = (f32)    RESHAPE(node_1837{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+57613:common_debug_cb_eval:                node_1858 = (f32) GATED_DELTA_NET(q_conv_predelta-24{128, 16, 1, 1}, k_conv_predelta-24{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+58273:common_debug_cb_eval:       conv_output_raw-25 = (f32)   SSM_CONV(conv_input-25{4, 8192, 1, 1}, blk.25.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+58280:common_debug_cb_eval:      conv_output_silu-25 = (f32)       SILU(conv_output_raw-25{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+58287:common_debug_cb_eval: conv_output_silu-25 (view) = (f32)       VIEW(conv_output_silu-25{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+58300:common_debug_cb_eval:            qk_conv_l2-25 = (f32)    L2_NORM(conv_output_silu-25 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+58313:common_debug_cb_eval:       q_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+58326:common_debug_cb_eval:       k_conv_predelta-25 = (f32)       VIEW(qk_conv_l2-25{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+58339:common_debug_cb_eval:       v_conv_predelta-25 = (f32)       VIEW(conv_output_silu-25{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+58433:common_debug_cb_eval:        state_predelta-25 = (f32)    RESHAPE(node_1919{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+58492:common_debug_cb_eval:                node_1940 = (f32) GATED_DELTA_NET(q_conv_predelta-25{128, 16, 1, 1}, k_conv_predelta-25{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+59152:common_debug_cb_eval:       conv_output_raw-26 = (f32)   SSM_CONV(conv_input-26{4, 8192, 1, 1}, blk.26.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+59159:common_debug_cb_eval:      conv_output_silu-26 = (f32)       SILU(conv_output_raw-26{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+59166:common_debug_cb_eval: conv_output_silu-26 (view) = (f32)       VIEW(conv_output_silu-26{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+59179:common_debug_cb_eval:            qk_conv_l2-26 = (f32)    L2_NORM(conv_output_silu-26 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+59192:common_debug_cb_eval:       q_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+59205:common_debug_cb_eval:       k_conv_predelta-26 = (f32)       VIEW(qk_conv_l2-26{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+59218:common_debug_cb_eval:       v_conv_predelta-26 = (f32)       VIEW(conv_output_silu-26{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+59312:common_debug_cb_eval:        state_predelta-26 = (f32)    RESHAPE(node_2001{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+59371:common_debug_cb_eval:                node_2022 = (f32) GATED_DELTA_NET(q_conv_predelta-26{128, 16, 1, 1}, k_conv_predelta-26{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+60675:common_debug_cb_eval:       conv_output_raw-28 = (f32)   SSM_CONV(conv_input-28{4, 8192, 1, 1}, blk.28.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+60682:common_debug_cb_eval:      conv_output_silu-28 = (f32)       SILU(conv_output_raw-28{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+60689:common_debug_cb_eval: conv_output_silu-28 (view) = (f32)       VIEW(conv_output_silu-28{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+60702:common_debug_cb_eval:            qk_conv_l2-28 = (f32)    L2_NORM(conv_output_silu-28 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+60715:common_debug_cb_eval:       q_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+60728:common_debug_cb_eval:       k_conv_predelta-28 = (f32)       VIEW(qk_conv_l2-28{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+60741:common_debug_cb_eval:       v_conv_predelta-28 = (f32)       VIEW(conv_output_silu-28{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+60835:common_debug_cb_eval:        state_predelta-28 = (f32)    RESHAPE(node_2138{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+60894:common_debug_cb_eval:                node_2159 = (f32) GATED_DELTA_NET(q_conv_predelta-28{128, 16, 1, 1}, k_conv_predelta-28{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+61554:common_debug_cb_eval:       conv_output_raw-29 = (f32)   SSM_CONV(conv_input-29{4, 8192, 1, 1}, blk.29.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+61561:common_debug_cb_eval:      conv_output_silu-29 = (f32)       SILU(conv_output_raw-29{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+61568:common_debug_cb_eval: conv_output_silu-29 (view) = (f32)       VIEW(conv_output_silu-29{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+61581:common_debug_cb_eval:            qk_conv_l2-29 = (f32)    L2_NORM(conv_output_silu-29 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+61594:common_debug_cb_eval:       q_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+61607:common_debug_cb_eval:       k_conv_predelta-29 = (f32)       VIEW(qk_conv_l2-29{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+61620:common_debug_cb_eval:       v_conv_predelta-29 = (f32)       VIEW(conv_output_silu-29{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+61714:common_debug_cb_eval:        state_predelta-29 = (f32)    RESHAPE(node_2220{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+61773:common_debug_cb_eval:                node_2241 = (f32) GATED_DELTA_NET(q_conv_predelta-29{128, 16, 1, 1}, k_conv_predelta-29{128, 16, 1, 1}}) = {4096, 129, 1, 1}
+62433:common_debug_cb_eval:       conv_output_raw-30 = (f32)   SSM_CONV(conv_input-30{4, 8192, 1, 1}, blk.30.ssm_conv1d.weight{4, 8192, 1, 1}}) = {8192, 1, 1, 1}
+62440:common_debug_cb_eval:      conv_output_silu-30 = (f32)       SILU(conv_output_raw-30{8192, 1, 1, 1}, }) = {8192, 1, 1, 1}
+62447:common_debug_cb_eval: conv_output_silu-30 (view) = (f32)       VIEW(conv_output_silu-30{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+62460:common_debug_cb_eval:            qk_conv_l2-30 = (f32)    L2_NORM(conv_output_silu-30 (view){128, 32, 1, 1}, }) = {128, 32, 1, 1}
+62473:common_debug_cb_eval:       q_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+62486:common_debug_cb_eval:       k_conv_predelta-30 = (f32)       VIEW(qk_conv_l2-30{128, 32, 1, 1}, }) = {128, 16, 1, 1}
+62499:common_debug_cb_eval:       v_conv_predelta-30 = (f32)       VIEW(conv_output_silu-30{8192, 1, 1, 1}, }) = {128, 32, 1, 1}
+62593:common_debug_cb_eval:        state_predelta-30 = (f32)    RESHAPE(node_2302{524288, 1, 1, 1}, }) = {128, 128, 32, 1}
+62652:common_debug_cb_eval:                node_2323 = (f32) GATED_DELTA_NET(q_conv_predelta-30{128, 16, 1, 1}, k_conv_predelta-30{128, 16, 1, 1}}) = {4096, 129, 1, 1}

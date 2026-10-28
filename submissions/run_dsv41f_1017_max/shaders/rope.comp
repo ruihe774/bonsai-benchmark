@@ -1,0 +1,29 @@
+#version 450
+layout(local_size_x = 64) in;
+layout(std430, binding = 0) readonly buffer XB { float x[]; };
+layout(std430, binding = 1) writeonly buffer YB { float y[]; };
+layout(push_constant) uniform PC { uint pos; uint nheads; uint sstride; } pc;
+
+void main() {
+    uint h = gl_WorkGroupID.x;
+    uint i = gl_LocalInvocationID.x;
+    uint base = h * 256u;
+    uint sbase = h * (pc.sstride != 0u ? pc.sstride : 256u);
+    if (i < 32u) {
+        float ang = float(pc.pos) * pow(10000000.0, -float(i) / 32.0);
+        float c = cos(ang); float s = sin(ang);
+        float a = x[sbase + i];
+        float b = x[sbase + i + 32u];
+        y[base + i] = a * c - b * s;
+    } else {
+        uint j = i - 32u;
+        float ang = float(pc.pos) * pow(10000000.0, -float(j) / 32.0);
+        float c = cos(ang); float s = sin(ang);
+        float a = x[sbase + j];
+        float b = x[sbase + i];
+        y[base + i] = a * s + b * c;
+    }
+    y[base + 64u + i] = x[sbase + 64u + i];
+    y[base + 128u + i] = x[sbase + 128u + i];
+    y[base + 192u + i] = x[sbase + 192u + i];
+}

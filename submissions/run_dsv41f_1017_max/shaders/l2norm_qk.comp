@@ -1,0 +1,24 @@
+#version 450
+layout(local_size_x = 128) in;
+layout(std430, binding = 0) buffer XB { float x[]; };
+layout(push_constant) uniform PC { uint rows; uint flags; } pc;
+
+shared float red[128];
+
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    uint row = gl_WorkGroupID.x;
+    uint base = row * 128u;
+    float v = x[base + tid];
+    red[tid] = v * v;
+    barrier();
+    for (uint s = 64u; s > 0u; s >>= 1) {
+        if (tid < s) red[tid] += red[tid + s];
+        barrier();
+    }
+    if (tid == 0u) red[0] = sqrt(red[0]) + 1e-6;
+    barrier();
+    float sc = 1.0 / red[0];
+    if (row < 16u) sc *= 0.08838834764831845;
+    x[base + tid] = v * sc;
+}

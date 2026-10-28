@@ -1,0 +1,4 @@
+blk.0.attn_gate.weight match 25600 / 25600 frac 1.0
+blk.0.attn_qkv.weight match 25600 / 25600 frac 1.0
+blk.3.attn_q.weight match 25600 / 25600 frac 1.0
+blk.0.ssm_out.weight match 25600 / 25600 frac 1.0

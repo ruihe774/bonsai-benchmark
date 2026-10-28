@@ -1,0 +1,17 @@
+#version 450
+layout(local_size_x = 32) in;
+layout(std430, binding = 0) readonly buffer WB { float w[]; };
+layout(std430, binding = 1) buffer OB { float outv[]; };
+layout(push_constant) uniform PC { uint alpha_off; uint beta_off; uint a_off; uint dtb_off; } pc;
+
+void main() {
+    uint h = gl_LocalInvocationID.x;
+    float al = outv[h];
+    float b = outv[32u + h];
+    float sa = w[pc.a_off + h];
+    float dt = w[pc.dtb_off + h];
+    float z = al + dt;
+    float sp = log(1.0 + exp(-abs(z))) + max(z, 0.0);
+    outv[h] = sa * sp;
+    outv[32u + h] = 1.0 / (1.0 + exp(-b));
+}

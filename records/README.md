@@ -6,6 +6,7 @@ Raw Claude Code artifacts for the bonsai-vk benchmark runs, kept alongside
 | directory | model | effort | compact window | report |
 |---|---|---|---|---|
 | `run_dsv41f_1017_high` | DeepSeek-V4.1-Flash-1017 (`deepseek-flash[1m]`) | high | 786432 | `reports/run_dsv41f_1017_high/` (verifier failed: greedy-long SIGSEGV; partial 0.6958) |
+| `run_dsv41f_1017_max` | DeepSeek-V4.1-Flash-1017 (`deepseek-flash[1m]`) | max | 300000 | `reports/run_dsv41f_1017_max/` (correctness 0.4870 rejected; VRAM gate failed) |
 | `run_gpt6_1_sol_high` | gpt-6.1-sol | high | 300000 | `reports/run_gpt6_1_sol_high/` (correctness 0.9958 accepted; perf 0.511×; memory gates pass) |
 
 `run_gpt6_1_sol_high` is the first run prepared after the black-box reference
@@ -14,6 +15,16 @@ limits reported as HTTP 422; both are discussed in its `AUDIT.md`. Its two
 earlier attempts are preserved under `/mnt/workspace/bonsai-runs` with
 `_attempt1` (upstream 422 killed the main session) and `_abandoned` (operator
 stopped it for static analysis of `ref/bin`, before the rule existed).
+
+`run_dsv41f_1017_max` is the max-effort DeepSeek run with the same compact
+window as the GPT run. The agent exited on its own after 63 min of the 2 h
+budget; the proxy saw 491 requests, 0 retries. The audit found no gaming, but
+the submission failed verification: `bonsai_tokenize` reports an upper bound
+rather than the required id count when `ids == NULL` (ABI contract error), the
+hidden golden logits/positions disagree with the agent's NumPy self-check, and
+peak VRAM (4078.4 MiB) exceeds the 2950.6 MiB gate, which zeroes performance.
+Its stream capture is stored compressed as `transcript/stream.jsonl.zst`
+(59 MB → 6.9 MB) because of the max-effort thinking stream.
 
 Each directory contains:
 
@@ -28,7 +39,8 @@ Each directory contains:
 * `transcript/` — the session JSONL as saved under `~/.claude/projects/`,
   including the two subagent transcripts and persisted tool results where
   present. The main transcript is `<session-uuid>.jsonl` at its root;
-  `stream.jsonl` is the runner's stream-json capture of the same session.
+  `stream.jsonl` is the runner's stream-json capture of the same session
+  (compressed to `stream.jsonl.zst` for the max-effort run).
 * `AUDIT.md` — transcript and source audit for gaming/compliance behaviors.
 
 The transcripts are the agent sessions themselves and predate verification; see

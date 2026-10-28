@@ -1,0 +1,11 @@
+28:prism.hadamard.tied_output [<GGUFValueType.BOOL: 7>] True
+29:prism.hadamard.version [<GGUFValueType.UINT32: 4>] 2
+30:prism.hadamard.block_size [<GGUFValueType.UINT32: 4>] 512
+31:prism.hadamard.transform [<GGUFValueType.STRING: 8>] normalized-sylvester-walsh-hadamard
+32:prism.hadamard.axis [<GGUFValueType.STRING: 8>] input-last-dimension
+33:prism.hadamard.sign_mode [<GGUFValueType.STRING: 8>] explicit
+34:prism.hadamard.weight_names [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] ['blk.0.attn_qkv.weight', 'blk.0.attn_gate.weight', 'blk.0.ssm_out.weight', 'blk.0.ffn_down.weight', 'blk.0.ffn_gate.weight', 'blk.0.ffn_up.weight', 'blk.1.attn_qkv.weight', 'blk.1.attn_gate.weight', 'blk.1.ssm_out.weight', 'blk.1.ffn_down.weight', 'blk.1.ffn_gate.weight', 'blk.1.ffn_up.weight', 'bl...
+35:prism.hadamard.sign_widths [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] [2560, 4096, 9216]
+36:prism.hadamard.sign_values [<GGUFValueType.ARRAY: 9>, <GGUFValueType.INT32: 5>] [-1, -1, -1, 1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, -1, -1...
+37:prism.hadamard.inverse_weight_names [<GGUFValueType.ARRAY: 9>, <GGUFValueType.STRING: 8>] ['token_embd.weight']
+38:prism.hadamard.gdn_v_grouped [<GGUFValueType.BOOL: 7>] True

@@ -1,0 +1,15 @@
+#version 450
+layout(local_size_x = 256) in;
+layout(std430, binding = 0) readonly buffer KB { float k[]; };
+layout(std430, binding = 1) readonly buffer VB { float v[]; };
+layout(std430, binding = 2) writeonly buffer KC { uint kc[]; };
+layout(std430, binding = 3) writeonly buffer VC { uint vc[]; };
+layout(push_constant) uniform PC { uint pos; uint n; } pc;
+
+void main() {
+    uint e = gl_WorkGroupID.x * 256u + gl_LocalInvocationID.x;
+    if (e >= pc.n) return;
+    uint idx = pc.pos * pc.n + e;
+    kc[idx] = packHalf2x16(vec2(k[e], 0.0));
+    vc[idx] = packHalf2x16(vec2(v[e], 0.0));
+}

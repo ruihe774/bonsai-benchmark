@@ -107,6 +107,9 @@ check("data/docs/ref read-only", len(write_results) >= 10 and
 check("credential isolation",
       "benchmark-dummy-token" in res(bash_results, 10)[1] and
       "mock-upstream-secret" not in res(bash_results, 10)[1])
+check("deadline control",
+      "time-left-ok" in res(bash_results, 13)[1] and
+      "deadline-read-only" in res(bash_results, 13)[1])
 sys.exit(0 if ok else 1)
 PY
 echo "mock requests:"

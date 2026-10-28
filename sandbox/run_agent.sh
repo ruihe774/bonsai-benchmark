@@ -6,7 +6,8 @@
 #
 # The agent container has no internet route. It can only reach the proxy
 # container on an internal podman network; the proxy holds the credential and
-# forwards only the Messages API paths.
+# forwards only the Messages API paths. The wall-clock deadline can be changed
+# while the run is in progress with sandbox/deadline.sh.
 set -euo pipefail
 
 BENCH="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
@@ -28,8 +29,45 @@ PROXY_IP="${PROXY_IP:-10.89.0.2}"
 AGENT_IP="${AGENT_IP:-10.89.0.3}"
 PNAME="bonsai-proxy-$NAME"
 ANAME="bonsai-agent-$NAME"
-RUN_TIMEOUT="${RUN_TIMEOUT:-7200}"    # wall-clock budget, seconds (default 2 h)
-DEADLINE_EPOCH=$(( $(date +%s) + RUN_TIMEOUT ))
+RUN_TIMEOUT="${RUN_TIMEOUT:-7200}"    # initial wall-clock budget, seconds (default 2 h)
+START_EPOCH=$(date +%s)
+DEADLINE_EPOCH=$(( START_EPOCH + RUN_TIMEOUT ))
+# Operator-adjustable live deadline. sandbox/deadline.sh rewrites
+# $CTL/deadline; the runner polls it and stops the container at that time. The
+# directory is mounted read-only in the container, so the agent cannot extend
+# its own session.
+CTL="$ROOT/$NAME.control"
+WATCH_PID=""
+
+live_deadline() {
+  local d
+  d=$(tr -d '[:space:]' < "$CTL/deadline" 2>/dev/null || true)
+  case "$d" in ''|*[!0-9]*) d=$DEADLINE_EPOCH ;; esac
+  printf '%s\n' "$d"
+}
+
+watch_deadline() {
+  local pid=$1 dl
+  while kill -0 "$pid" 2>/dev/null; do
+    dl=$(live_deadline)
+    if [ "$(date +%s)" -ge "$dl" ]; then
+      printf '%d\n' "$dl" > "$CTL/terminated"
+      # A paused ("rate-limited") container stays frozen; thaw it so the stop
+      # signals are delivered. Pausing/unpausing is itself left to the operator.
+      podman unpause "$ANAME" >/dev/null 2>&1 || true
+      podman stop --time 60 "$ANAME" >/dev/null 2>&1 || true
+      # The container may not exist yet (very short deadline), or stop may have
+      # failed; also terminate the podman client like the old timeout did.
+      if kill -0 "$pid" 2>/dev/null; then
+        kill -TERM "$pid" 2>/dev/null || true
+        sleep 5
+        kill -KILL "$pid" 2>/dev/null || true
+      fi
+      return
+    fi
+    sleep 1
+  done
+}
 
 # Optional model pin for benchmarking several models through the same proxy.
 MODEL_ENV=()
@@ -105,7 +143,14 @@ if ! podman network exists "$EGRESS_NET"; then
   podman network create "$EGRESS_NET" >/dev/null
 fi
 
+rm -rf "$CTL"
+mkdir -p "$CTL"
+printf '%d\n' "$DEADLINE_EPOCH" > "$CTL/deadline"
+printf '%d\n' "$DEADLINE_EPOCH" > "$CTL/initial-deadline"
+: > "$CTL/adjustments.log"
+
 cleanup() {
+  if [ -n "$WATCH_PID" ]; then kill "$WATCH_PID" >/dev/null 2>&1 || true; fi
   podman logs "$PNAME" >"$ROOT/$NAME.proxy.jsonl" 2>/dev/null || true
   podman rm -f "$PNAME" >/dev/null 2>&1 || true
   podman rm -f "$ANAME" >/dev/null 2>&1 || true
@@ -137,12 +182,14 @@ if ! podman logs "$PNAME" 2>&1 | grep -q "listening on"; then
 fi
 
 set +e
-START_EPOCH=$(date +%s)
-timeout --signal=TERM --kill-after=60 "$RUN_TIMEOUT" podman run --rm --name "$ANAME" \
+podman run --rm --name "$ANAME" \
   --device /dev/dri --group-add keep-groups --security-opt label=disable \
   --network "$INT_NET:ip=$AGENT_IP" \
   --shm-size=4g --tmpfs /tmp:rw,size=8g \
+  -v "$CTL:/run/bench:ro" \
+  -e BENCH_DEADLINE_FILE=/run/bench/deadline \
   -e BENCH_DEADLINE_EPOCH="$DEADLINE_EPOCH" \
+  -v "$BENCH/sandbox/time-left.sh:/usr/local/bin/time-left:ro" \
   -v "$RUN:/workspace" \
   -v "$BENCH/deps/docs:/workspace/docs:ro" \
   -v "$BENCH/deps/data:/workspace/data:ro" \
@@ -160,14 +207,27 @@ timeout --signal=TERM --kill-after=60 "$RUN_TIMEOUT" podman run --rm --name "$AN
   -e DISABLE_TELEMETRY=1 \
   "$AGENT_IMAGE" \
   bash -lc 'cd /workspace && claude -p "$(cat PROMPT.md)" --settings /run/claude-settings.json --setting-sources project --safe-mode --strict-mcp-config --permission-mode dontAsk --output-format stream-json --verbose' \
-  >"$ROOT/$NAME.transcript.jsonl" 2>"$ROOT/$NAME.stderr.log"
+  >"$ROOT/$NAME.transcript.jsonl" 2>"$ROOT/$NAME.stderr.log" &
+AGENT_PID=$!
+watch_deadline "$AGENT_PID" &
+WATCH_PID=$!
+wait "$AGENT_PID"
 rc=$?
+kill "$WATCH_PID" >/dev/null 2>&1 || true
+wait "$WATCH_PID" >/dev/null 2>&1 || true
+WATCH_PID=""
 set -e
 END_EPOCH=$(date +%s)
 timed_out=false
-if [ "$rc" -eq 124 ]; then timed_out=true; fi
-printf '{"start_epoch":%d,"end_epoch":%d,"budget_s":%d,"elapsed_s":%d,"exit":%d,"timed_out":%s,"deadline_epoch":%d}\n' \
-  "$START_EPOCH" "$END_EPOCH" "$RUN_TIMEOUT" "$((END_EPOCH - START_EPOCH))" \
-  "$rc" "$timed_out" "$DEADLINE_EPOCH" > "$ROOT/$NAME.meta.json"
-echo "agent exit: $rc (elapsed $((END_EPOCH - START_EPOCH))s of $RUN_TIMEOUT s)"
+[ -f "$CTL/terminated" ] && timed_out=true
+FINAL_DEADLINE_EPOCH=$(live_deadline)
+ADJUSTMENTS=$(grep -c . "$CTL/adjustments.log" 2>/dev/null || true)
+case "$ADJUSTMENTS" in ''|*[!0-9]*) ADJUSTMENTS=0 ;; esac
+deadline_adjusted=false
+[ "$FINAL_DEADLINE_EPOCH" -ne "$DEADLINE_EPOCH" ] && deadline_adjusted=true
+printf '{"start_epoch":%d,"end_epoch":%d,"budget_s":%d,"effective_budget_s":%d,"elapsed_s":%d,"exit":%d,"timed_out":%s,"deadline_epoch":%d,"initial_deadline_epoch":%d,"deadline_adjusted":%s,"deadline_adjustments":%d}\n' \
+  "$START_EPOCH" "$END_EPOCH" "$RUN_TIMEOUT" "$((FINAL_DEADLINE_EPOCH - START_EPOCH))" \
+  "$((END_EPOCH - START_EPOCH))" "$rc" "$timed_out" "$FINAL_DEADLINE_EPOCH" \
+  "$DEADLINE_EPOCH" "$deadline_adjusted" "$ADJUSTMENTS" > "$ROOT/$NAME.meta.json"
+echo "agent exit: $rc (elapsed $((END_EPOCH - START_EPOCH))s; deadline $((FINAL_DEADLINE_EPOCH - START_EPOCH))s after start)"
 exit "$rc"

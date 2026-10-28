@@ -115,9 +115,10 @@ the dummy token, external and egress-network hosts are unreachable, and the
 Zig/`glslc`/`glslangValidator`/`slangc`/`spirv-val`/`gguf-py`/CPU-reference
 toolchain works (including a `zig build` of the ABI stub). The mock observed
 the injected upstream credential; the proxy log shows
-`authorization":["<redacted>"]`. Default wall-clock budget is 2 hours, exported
-as `BENCH_DEADLINE_EPOCH`; `time-left` reports the remainder and
-`RUN_NAME.meta.json` records start/end/timeout.
+`authorization":["<redacted>"]`. Default wall-clock budget is 2 hours, with the
+launch value exported as `BENCH_DEADLINE_EPOCH` and the live value kept in a
+read-only control file that the operator can adjust; `time-left` reports the
+current remainder and `RUN_NAME.meta.json` records start/end/timeout.
 
 ## Reproducing
 

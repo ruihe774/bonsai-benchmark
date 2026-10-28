@@ -80,9 +80,11 @@ run the script.
 
 ## Time budget
 
-The session is terminated at a fixed wall-clock deadline. `BENCH_DEADLINE_EPOCH`
-holds the deadline as Unix time, and `time-left` prints the remaining time. The
-default budget is 2 hours; trust the environment variable if it differs.
+The session is terminated at a wall-clock deadline that the operator may
+adjust while the run is in progress (for example to pause for an upstream rate
+limit). `time-left` prints the current remaining time; re-run it when you need
+a fresh estimate rather than assuming a fixed budget. The default budget is
+2 hours; trust `time-left` if it differs.
 
 Only files in this workspace at the deadline are graded. The conversation is
 not saved for grading, so write code, run tests and update `NOTES.md`

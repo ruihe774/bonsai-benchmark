@@ -145,12 +145,33 @@ container). `RUN_TIMEOUT` bounds the run (default 2 h).
   workspace at the deadline is graded, and the docs tell the agent to save
   continuously. The CPU and Vulkan reference binaries are both available;
   expected speeds are documented in `TASK.md`.
+- The operator can adjust the deadline of a live run without restarting it:
+  ```bash
+  sandbox/deadline.sh run01 show
+  sandbox/deadline.sh run01 extend 30m       # add 1800 s
+  sandbox/deadline.sh run01 set 1793189110   # absolute Unix epoch
+  sandbox/deadline.sh run01 shorten 10m      # subtract 600 s
+  ```
+  The runner keeps the live value in `RUNS_ROOT/RUN_NAME.control/deadline`,
+  polls it once a second, and stops the agent when it is reached. That
+  directory is mounted read-only at `/run/bench` in the agent container, so
+  the agent cannot move its own deadline; `time-left` reads the live value.
+  `RUNS_ROOT` selects the runs directory (default `/mnt/workspace/bonsai-runs`),
+  and each adjustment is logged in the control directory and summarized in
+  `meta.json` (`initial_deadline_epoch`, `deadline_epoch`,
+  `deadline_adjustments`). Adjustment is manual by design: the runner does not
+  watch upstream rate limits. For a rate-limited model, pause the container
+  with `podman pause bonsai-agent-RUN_NAME`, unpause it with
+  `podman unpause bonsai-agent-RUN_NAME`, and extend the deadline by at least
+  the pause duration. The runner thaws a paused container if the deadline
+  arrives while it is paused, so the run still terminates.
 - `sandbox/smoke_test.sh [NAME]` validates the whole sandbox against a local
   mock Messages API (`sandbox/mock_anthropic.py`): individual simple Bash
   commands and the script workaround, GPU access, workspace writes,
   `data/docs/ref` read-only, WebFetch/WebSearch denial, credential isolation,
-  no egress, and the toolchain (including the Python data stack and the
-  safetensors file), without spending real API calls or exposing a credential.
+  no egress, the live deadline (`time-left` and its read-only control file),
+  and the toolchain (including the Python data stack and the safetensors
+  file), without spending real API calls or exposing a credential.
 
 ### Model and cost tuning
 

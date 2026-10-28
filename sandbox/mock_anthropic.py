@@ -41,6 +41,19 @@ SMOKE_PY = """#!/bin/bash
 python3 -c "import gguf, numpy, safetensors, yaml; from safetensors import safe_open; f=safe_open('/workspace/data/Ternary-Bonsai-2-4B-PTQ1_0-f16.safetensors', framework='numpy'); assert len(f.keys()) == 426 and not f.metadata(); print('py-ok')"
 """
 
+SMOKE_DEADLINE = """#!/bin/bash
+if time-left | grep -q remaining; then
+  echo time-left-ok
+else
+  echo time-left-MISSING
+fi
+if printf x > /run/bench/deadline 2>/dev/null; then
+  echo deadline-WRITABLE
+else
+  echo deadline-read-only
+fi
+"""
+
 BUILD_ZIG = """const std = @import("std");
 
 pub fn build(b: *std.Build) void {
@@ -96,6 +109,8 @@ STEPS = [
     ("Write", {"file_path": "/workspace/ref/.smoke", "content": "x"}),
     ("WebFetch", {"url": "https://example.com", "prompt": "Say hi"}),
     ("WebSearch", {"query": "benchmark smoke test"}),
+    ("Write", {"file_path": "/workspace/smoke-deadline.sh", "content": SMOKE_DEADLINE}),
+    ("Bash", {"command": "bash smoke-deadline.sh"}),
 ]
 
 
